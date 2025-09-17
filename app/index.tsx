@@ -9,7 +9,7 @@ import './global.css';
  
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white gap-2">
+    <View className="flex-1 items-center justify-center bg-gray-100 gap-2">
       
       <LogoApp />
 

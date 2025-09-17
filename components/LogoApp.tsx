@@ -3,12 +3,18 @@ import { Image, View } from "react-native";
 
 interface LogoAppProps {
   className?: string;
+  width?: number;
+  height?: number;
 }
 
-const LogoApp = ({className}: LogoAppProps) => {
+const LogoApp = ({className, width, height}: LogoAppProps) => {
   return (
-    <View className={`${className}`}>
-      <Image source={require('../assets/logo-app.png')} />
+    <View className={className}>
+      <Image
+        source={require('../assets/logo.png')}
+        style={{ width: width || 230, height: height || 224 }}
+        resizeMode="contain"
+      />
     </View>
   );
 };
