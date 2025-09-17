@@ -1,16 +1,15 @@
 import Feather from '@expo/vector-icons/Feather';
-import { useState } from "react";
-import { TextInput, View } from "react-native";
+import React, { useState } from "react";
+import { TextInput, TouchableOpacity, View } from "react-native";
 
 
 interface SearchBarProps {
-  className: string;
-  label: string;
+  className?: string;
   onChangeText?: (text: string | undefined) => void;
   placeholder?: string;
 }
 
-const SearchBar = ({ className, label, onChangeText, placeholder = "Pesquisar"}: SearchBarProps) => {
+const SearchBar = ({ className ="", onChangeText, placeholder = "Pesquisar"}: SearchBarProps) => {
     const [value, setValue] = useState('')
 
     const handleChange = (text: string) => {
@@ -20,14 +19,16 @@ const SearchBar = ({ className, label, onChangeText, placeholder = "Pesquisar"}:
     }
 
   return (
-   <View className="py-1 mx-14 px-5 flex-row items-center bg-lightGray rounded-2xl">
-    <Feather name="search" size={24} color="#001D15" />
+   <View className="py-1 mx-16 pl-2 pr-10 flex-row items-center bg-lightGray rounded-2xl">
+    <TouchableOpacity className='flex-row h-full items-center pb-1 px-2'>
+    <Feather name="search" size={22} color="#113D31" />
+    </TouchableOpacity>
     <TextInput 
-      className={`w-full h-full px-5 rounded-2xl font-medium text-xl ${className}`}
+      className={`w-full h-full pl-1.5 rounded-2xl font-medium text-xl ${className}`}
       placeholder={placeholder}
       onChangeText={handleChange}
       value={value}
-      placeholderTextColor="#001D15"
+      placeholderTextColor="#113D31"
     />
     
    </View>
