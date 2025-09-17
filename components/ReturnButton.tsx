@@ -22,7 +22,7 @@ const ReturnButton = ({ buttonClassName, children, buttonType = "primary", onPre
 
   return (
   
-<TouchableOpacity onPress={handlePress} className="h-11 w-11 items-center justify-center rounded-lg bg-white">
+<TouchableOpacity onPress={handlePress} className={`h-11 w-11 items-center justify-center rounded-lg bg-white ${buttonType === 'primary'? "border border-forestGreen-600" : "border border-butterYellow"} ${buttonClassName}`} activeOpacity={0.7}>
 
     <View className='h-full w-full items-center justify-center'>
         <MaterialIcons  className="-mr-3" name="arrow-back-ios" size={24} color={buttonType === 'primary'? "black" : "#BF360C"} />

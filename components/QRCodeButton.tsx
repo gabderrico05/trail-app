@@ -4,12 +4,10 @@ import QRCode from "../assets/QRCode.svg";
 
 interface QRCodeButtonProps {
   buttonClassName?: string;
-  children?: string | React.ReactNode;
-  buttonType?: 'primary' | 'secondary';
   onPress?: () => void;
 }
 
-const QRCodeButton = ({ buttonClassName, children, buttonType = "primary", onPress}: QRCodeButtonProps ) => {
+const QRCodeButton = ({ buttonClassName,  onPress}: QRCodeButtonProps ) => {
 
     const handlePress = () => {
         
@@ -20,7 +18,7 @@ const QRCodeButton = ({ buttonClassName, children, buttonType = "primary", onPre
 
   return (
   
-<TouchableOpacity onPress={handlePress} className="h-11 w-11 items-center justify-center rounded-lg bg-forestGreen-600">
+<TouchableOpacity onPress={handlePress} className={`h-11 w-11 items-center justify-center rounded-lg bg-forestGreen-600 ${buttonClassName}`} activeOpacity={0.7}>
 
     <View className='h-full w-full items-center justify-center'>
         <QRCode width={32} height={32} />
