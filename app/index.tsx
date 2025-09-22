@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import LogoApp from "@/components/LogoApp";
+import ParkCard from "@/components/ParkCards";
 import QRCodeButton from "@/components/QRCodeButton";
 import ReturnButton from "@/components/ReturnButton";
 import SearchBar from "@/components/SearchBar";
@@ -14,6 +15,26 @@ export default function App() {
       <LogoApp />
 
       <SearchBar/>
+
+      <ParkCard
+        image={require("../assets/park_icon.png")}
+        title="Parque Estadual da Serra do Mar - Núcleo Caraguatatuba"
+        subtitle="Rua Horto Florestal, 1200."
+        onPress={() => {}}
+      />
+      
+      <ParkCard
+        title="Parque Estadual da Serra do Mar - Núcleo Caraguatatuba"
+        subtitle=""
+        onPress={() => {}}
+      />
+
+      <ParkCard
+        title="Parque Estadual da Serra do Mar - Núcleo Caraguatatuba"
+        subtitle=""
+        onPress={() => {}}
+      />
+
 
       <Button buttonType="primary" onPress={() => {}}>
         Começar
