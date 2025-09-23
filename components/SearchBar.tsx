@@ -19,7 +19,7 @@ const SearchBar = ({ className ="", onChangeText, placeholder = "Pesquisar"}: Se
     }
 
   return (
-   <View className="py-1 mx-16 pl-2 pr-10 flex-row items-center bg-lightGray rounded-2xl">
+   <View className="p-0.5 pl-2 pr-10 flex-row items-center bg-lightGray rounded-2xl">
     <TouchableOpacity className='flex-row h-full items-center pb-1 px-2'>
     <Feather name="search" size={22} color="#113D31" />
     </TouchableOpacity>

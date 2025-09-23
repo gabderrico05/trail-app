@@ -18,13 +18,6 @@ export default function ParkCard({
     <TouchableOpacity
       onPress={onPress}
       className={`flex-row items-center rounded-xl p-3 mb-3 border mr-9 ml-9`}
-      style={{
-        shadowColor: "#000",
-        shadowOpacity: 0.05,
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 4,
-        elevation: 1,
-      }}
     >
       {image && (
         <Image

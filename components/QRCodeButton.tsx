@@ -18,9 +18,9 @@ const QRCodeButton = ({ buttonClassName,  onPress}: QRCodeButtonProps ) => {
 
   return (
   
-<TouchableOpacity onPress={handlePress} className={`h-11 w-11 items-center justify-center rounded-lg bg-forestGreen-600 ${buttonClassName}`} activeOpacity={0.7}>
+<TouchableOpacity onPress={handlePress} className={`w-14 h-14 items-center justify-center rounded-lg bg-forestGreen-600 ${buttonClassName}`} activeOpacity={0.7}>
 
-    <View className='h-full w-full items-center justify-center'>
+    <View className='items-center justify-center'>
         <QRCode width={32} height={32} />
     </View>
         

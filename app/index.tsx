@@ -13,8 +13,15 @@ export default function App() {
     <View className="flex-1 items-center justify-center bg-gray-100 gap-2">
       
       <LogoApp />
-
+      <View className="w-full px-9">
       <SearchBar/>
+      </View>
+      
+
+      <View className="w-full flex-row justify-center gap-5 items-center px-24">
+        <SearchBar/>
+        <QRCodeButton/>
+      </View>
 
       <ParkCard
         image={require("../assets/park_icon.png")}
