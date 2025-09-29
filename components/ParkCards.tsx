@@ -17,14 +17,16 @@ export default function ParkCard({
   return (
     <TouchableOpacity
       onPress={onPress}
-      className={`flex-row items-center rounded-xl p-3 mb-3 border mr-9 ml-9`}
+      className={`flex-row min-h-fit items-center rounded-xl p-3 mb-3 border mr-9 ml-9`}
     >
-      {image && (
+      {image ? (
         <Image
           source={image}
           className="w-12 h-12 rounded-md mr-3"
           resizeMode="cover"
         />
+      ) : (
+        <View className="w-8 h-8 rounded-full mr-3 bg-gray-300 items-center justify-center" />
       )}
       <View className="flex-1">
         <Text className="text-sm font-semibold text-gray-900">{title}</Text>

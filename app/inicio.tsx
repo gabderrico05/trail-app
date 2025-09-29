@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import LogoApp from "@/components/LogoApp";
+import { router } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
 
@@ -14,7 +15,7 @@ function inicio() {
         Explore trilhas de forma interativa, descubra curiosidades e registre
         conquistas a cada passo. Escolha sua rota e viva a experiência!
       </Text>
-      <Button>Começar</Button>
+      <Button onPress={() => router.push("/selectPark")}>Começar</Button>
     </View>
   );
 }
