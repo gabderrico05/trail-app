@@ -1,0 +1,492 @@
+[
+  {
+    "name": "Parque Ibirapuera",
+    "address": "Av. Pedro Álvares Cabral - Vila Mariana, São Paulo - SP, 04094-050",
+    "image": "https://www.essemundoenosso.com.br/wp-content/uploads/2022/11/parque-do-ibirapuera-sao-paulo-principais-atracoes-01.jpg"
+  },
+  {
+    "name": "Parque Villa-Lobos",
+    "address": "Av. Prof. Fonseca Rodrigues, 2001 - Alto de Pinheiros, São Paulo - SP, 05461-010",
+    "image": "https://www.parquevillalobos.net/wp-content/uploads/2023/07/parque-villa-lobos.jpg"
+  },
+  {
+    "name": "Jardim Botânico de São Paulo",
+    "address": "Av. Miguel Estefno, 3031 - Vila Água Funda, São Paulo - SP, 04301-902",
+    "image": "https://jardimbotanico.sp.gov.br/files/2022/07/2-Entrada-do-JB-cred-Sandra-Canejo-1-1.jpg"
+  },
+  {
+    "name": "Parque da Água Branca",
+    "address": "Av. Francisco Matarazzo, 455 - Água Branca, São Paulo - SP, 05001-900",
+    "image": "https://catracalivre.com.br/wp-content/uploads/2019/07/parque-da-agua-branca-foto-reproducao-facebook-@parquedaaguabranca.jpg"
+  },
+  {
+    "name": "Parque Burle Marx",
+    "address": "Av. Dona Helena Pereira de Moraes, 200 - Vila Andrade, São Paulo - SP, 05707-400",
+    "image": "https://www.parqueburlemarx.com.br/wp-content/uploads/2022/01/pbm-galeria-01.jpg"
+  },
+  {
+    "name": "Parque Estadual da Cantareira",
+    "address": "R. do Horto, 1799 - Horto Florestal, São Paulo - SP, 02377-000",
+    "image": "https://guiadeareasverdes.sp.gov.br/wp-content/uploads/2019/08/WhatsApp-Image-2019-08-20-at-15.02.13-1.jpeg"
+  },
+  {
+    "name": "Parque da Independência",
+    "address": "Av. Nazaré, s/n - Ipiranga, São Paulo - SP, 04263-200",
+    "image": "https://www.visitesaopaulo.com/wp-content/uploads/2017/07/parque_independencia_foto_caio_pimenta_spturis_06.jpg"
+  },
+  {
+    "name": "Parque Trianon",
+    "address": "Rua Peixoto Gomide, 949 - Cerqueira César, São Paulo - SP, 01409-001",
+    "image": "https://vejasp.abril.com.br/wp-content/uploads/2016/12/parques-trianon-credito-jose-cavenaghi.jpeg"
+  },
+  {
+    "name": "Parque da Aclimação",
+    "address": "R. Muniz de Sousa, 1119 - Aclimação, São Paulo - SP, 01534-001",
+    "image": "https://media.static-alliedpress.com/bancodeimagens/fotos/P/p-20230214-084705139.jpg"
+  },
+  {
+    "name": "Parque do Carmo",
+    "address": "Av. Afonso de Sampaio e Sousa, 951 - Itaquera, São Paulo - SP, 08270-000",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parque_do_carmo_-_cerejeira_-_foto_helenna_artur_svma.jpg"
+  },
+  {
+    "name": "Parque Estadual Jaraguá",
+    "address": "Rua Antônio Cardoso Nogueira, 539 - Vila Chica Luiza, São Paulo - SP, 05184-000",
+    "image": "https://www.saopaulo.sp.gov.br/wp-content/uploads/2022/10/pico-do-jaragua.jpg"
+  },
+  {
+    "name": "Parque Ecológico do Tietê",
+    "address": "R. Guirá-Acangatara, 70 - Engenheiro Goulart, São Paulo - SP, 03719-010",
+    "image": "https://daee.sp.gov.br/site/wp-content/uploads/2020/09/Parque-Tiete.jpeg"
+  },
+  {
+    "name": "Parque da Luz",
+    "address": "Praça da Luz, s/n - Bom Retiro, São Paulo - SP, 01120-010",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/2(12).jpg"
+  },
+  {
+    "name": "Parque Buenos Aires",
+    "address": "Av. Angélica, 1500 - Higienópolis, São Paulo - SP, 01228-100",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/buenos_aires/Galeria_de_fotos/buenosaires_helenna_artur_svma_(13).jpg"
+  },
+  {
+    "name": "Parque Alfredo Volpi",
+    "address": "Av. Eng. Oscar Americano, 480 - Morumbi, São Paulo - SP, 05605-060",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/alfredo_volpi/galeria_de_fotos/AlfredoVolpi_HelennaArtur%20(1).jpg"
+  },
+  {
+    "name": "Aterro do Flamengo",
+    "address": "Av. Infante Dom Henrique, s/n - Glória, Rio de Janeiro - RJ, 20021-140",
+    "image": "https://diariodorio.com/wp-content/uploads/2021/05/flamengo-park-in-rio-de-janeiro-brazil-1-scaled.jpg"
+  },
+  {
+    "name": "Parque Lage",
+    "address": "R. Jardim Botânico, 414 - Jardim Botânico, Rio de Janeiro - RJ, 22461-000",
+    "image": "https://www.eavparquelage.rj.gov.br/wp-content/uploads/2023/10/DJI_0049-scaled.jpg"
+  },
+  {
+    "name": "Jardim Botânico do Rio de Janeiro",
+    "address": "R. Jardim Botânico, 1008 - Jardim Botânico, Rio de Janeiro - RJ, 22460-030",
+    "image": "https://www.gov.br/jbrj/pt-br/assuntos/eventos/imagens-eventos/jardim-botanico-do-rio-de-janeiro-caminhos-de-palmeiras-foto-de-guilherme-pinto_agencia-o-globo.jpg/@@images/386c9f65-fa52-475b-b99b-f9f30b91d227.jpeg"
+  },
+  {
+    "name": "Parque Nacional da Tijuca",
+    "address": "Estr. da Cascatinha, 850 - Alto da Boa Vista, Rio de Janeiro - RJ, 20531-590",
+    "image": "https://www.parquenacionaldatijuca.rio.br/wp-content/uploads/2023/07/2023-07-12-PN-Tijuca-13-1-scaled.jpg"
+  },
+  {
+    "name": "Quinta da Boa Vista",
+    "address": "Av. Pedro II, s/n - São Cristóvão, Rio de Janeiro - RJ, 20940-040",
+    "image": "https://riotur.rio/wp-content/uploads/2022/02/quinta-da-boa-vista-@isabellamachado.tur.br_.jpg"
+  },
+  {
+    "name": "Bosque da Barra",
+    "address": "Av. das Américas, 6000 - Barra da Tijuca, Rio de Janeiro - RJ, 22793-080",
+    "image": "https://visit.rio/wp-content/uploads/2021/11/Bosque-da-Barra-divulgacao.jpg"
+  },
+  {
+    "name": "Parque da Catacumba",
+    "address": "Av. Epitácio Pessoa, 3000 - Lagoa, Rio de Janeiro - RJ, 22471-003",
+    "image": "https://riotur.rio/wp-content/uploads/2022/03/Parque-da-Catacumba-Foto-Divulgacao-Alexandre-Macieira.jpg"
+  },
+  {
+    "name": "Parque Estadual da Chacrinha",
+    "address": "R. Guimarães Natal, s/n - Copacabana, Rio de Janeiro - RJ, 22011-120",
+    "image": "https://www.inea.rj.gov.br/wp-content/uploads/2019/01/PECH-002.jpg"
+  },
+  {
+    "name": "Parque Chico Mendes",
+    "address": "Av. Jarbas de Carvalho, 679 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-671",
+    "image": "https://pbs.twimg.com/media/F9iF4q7X0AA-gVz.jpg"
+  },
+  {
+    "name": "Parque da Cidade",
+    "address": "Estr. de Santa Marinha, 503 - Gávea, Rio de Janeiro - RJ, 22451-240",
+    "image": "https://catracalivre.com.br/wp-content/uploads/2019/07/parque-da-cidade-gavea-foto-divulgacao.jpg"
+  },
+  {
+    "name": "Parque Eduardo Guinle",
+    "address": "R. Paulo César de Andrade, s/n - Laranjeiras, Rio de Janeiro - RJ, 22221-090",
+    "image": "https://mapadecultura.rj.gov.br/wp-content/uploads/2018/10/parque-guinle-2.jpg"
+  },
+  {
+    "name": "Parque Garota de Ipanema",
+    "address": "Av. Francisco Bhering, s/n - Ipanema, Rio de Janeiro - RJ, 22080-050",
+    "image": "https://fastly.4sqi.net/img/general/600x600/52335191_S0mS-1sQk1nSklU9zH9oU2p98P2o7y-e5Xk5Z1b2rM8.jpg"
+  },
+  {
+    "name": "Passeio Público",
+    "address": "R. do Passeio, s/n - Centro, Rio de Janeiro - RJ, 20021-290",
+    "image": "https://visit.rio/wp-content/uploads/2021/11/Passeio-Publico-Halley-Pacheco.jpg"
+  },
+  {
+    "name": "Parque dos Patins",
+    "address": "Av. Borges de Medeiros, s/n - Lagoa, Rio de Janeiro - RJ, 22470-030",
+    "image": "https://riotur.rio/wp-content/uploads/2022/03/Parque-dos-Patins-Credito-a-Alexandre-Macieira.jpg"
+  },
+  {
+    "name": "Parque Penhasco Dois Irmãos",
+    "address": "R. Aperana, s/n - Leblon, Rio de Janeiro - RJ, 22431-190",
+    "image": "https://riotur.rio/wp-content/uploads/2022/03/Parque-Penhasco-Dois-Irmaos-Credito-a-Alexandre-Macieira.jpg"
+  },
+  {
+    "name": "Jardim Botânico de Curitiba",
+    "address": "Rua Eng°. Ostoja Roguski, s/n - Jardim Botânico, Curitiba - PR, 80210-390",
+    "image": "https://www.curitiba.pr.gov.br/fotos/jardim-botanico-de-curitiba/31"
+  },
+  {
+    "name": "Parque Tanguá",
+    "address": "R. Oswaldo Maciel, 97 - Taboão, Curitiba - PR, 82130-450",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-tangua/133"
+  },
+  {
+    "name": "Parque Barigui",
+    "address": "Av. Cândido Hartmann, s/n - Bigorrilho, Curitiba - PR, 80710-570",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-barigui/80"
+  },
+  {
+    "name": "Bosque Alemão",
+    "address": "R. Nicolo Paganini, s/n - Pilarzinho, Curitiba - PR, 82120-330",
+    "image": "https://www.curitiba.pr.gov.br/fotos/bosque-alemao/66"
+  },
+  {
+    "name": "Parque Tingui",
+    "address": "R. Fredolin Wolf, 1149-1443 - São João, Curitiba - PR, 81020-430",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-tingui/134"
+  },
+  {
+    "name": "Bosque João Paulo II",
+    "address": "R. Wellington de Oliveira Viana, 33 - Centro Cívico, Curitiba - PR, 80530-350",
+    "image": "https://www.curitiba.pr.gov.br/fotos/bosque-papa-joao-paulo-ii/59"
+  },
+  {
+    "name": "Passeio Público",
+    "address": "R. Pres. Carlos Cavalcanti, s/n - Centro, Curitiba - PR, 80020-280",
+    "image": "https://www.curitiba.pr.gov.br/fotos/passeio-publico/108"
+  },
+  {
+    "name": "Parque São Lourenço",
+    "address": "R. Mateus Leme, 4700 - São Lourenço, Curitiba - PR, 82200-015",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-sao-lourenco/128"
+  },
+  {
+    "name": "Ópera de Arame",
+    "address": "R. João Gava, 920 - Abranches, Curitiba - PR, 82130-010",
+    "image": "https://www.curitiba.pr.gov.br/fotos/opera-de-arame/103"
+  },
+  {
+    "name": "Parque Lago Azul",
+    "address": "R. Colomba Merlin, 831 - Umbará, Curitiba - PR, 81940-305",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-lago-azul/120"
+  },
+  {
+    "name": "Parque Bacacheri",
+    "address": "R. Rodrigo de Freitas, 277 - Bacacheri, Curitiba - PR, 82510-290",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-general-ibere-de-mattos-bacacheri/88"
+  },
+  {
+    "name": "Bosque do Papa e Memorial Polonês",
+    "address": "R. Wellington de Oliveira Viana, 33 - Centro Cívico, Curitiba - PR, 80530-350",
+    "image": "https://www.curitiba.pr.gov.br/fotos/bosque-papa-joao-paulo-ii/59"
+  },
+  {
+    "name": "Parque das Pedreiras (Pedreira Paulo Leminski)",
+    "address": "R. João Gava, 970 - Abranches, Curitiba - PR, 82130-010",
+    "image": "https://www.curitiba.pr.gov.br/fotos/pedreira-paulo-leminski/110"
+  },
+  {
+    "name": "Universidade Livre do Meio Ambiente (Unilivre)",
+    "address": "R. Victor Benato, 210 - Pilarzinho, Curitiba - PR, 82120-110",
+    "image": "https://www.curitiba.pr.gov.br/fotos/universidade-livre-do-meio-ambiente-unilivre/137"
+  },
+  {
+    "name": "Parque Náutico",
+    "address": "Av. Marechal Floriano Peixoto, s/n - Boqueirão, Curitiba - PR, 81650-000",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-nautico/123"
+  },
+  {
+    "name": "Parque das Mangabeiras",
+    "address": "Av. José do Patrocínio Pontes, 580 - Mangabeiras, Belo Horizonte - MG, 30210-090",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-das-mangabeiras-mauricio-campos/galeria-de-fotos/PqMangabeiras_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Municipal Américo Renné Giannetti",
+    "address": "Av. Afonso Pena, 1377 - Centro, Belo Horizonte - MG, 30130-002",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-municipal-americo-renne-giannetti/galeria-de-fotos/pqmunicipal_credito_ricardouarre_fpmzb_06.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Ecológico da Pampulha",
+    "address": "Av. Otacílio Negrão de Lima, 6061 - Pampulha, Belo Horizonte - MG, 31365-450",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-ecologico-da-pampulha-francisco-lins-do-rego/galeria-de-fotos/pqecologicopampulha_credito_ricardouarre_fpmzb_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque da Serra do Curral",
+    "address": "Av. José do Patrocínio Pontes, 1951 - Mangabeiras, Belo Horizonte - MG, 30210-090",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-da-serra-do-curral/galeria-de-fotos/pqSerradoCurral_credito_RicardoUarre_FPMZB_01.JPG/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Lagoa do Nado",
+    "address": "R. Des. Lincoln Prates, 240 - Itapoã, Belo Horizonte - MG, 31710-690",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-municipal-fazenda-lagoa-do-nado/galeria-de-fotos/PqLagoadoNado_credito_RicardoUarre_FPMZB_03.JPG/image_view_fullscreen"
+  },
+  {
+    "name": "Parque das Águas (Parque Roberto Burle Marx)",
+    "address": "Av. Ximango, 809 - Flávio Marques Lisboa, Belo Horizonte - MG, 30620-350",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-ecologico-roberto-burle-marx-parque-das-aguas/galeria-de-fotos/PqdasAguas_credito_RicardoUarre_FPMZB_1.JPG/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Municipal Juscelino Kubitschek (Praça JK)",
+    "address": "Av. dos Bandeirantes, 240 - Sion, Belo Horizonte - MG, 30210-410",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-municipal-juscelino-kubitschek-jk/galeria-de-fotos/pqjk_credito_ricardouarre_fpmzb_04.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Mirante do Mangabeiras",
+    "address": "R. Pedro José Pardo, 1000 - Mangabeiras, Belo Horizonte - MG, 30210-090",
+    "image": "https://www.visiteminasgerais.com.br/wp-content/uploads/2021/08/Mirante-do-Mangabeiras-Belo-Horizonte-Credito-Newton-Lorenzini-1-scaled.jpg"
+  },
+  {
+    "name": "Parque Mata das Borboletas",
+    "address": "R. Assunção, 770 - Sion, Belo Horizonte - MG, 30310-020",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-mata-das-borboletas/galeria-de-fotos/pqmatadasborboletas_ricardouarre_fpmzb_16.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Rosinha Cadar",
+    "address": "R. Matias Cardoso, 126 - Santo Agostinho, Belo Horizonte - MG, 30170-050",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-rosinha-cadar/galeria-de-fotos/pqRosinhaCadar_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Ecológico Renato Azeredo",
+    "address": "R. Antônio José de Oliveira, 270 - Palmares, Belo Horizonte - MG, 31155-000",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-ecologico-renato-azeredo/galeria-de-fotos/pqRenatoAzeredo_credito_RicardoUarre_FPMZB_02.JPG/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Professor Amílcar Vianna Martins",
+    "address": "R. Cobre, 114 - Cruzeiro, Belo Horizonte - MG, 30310-190",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-professor-amilcar-vianna-martins/galeria-de-fotos/pqAmilcarVianna_credito_RicardoUarre_FPMZB_02.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Jacques Cousteau",
+    "address": "R. Augusto José dos Santos, 366 - Estrela do Oriente, Belo Horizonte - MG, 30580-110",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-municipal-jacques-cousteau/galeria-de-fotos/pqjacquescousteau_credito_ricardouarre_fpmzb_03.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Aggeo Pio Sobrinho",
+    "address": "Av. Prof. Mário Werneck, 2691 - Buritis, Belo Horizonte - MG, 30455-610",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-municipal-aggeo-pio-sobrinho/galeria-de-fotos/pqaggeopiosobrinho_credito_ricardouarre_fpmzb_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Orlando de Carvalho Silveira",
+    "address": "R. Juruá, 860 - da Graça, Belo Horizonte - MG, 31140-020",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-orlando-de-carvalho-silveira/galeria-de-fotos/pqorlando_credito_ricardouarre_fpmzb_04.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Horto Florestal de São Paulo",
+    "address": "R. do Horto, 931 - Horto Florestal, São Paulo - SP, 02377-000",
+    "image": "https://www.infraestruturameioambiente.sp.gov.br/institutoflorestal/wp-content/uploads/sites/234/2019/02/horto-florestal-02.jpg"
+  },
+  {
+    "name": "Parque do Povo",
+    "address": "Av. Henrique Chamma, 420 - Pinheiros, São Paulo - SP, 04533-020",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/povo/Galeria_de_fotos/Povo_HelennaArtur%20(5).jpg"
+  },
+  {
+    "name": "Parque da Juventude",
+    "address": "Av. Cruzeiro do Sul, 2630 - Carandiru, São Paulo - SP, 02030-100",
+    "image": "https://www.infraestruturameioambiente.sp.gov.br/parques/wp-content/uploads/sites/351/2021/07/parquedajuventude-foto-acervo-semil-002-1.jpg"
+  },
+  {
+    "name": "Parque Cidade de Toronto",
+    "address": "Av. Cardeal Motta, 84 - City América, São Paulo - SP, 05101-220",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/cidade_de_toronto/Galeria_de_Fotos/CidadeToronto_HelennaArtur%20(7).jpg"
+  },
+  {
+    "name": "Parque Ecológico de Guarapiranga",
+    "address": "Estr. da Riviera, 3286 - Riviera Paulista, São Paulo - SP, 04916-000",
+    "image": "https://www.infraestruturameioambiente.sp.gov.br/parques/wp-content/uploads/sites/351/2021/07/parqueecologicodoguarapiranga-foto-acervo-semil-001.jpg"
+  },
+  {
+    "name": "Parque Estadual do Belém",
+    "address": "Av. Celso Garcia, 2231 - Belenzinho, São Paulo - SP, 03015-000",
+    "image": "https://www.infraestruturameioambiente.sp.gov.br/parques/wp-content/uploads/sites/351/2021/07/parquebelem-foto-acervo-semil-001.jpg"
+  },
+  {
+    "name": "Parque Chácara do Jockey",
+    "address": "Av. Prof. Francisco Morato, 5257 - Vila Sônia, São Paulo - SP, 05521-300",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/chacara_do_jockey/Galeria_de_fotos/ChacaraJockey_HelennaArtur%20(7).jpg"
+  },
+  {
+    "name": "Parque do Piqueri",
+    "address": "R. Tuiuti, 515 - Tatuapé, São Paulo - SP, 03081-015",
+    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/piqueri/Galeria_de_fotos/Piqueri_HelennaArtur%20(17).jpg"
+  },
+  {
+    "name": "Parque Estadual da Pedra Branca",
+    "address": "Estr. do Pau da Fome, 4003 - Taquara, Rio de Janeiro - RJ, 22723-497",
+    "image": "https://www.inea.rj.gov.br/wp-content/uploads/2019/01/PEPB-010.jpg"
+  },
+  {
+    "name": "Parque de Madureira",
+    "address": "R. Soares Caldeira, 115 - Madureira, Rio de Janeiro - RJ, 21351-090",
+    "image": "https://riotur.rio/wp-content/uploads/2022/02/Parque-de-Madureira_Alexandre-Macieira-Riotur-1.jpg"
+  },
+  {
+    "name": "Campo de Santana",
+    "address": "Praça da República, s/n - Centro, Rio de Janeiro - RJ, 20211-350",
+    "image": "https://visit.rio/wp-content/uploads/2021/11/Campo-de-Santana-Halley-Pacheco-1-1536x1024.jpg"
+  },
+  {
+    "name": "Parque Natural Municipal de Marapendi",
+    "address": "Av. Alfredo Balthazar da Silveira, 635 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-710",
+    "image": "https://riotur.rio/wp-content/uploads/2022/03/Parque-Marapendi-Foto-Divulgacao-Alexandre-Macieira-1.jpg"
+  },
+  {
+    "name": "Parque Estadual do Grajaú",
+    "address": "R. Comendador Martinelli, 742 - Grajaú, Rio de Janeiro - RJ, 20561-180",
+    "image": "https://www.inea.rj.gov.br/wp-content/uploads/2019/01/PEG-008-1.jpg"
+  },
+  {
+    "name": "Parque das Ruínas",
+    "address": "R. Murtinho Nobre, 169 - Santa Teresa, Rio de Janeiro - RJ, 20241-050",
+    "image": "https://riotur.rio/wp-content/uploads/2022/02/Parque-das-Ruinas-Alexandre-Macieira-Riotur.jpg"
+  },
+  {
+    "name": "Bosque da Freguesia",
+    "address": "Av. Ten. Cel. Muniz de Aragão, s/n - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22765-240",
+    "image": "https://pbs.twimg.com/media/F803Z7sXoAAH46T.jpg"
+  },
+  {
+    "name": "Parque Olímpico da Barra",
+    "address": "Av. Embaixador Abelardo Bueno, 3401 - Barra da Tijuca, Rio de Janeiro - RJ, 22775-039",
+    "image": "https://legadoolimpico.gov.br/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-20-at-13.56.23.jpeg"
+  },
+  {
+    "name": "Parque do Flamengo (área esportiva)",
+    "address": "Av. Infante Dom Henrique, 85 - Glória, Rio de Janeiro - RJ, 20021-140",
+    "image": "https://diariodorio.com/wp-content/uploads/2021/05/flamengo-park-in-rio-de-janeiro-brazil-1-scaled.jpg"
+  },
+  {
+    "name": "Parque dos Atletas",
+    "address": "Av. Salvador Allende, 6500 - Barra da Tijuca, Rio de Janeiro - RJ, 22783-127",
+    "image": "https://rockinrio.com/wp-content/uploads/2022/03/RR-AOVIVO-DIA03-31-scaled.jpg"
+  },
+  {
+    "name": "Zoológico de Curitiba",
+    "address": "R. João Miqueletto, 1500 - Alto Boqueirão, Curitiba - PR, 81860-270",
+    "image": "https://www.curitiba.pr.gov.br/fotos/zoologico-de-curitiba/139"
+  },
+  {
+    "name": "Praça do Japão",
+    "address": "Av. Sete de Setembro, s/n - Água Verde, Curitiba - PR, 80240-000",
+    "image": "https://www.curitiba.pr.gov.br/fotos/praca-do-japao/116"
+  },
+  {
+    "name": "Parque Atuba",
+    "address": "Rua Angelo Greca, s/n - Atuba, Curitiba - PR, 82630-490",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-atuba/78"
+  },
+  {
+    "name": "Bosque de Portugal",
+    "address": "R. Fagundes Varela, 774 - Jardim Social, Curitiba - PR, 82520-040",
+    "image": "https://www.curitiba.pr.gov.br/fotos/bosque-de-portugal/62"
+  },
+  {
+    "name": "Parque Passaúna",
+    "address": "R. Ângelo Marqueto, 2528 - Augusta, Curitiba - PR, 81265-450",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-passauna/124"
+  },
+  {
+    "name": "Parque dos Tropeiros",
+    "address": "R. Maria Lúcia Locher de Athayde, 10000 - Cidade Industrial de Curitiba, Curitiba - PR, 81460-105",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-dos-tropeiros/126"
+  },
+  {
+    "name": "Memorial Ucraniano",
+    "address": "R. Dr. Mbá de Ferrante, s/n - Tingui, Curitiba - PR, 82600-580",
+    "image": "https://www.curitiba.pr.gov.br/fotos/memorial-ucraniano/101"
+  },
+  {
+    "name": "Parque Gomm",
+    "address": "R. Bruno Filgueira, 850 - Batel, Curitiba - PR, 80440-220",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-gomm/119"
+  },
+  {
+    "name": "Parque Histórico da Vilinha",
+    "address": "Rua Marco Polo, 1560 - Bairro Alto, Curitiba - PR, 82820-060",
+    "image": "https://www.curitiba.pr.gov.br/fotos/parque-historico-da-vilinha/138"
+  },
+  {
+    "name": "Jardim das Sensações",
+    "address": "Rua Eng°. Ostoja Roguski, 690 - Jardim Botânico, Curitiba - PR, 80210-390",
+    "image": "https://www.curitiba.pr.gov.br/fotos/jardim-das-sensacoes/93"
+  },
+  {
+    "name": "Parque Primeiro de Maio",
+    "address": "R. Ademar da Silva, 179 - Primeiro de Maio, Belo Horizonte - MG, 31810-040",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-primeiro-de-maio/galeria-de-fotos/Pq1deMaio_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Ecológico do Bairro Caiçara",
+    "address": "R. Tico-Tico, 100 - Caiçaras, Belo Horizonte - MG, 30770-070",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-ecologico-e-de-lazer-do-bairro-caicara/galeria-de-fotos/pqcaicara_credito_ricardouarre_fpmzb_12.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Ursulina de Andrade Mello",
+    "address": "R. Dr. Sylvio Menicucci, 640 - Castelo, Belo Horizonte - MG, 31330-310",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-ursulina-de-andrade-mello/galeria-de-fotos/pqursulina_credito_ricardouarre_fpmzb_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Fernão Dias",
+    "address": "R. Teresina, 20 - Fernão Dias, Belo Horizonte - MG, 31910-090",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-fernao-dias/galeria-de-fotos/pqfernaodias_credito_ricardouarre_fpmzb_03.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Nossa Senhora da Piedade",
+    "address": "R. Joaquim Gouvêa, 271 - Aarão Reis, Belo Horizonte - MG, 31814-530",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-nossa-senhora-da-piedade/galeria-de-fotos/pqnsdapiedade_credito_ricardouarre_fpmzb_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Ecológico Vencesli Firmino da Silva",
+    "address": "R. dos Agrônomos, 285 - Alípio de Melo, Belo Horizonte - MG, 30830-370",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-ecologico-vencesli-firmino-da-silva/galeria-de-fotos/PqVencesli_credito_RicardoUarre_FPMZB_02.JPG/image_view_fullscreen"
+  },
+  {
+    "name": "Parque do Bairro Planalto",
+    "address": "R. São José do Jacuri, 131 - Planalto, Belo Horizonte - MG, 31730-220",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-do-bairro-planalto/galeria-de-fotos/PqPlanalto_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Cássia Eller",
+    "address": "Av. Presidente Tancredo Neves, 2626 - Paquetá, Belo Horizonte - MG, 31330-430",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-cassia-eller/galeria-de-fotos/pqCassiaEller_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque da Matinha",
+    "address": "R. Ituiutaba, 313 - União, Belo Horizonte - MG, 31170-020",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-da-matinha/galeria-de-fotos/pqmatinha_credito_ricardouarre_fpmzb_01.jpg/image_view_fullscreen"
+  },
+  {
+    "name": "Parque Real",
+    "address": "R. Três, 187 - Paulo VI, Belo Horizonte - MG, 31998-190",
+    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-real/galeria-de-fotos/PqReal_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+  }
+]
