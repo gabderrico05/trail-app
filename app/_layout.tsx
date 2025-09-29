@@ -15,6 +15,12 @@ export default function StackLayout() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="selectPark"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
