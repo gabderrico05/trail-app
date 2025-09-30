@@ -21,6 +21,13 @@ export default function StackLayout() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="selectTrail"
+        options={{
+          headerShown: false,
+        }}
+      />
+
     </Stack>
   );
 }

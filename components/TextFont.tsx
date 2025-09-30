@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 import { Text } from "react-native";
 
@@ -7,14 +8,10 @@ interface TextFontProps {
 }
 
 const TextFont = ({className, children}: TextFontProps) => {
-  const hasCustomFont = className?.includes('font-');
-  const hasCustomTextSize = className?.includes('text-');
   
-  const defaultFont = hasCustomFont ? '' : 'font-normal';
-  const defaultTextSize = hasCustomTextSize ? '' : 'text-base';
   
   return (
-    <Text className={`${defaultFont} ${defaultTextSize} ${className || ''}`}>
+    <Text className={cn("font-normal text-base", className)}>
       {children}
     </Text>
   );

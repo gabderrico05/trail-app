@@ -21,7 +21,6 @@ export default function SearchBar<T>({
 
   const handleChange = (text: string) => {
     setQuery(text);
-    // Se limpar o texto, volta ao normal automaticamente
     if (text.trim() === "") {
       onFiltered(data);
     }
