@@ -69,7 +69,7 @@ export default function App() {
                 image={item.image}
                 title={item.title}
                 subtitle={item.subtitle}
-                onPress={() => { router.push('/') }}
+                onPress={() => { router.push('/selectTrail') }}
               />
             )}
             keyExtractor={(item) => item.id}
@@ -104,7 +104,7 @@ export function Header({ setFilteredParks}: HeaderProps) {
       <ReturnButton />
       
       <View className="items-center gap-4">
-        <LogoApp width={152} height={149} className="" />
+        <LogoApp  className="w-[152px] h-[149px]" />
         
         <TextFont className="text-xl font-bold text-forestGreen-500 text-center">
           Pronto para começar?
