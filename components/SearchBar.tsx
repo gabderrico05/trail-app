@@ -4,7 +4,7 @@ import { TextInput, TouchableOpacity, View } from "react-native";
 
 interface SearchBarProps<T> {
   data: T[];
-  filterKey: keyof T;
+  filterKey: keyof T | (keyof T)[];
   onFiltered: (results: T[]) => void;
   placeholder?: string;
   className?: string;
@@ -27,9 +27,12 @@ export default function SearchBar<T>({
   };
 
   const handleSearch = () => {
-    const results = data.filter((item) =>
-      String(item[filterKey]).toLowerCase().includes(query.toLowerCase())
-    );
+    const results = data.filter((item) => {
+      const keys = Array.isArray(filterKey) ? filterKey : [filterKey];
+      return keys.some(key => 
+        String(item[key]).toLowerCase().includes(query.toLowerCase())
+      );
+    });
     onFiltered(results);
   };
 
