@@ -10,47 +10,6 @@ import { FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-export const parksData = [
-  {
-    id: '1',
-    image: require("../assets/park_icon.png"),
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "Rua Horto Florestal, 1200.",
-  },
-  {
-    id: '2',
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "",
-  },
-  {
-    id: '3',
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "",
-  },
-  {
-    id: '4',
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "",
-  },
-  {
-    id: '5',
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "",
-  },
-  {
-    id: '6',
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "",
-  },
-  {
-    id: '7',
-    title: "Parque Estadual da Serra do Mar - Núcleo Caraguatatuba",
-    subtitle: "",
-  },
-];
-
-
-
 export default function App() {
   
   const [filteredParks, setFilteredParks] = useState(parquesData);
@@ -78,9 +37,6 @@ export default function App() {
               <View className="flex-1 h-full justify-center items-center py-5">
                 <TextFont className="text-forestGreen-400 text-center text-lg">
                   Nenhum resultado encontrado
-                </TextFont>
-                <TextFont className="text-forestGreen-400 text-center text-sm mt-2">
-                  Tente pesquisar por outro termo
                 </TextFont>
               </View>
             }
@@ -110,7 +66,12 @@ export function Header({ setFilteredParks}: HeaderProps) {
           Pronto para começar?
         </TextFont>
         
-        <TextFont className={` text-md text-forestGreen-500 text-center`}>
+        <TextFont 
+          className="text-md text-forestGreen-500 text-center"
+          numberOfLines={1}
+          adjustsFontSizeToFit={true}
+          minimumFontScale={0.8}
+        >
           Selecione a instituição ou parque e comece a explorar.
         </TextFont>
         

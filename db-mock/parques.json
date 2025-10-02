@@ -579,12 +579,18 @@
     "id": 97,
     "name": "Parque da Matinha",
     "address": "R. Ituiutaba, 313 - União, Belo Horizonte - MG, 31170-020",
-    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-da-matinha/galeria-de-fotos/pqmatinha_credito_ricardouarre_fpmzb_01.jpg/image_view_fullscreen"
+    "image": ""
   },
   {
     "id": 98,
     "name": "Parque Real",
     "address": "R. Três, 187 - Paulo VI, Belo Horizonte - MG, 31998-190",
-    "image": "https://pbh.gov.br/omunicipio/orgaos/fundacao-de-parques-e-zoobotanica/parques/parque-real/galeria-de-fotos/PqReal_credito_PedroGandra_PBH_01.jpg/image_view_fullscreen"
+    "image": "https://p7.hiclipart.com/preview/784/756/1021/parques-reunidos-business-amusement-park-california-s-great-america-business.jpg"
+  },
+  {
+    "id": 99,
+    "name": "Parque Estadual Serra do Mar",
+    "address": "R. Três, 187 - Paulo VI, Belo Horizonte - MG, 31998-190",
+    "image": "https://parquepedradosol.com.br/wp-content/uploads/2025/02/identidade-visual-parque-pedra-do-sol.webp"
   }
 ]

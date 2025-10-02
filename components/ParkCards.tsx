@@ -5,7 +5,7 @@ import Button from "../assets/forward_button_icon.svg";
 type ParkCardProps = {
   image?: any;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   onPress?: () => void;
 };
 
@@ -16,7 +16,10 @@ export default function ParkCard({
   onPress,
 }: ParkCardProps) {
   const [pressed, setPressed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   
+
   return (
     <Pressable
       onPress={onPress}
@@ -26,18 +29,22 @@ export default function ParkCard({
         pressed ? "border-butterYellow" : "border-gray-300"
       } mr-9 ml-9`}
     >
-      {image ? (
-        <Image
-          source={image}
-          className="w-12 h-12 rounded-md mr-3"
-          resizeMode="cover"
-        />
-      ) : (
-        <View className="w-8 h-8 rounded-full mr-3 bg-gray-300 items-center justify-center" />
-      )}
+      <View
+           className="w-12 h-12 mr-3 rounded-full items-center justify-center bg-[#D9D9D9]">
+        {image && (
+          <Image 
+            source={{ uri: image }}
+            resizeMode="contain"
+            className={`w-full h-full ${imageLoaded && 'bg-white'}`}
+            onLoad={() => setImageLoaded(true)}
+          />
+        )}
+      </View>
+      
+      
       <View className="flex-1">
         <Text className="text-sm font-semibold text-gray-900">{title}</Text>
-        <Text className="text-xs text-gray-500">{subtitle}</Text>
+        {subtitle && <Text className="text-xs text-gray-500">{subtitle}</Text>}
       </View>
       <View className="ml-3">
         <Button />

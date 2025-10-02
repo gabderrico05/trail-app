@@ -2,11 +2,12 @@ import Button from "@/components/Button";
 import LogoApp from "@/components/LogoApp";
 import { router } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function inicio() {
   return (
-    <View className="flex-1  bg-butterYellow items-center py-10">
+    <SafeAreaView className="flex-1  bg-butterYellow items-center py-10">
       <LogoApp />
       <Text className=" text-forestGreen-500 text-xl font-bold my-5">
         Bem-vindo(a) à sua jornada interativa!
@@ -16,7 +17,7 @@ function inicio() {
         conquistas a cada passo. Escolha sua rota e viva a experiência!
       </Text>
       <Button onPress={() => router.push("/selectPark")}>Começar</Button>
-    </View>
+    </SafeAreaView>
   );
 }
 
