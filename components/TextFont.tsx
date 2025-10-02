@@ -1,17 +1,17 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-import { Text } from "react-native";
+import { Text, TextProps } from "react-native";
 
-interface TextFontProps {
+interface TextFontProps extends TextProps {
   className?: string;
   children?: string | React.ReactNode;
 }
 
-const TextFont = ({className, children}: TextFontProps) => {
+const TextFont = ({className, children, ...props}: TextFontProps) => {
   
   
   return (
-    <Text className={cn("font-normal text-base", className)}>
+    <Text className={cn("font-normal text-base", className)} {...props}>
       {children}
     </Text>
   );

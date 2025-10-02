@@ -4,7 +4,7 @@ import { TextInput, TouchableOpacity, View } from "react-native";
 
 interface SearchBarProps<T> {
   data: T[];
-  filterKey: keyof T;
+  filterKey: keyof T | (keyof T)[];
   onFiltered: (results: T[]) => void;
   placeholder?: string;
   className?: string;
@@ -17,6 +17,7 @@ export default function SearchBar<T>({
   placeholder = "Pesquisar",
   className = "",
 }: SearchBarProps<T>) {
+
   const [query, setQuery] = useState("");
 
   const handleChange = (text: string) => {
@@ -27,23 +28,26 @@ export default function SearchBar<T>({
   };
 
   const handleSearch = () => {
-    const results = data.filter((item) =>
-      String(item[filterKey]).toLowerCase().includes(query.toLowerCase())
-    );
+    const results = data.filter((item) => {
+      const keys = Array.isArray(filterKey) ? filterKey : [filterKey];
+      return keys.some(key => 
+        String(item[key]).toLowerCase().includes(query.toLowerCase())
+      );
+    });
     onFiltered(results);
   };
 
   return (
     <View className={`p-0.5 pl-2 pr-10 flex-row items-center bg-lightGray rounded-2xl ${className}`}>
       <TouchableOpacity 
-        className="flex-row h-full items-center pb-1 px-2"
+        className="flex-row h-full items-center pb-0.5 px-2"
         onPress={handleSearch}
       >
-        <Feather name="search" size={22} color="#113D31" />
+        <Feather name="search" size={20} color="#113D31" />
       </TouchableOpacity>
 
       <TextInput
-        className="w-full h-full pl-1.5 rounded-2xl font-medium text-xl"
+        className="w-full h-full pl-1.5 rounded-2xl font-medium text-lg"
         placeholder={placeholder}
         onChangeText={handleChange}
         value={query}
