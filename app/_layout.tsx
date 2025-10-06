@@ -24,8 +24,7 @@ export default function StackLayout() {
       <Stack.Screen
         name="selectTrail"
         options={{
-          headerShown: false,
-          statusBarStyle: "dark",
+          headerShown: false
         }}
       />
 
