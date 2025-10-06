@@ -28,7 +28,14 @@ export default function App() {
                 image={item.image}
                 title={item.name}
                 subtitle={item.address}
-                onPress={() => { router.push('/selectTrail') }}
+                onPress={() => { 
+                  router.push({
+                    pathname: '/selectTrail',
+                    params: {
+                      park: JSON.stringify(item) // Passa o objeto inteiro serializado
+                    }
+                  })
+                }}
               />
             )}
             keyExtractor={(item) => item.id.toString()}
