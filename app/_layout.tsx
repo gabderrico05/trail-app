@@ -25,6 +25,7 @@ export default function StackLayout() {
         name="selectTrail"
         options={{
           headerShown: false,
+          statusBarStyle: "dark",
         }}
       />
 

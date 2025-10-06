@@ -9,7 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lightGray: "#E8E8E8",
+        lightGray: {
+          200: "#F3EEED",
+          300: "#E8E8E8",
+        },
         burntOrange: "#BF360C",
         butterYellow: "#FFE489",
         forestGreen: {

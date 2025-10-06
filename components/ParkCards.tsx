@@ -30,7 +30,7 @@ export default function ParkCard({
       } mr-9 ml-9`}
     >
       <View
-           className="w-12 h-12 mr-3 rounded-full items-center justify-center bg-[#D9D9D9]">
+           className="w-12 h-12 mr-3 rounded-full items-center justify-center bg-lightGray-300">
         {image && (
           <Image 
             source={{ uri: image }}

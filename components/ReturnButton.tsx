@@ -23,10 +23,10 @@ const ReturnButton = ({ className, children, buttonType = "primary", onPress}: R
 
   return (
 
-<TouchableOpacity onPress={handlePress} className={cn(`h-14 w-14 items-center justify-center rounded-lg bg-white`, className)} >
+<TouchableOpacity onPress={handlePress} className={cn(`h-12 w-12 items-center justify-center rounded-lg bg-white`, className)} >
 
     <View className='h-full w-full items-center justify-center'>
-        <MaterialIcons  className="-mr-3" name="arrow-back-ios" size={24} color={buttonType === 'primary'? "black" : "#BF360C"} />
+        <MaterialIcons  className="-mr-3" name="arrow-back-ios" size={20} color={buttonType === 'primary'? "black" : "#BF360C"} />
     </View>
         
 </TouchableOpacity >
