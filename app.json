@@ -44,6 +44,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ea68e50d-8b12-4f11-bb31-fc555de85508"
+      }
+    },
+    "owner": "interativa.trilha"
   }
 }
