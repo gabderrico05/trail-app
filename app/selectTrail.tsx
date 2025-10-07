@@ -1,63 +1,64 @@
 import EntityBanner from "@/components/EntityBanner";
 import SearchBar from "@/components/SearchBar";
-import { useLocalSearchParams } from "expo-router";
+import TrailCard from "@/components/TrailCard";
 import React, { useState } from "react";
 import { FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import trails from "../db-mock/trilhas.json";
 
 export default function SelectTrail() {
-  const { park } = useLocalSearchParams<{ park: string }>();
-  
-  const parkData = park ? JSON.parse(park) : undefined;
-  
+  const trailData = trails;
+
   // Obter as margens exatas do SafeAreaView
   const insets = useSafeAreaInsets();
 
-  const [filteredParks, setFilteredParks] = useState(parkData);
+  const [filteredTrails, setFilteredTrails] = useState(trailData);
 
-  return(
+  return (
     <>
-      <View 
-        style={{ 
-          height: insets.top, 
-          backgroundColor: '#F3EEED' 
-        }} 
+      <View
+        style={{
+          height: insets.top,
+          backgroundColor: "#F3EEED",
+        }}
       />
 
-      <View 
+      <View
         className="flex-1 bg-white"
         style={{
           paddingBottom: insets.bottom,
         }}
       >
+        <FlatList
+          ListHeaderComponent={
+            <View>
+              <EntityBanner {...trailData} />
 
-    <FlatList
-      ListHeaderComponent={
-          <View>
-            
-          <EntityBanner {...parkData} />
-
-          <View className="mx-7 mt-10">
-            <SearchBar data={parkData} onFiltered={setFilteredParks} filterKey={"name"}/>
-          </View>
-
-        </View>
-      }
-
-      className="flex-1"
-      data={filteredParks}
-      
-      renderItem={({ item }) => (
-        <View >    
-        </View>
-      )}
-    />
-
-    </View>
+              <View className="mx-7 mt-10 mb-4">
+                <SearchBar
+                  data={trailData}
+                  onFiltered={setFilteredTrails}
+                  filterKey={"name"}
+                />
+              </View>
+            </View>
+          }
+          className="flex-1"
+          data={filteredTrails}
+          renderItem={({ item }) => (
+            <View className="max-w-full mx-5">
+              <TrailCard
+                title={item.name}
+                imgSrc={"../assets/" + item.imgSrc}
+                distance={item.distance}
+                time={item.estimated_time}
+                level={item.level}
+                detailLink={`/trailDetails?park=`}
+              ></TrailCard>
+            </View>
+          )}
+        />
+      </View>
     </>
   );
 }
-
-
-
-
