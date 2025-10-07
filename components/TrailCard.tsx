@@ -27,11 +27,10 @@ const TrailCard = ({
     router.push(`/detailTrail`);
   }
   return (
-    <View className="w-full max-h-min bg-white rounded-2xl overflow-hidden my-2.5 shadow-lg p-4">
+    <View className="w-full max-h-min bg-white rounded-2xl overflow-hidden my-2.5 shadow-lg p-4 border border-black/20">
       <Image
         source={require("../assets/imagem_trilha.jpg")}
-        style={{ width: "100%", height: 128 }}
-        className="rounded-xl"
+        style={{ width: "100%", height: 128, borderRadius: 12 }}
       />
 
       <View className=" w-full pt-1">
