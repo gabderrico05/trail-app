@@ -4,7 +4,7 @@
     "slug": "front-expo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo-app.png",
+    "icon": "./assets/logo.png",
     "scheme": "frontexpo",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -32,7 +32,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/logo-app.png",
+          "image": "./assets/logo.png",
           "imageWidth": 140,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff",
@@ -40,7 +40,8 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
