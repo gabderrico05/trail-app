@@ -20,7 +20,7 @@ export default function App() {
           data={filteredParks}
           renderItem={({ item }) => (
             <ParkCard
-              image={require("../assets/logo.png")}
+              image={item.image}
               title={item.name}
               subtitle={item.address}
               onPress={() => {
