@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import Button from "../assets/forward_button_icon.svg";
 
