@@ -17,41 +17,37 @@ export default function App() {
 
   return (
     <SafeAreaView className="flex-1 bg-white">
-      
-
-        <View className="flex-1">
-          <FlatList
-            ListHeaderComponent={Header({setFilteredParks})}
-            data={filteredParks}
-            renderItem={({ item }) => (
-              <ParkCard
-                image={item.image}
-                title={item.name}
-                subtitle={item.address}
-                onPress={() => { 
-                  router.push({
-                    pathname: '/selectTrail',
-                    params: {
-                      park: JSON.stringify(item) // Passa o objeto inteiro serializado
-                    }
-                  })
-                }}
-              />
-            )}
-            keyExtractor={(item) => item.id.toString()}
-            showsVerticalScrollIndicator={false}
-            ListEmptyComponent={
-              <View className="flex-1 h-full justify-center items-center py-5">
-                <TextFont className="text-forestGreen-400 text-center text-lg">
-                  Nenhum resultado encontrado
-                </TextFont>
-              </View>
-            }
-          />
-        </View>
-
-        
-        
+      <View className="flex-1">
+        <FlatList
+          ListHeaderComponent={Header({ setFilteredParks })}
+          data={filteredParks}
+          renderItem={({ item }) => (
+            <ParkCard
+              image={item.image}
+              name={item.name}
+              complement={item.complement}
+              address={item.address}
+              onPress={() => {
+                router.push({
+                  pathname: "/selectTrail",
+                  params: {
+                    park: JSON.stringify(item), // Passa o objeto inteiro serializado
+                  },
+                });
+              }}
+            />
+          )}
+          keyExtractor={(item) => item.id.toString()}
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={
+            <View className="flex-1 h-full justify-center items-center py-5">
+              <TextFont className="text-forestGreen-400 text-center text-lg">
+                Nenhum resultado encontrado
+              </TextFont>
+            </View>
+          }
+        />
+      </View>
     </SafeAreaView>
   );
 }
@@ -89,7 +85,7 @@ export function Header({ setFilteredParks}: HeaderProps) {
         <SearchBar
           className="mx-6 mt-1 mb-6"
           data={parquesData}
-          filterKey={["name", "address"]}
+          filterKey={["name", "address", "complement"]}
           onFiltered={setFilteredParks}
         />
       </View>

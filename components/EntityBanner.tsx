@@ -8,7 +8,7 @@ export default function EntityBanner(parkData: any) {
   const [imageLoaded, setImageLoaded] = useState(!!parkData.image);
   
   return(
-    <View className="w-full bg-lightGray-200 h-min-60 pb-10 px-7">
+    <View className="w-full bg-lightGray-200 h-min-60 pb-8 px-7">
             
             <View className="w-full">
               <ReturnButton buttonType="secondary"/>
@@ -31,7 +31,7 @@ export default function EntityBanner(parkData: any) {
                     :
 
                   <View className="bg-forestGreen-600 w-40 h-40 rounded-2xl items-center justify-center">
-                    <TextFont className="text-5xl text-white">
+                    <TextFont className="text-5xl font-bold text-white">
                       { (parkData?.name?.charAt(0)?.toUpperCase() ?? '') + (parkData?.name?.split(/\s+/)[1]?.charAt(0)?.toUpperCase() ?? parkData?.name?.charAt(0)?.toUpperCase()) }
                     </TextFont>
                   </View>
@@ -44,6 +44,11 @@ export default function EntityBanner(parkData: any) {
                   minimumFontScale={0.8}
                   >
                     {parkData && parkData.name}
+                 </TextFont>
+                 <TextFont
+                  className="font-regular mt-1"
+                  >
+                    {parkData && parkData.complement}
                  </TextFont>
             </View>
             

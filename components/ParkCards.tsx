@@ -4,15 +4,17 @@ import Button from "../assets/forward_button_icon.svg";
 
 type ParkCardProps = {
   image?: any;
-  title: string;
-  subtitle?: string;
+  name: string;
+  complement?: string;
+  address?: string;
   onPress?: () => void;
 };
 
 export default function ParkCard({
   image,
-  title,
-  subtitle,
+  name,
+  complement,
+  address,
   onPress,
 }: ParkCardProps) {
   const [pressed, setPressed] = useState(false);
@@ -43,8 +45,8 @@ export default function ParkCard({
       
       
       <View className="flex-1">
-        <Text className="text-sm font-semibold text-gray-900">{title}</Text>
-        {subtitle && <Text className="text-xs text-gray-500">{subtitle}</Text>}
+        <Text className="text-sm font-semibold text-gray-900">{name + " - " + complement}</Text>
+        {address && <Text className="text-xs text-gray-500">{address}</Text>}
       </View>
       <View className="ml-3">
         <Button />
