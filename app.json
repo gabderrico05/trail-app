@@ -2,6 +2,13 @@
   "expo": {
     "name": "front-expo",
     "slug": "front-expo",
+    "fonts": {
+      "Gabarito-Regular": "./assets/fonts/Gabarito-Regular.ttf",
+      "Gabarito-Bold": "./assets/fonts/Gabarito-Bold.ttf",
+      "Gabarito-ExtraBold": "./assets/fonts/Gabarito-ExtraBold.ttf",
+      "Gabarito-Medium": "./assets/fonts/Gabarito-Medium.ttf",
+      "Gabarito-SemiBold": "./assets/fonts/Gabarito-SemiBold.ttf"
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo-app.png",

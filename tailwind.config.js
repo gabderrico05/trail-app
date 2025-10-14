@@ -8,6 +8,14 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      fontFamily: {
+        'regular': ['Gabarito-Regular'],
+        'bold': ['Gabarito-Bold'],
+        'extrabold': ['Gabarito-ExtraBold'],
+        'medium': ['Gabarito-Medium'],
+        'semibold': ['Gabarito-SemiBold'],
+        'gabarito': ['Gabarito-Regular'],
+      },
       colors: {
         lightGray: {
           200: "#F3EEED",
