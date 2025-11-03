@@ -46,6 +46,12 @@ const [fontsLoaded] = useFonts({
           headerShown: false
         }}
       />
+      <Stack.Screen
+        name="detailTrail"
+        options={{
+          headerShown: false
+        }}
+      />
 
     </Stack>
   );

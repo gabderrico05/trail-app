@@ -1,0 +1,794 @@
+[
+  {
+    "name": "Trilha do Pico da Tijuca",
+    "estimated_time": "2 horas",
+    "distance": "5.6 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada no coração do Parque Nacional da Tijuca, esta trilha leva ao ponto mais alto do parque. O percurso é íngreme em alguns trechos e culmina com uma escadaria de 117 degraus esculpida na rocha."
+  },
+  {
+    "name": "Trilha da Pedra Bonita",
+    "estimated_time": "40 minutos",
+    "distance": "1.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais populares do Rio de Janeiro, com um caminho bem demarcado e de baixa dificuldade. Oferece vistas espetaculares da Pedra da Gávea, da Praia de São Conrado e de grande parte da Zona Sul."
+  },
+  {
+    "name": "Trilha do Morro da Urca",
+    "estimated_time": "30 minutos",
+    "distance": "1.1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma alternativa ecológica para chegar à primeira estação do bondinho do Pão de Açúcar. A trilha é cercada pela Mata Atlântica e oferece belas paisagens da Baía de Guanabara e da Praia Vermelha, sendo ideal para iniciantes."
+  },
+  {
+    "name": "Trilha da Pedra do Telégrafo",
+    "estimated_time": "50 minutos",
+    "distance": "2.3 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Famosa pela rocha que permite tirar fotos criativas, dando a impressão de um abismo. A trilha é relativamente curta, mas com trechos íngremes. A recompensa é uma vista deslumbrante das praias selvagens do Rio de Janeiro."
+  },
+  {
+    "name": "Trilha do Pico do Papagaio (Teresópolis)",
+    "estimated_time": "3 horas",
+    "distance": "7 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada no Parque Estadual dos Três Picos, esta trilha desafiadora leva a um dos picos mais emblemáticos da região. O percurso exige bom preparo físico, passando por trechos de mata fechada e escalaminhada."
+  },
+  {
+    "name": "Travessia Petrópolis-Teresópolis",
+    "estimated_time": "3 dias",
+    "distance": "30 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Considerada a travessia mais bonita do Brasil, exige planejamento e bom condicionamento físico. O percurso passa por paisagens espetaculares da Serra dos Órgãos, com vales, rios e picos rochosos, sendo uma experiência única de imersão na natureza."
+  },
+  {
+    "name": "Trilha da Cachoeira do Horto",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha leve e refrescante dentro do Parque Nacional da Tijuca, ideal para famílias. O caminho segue o curso de um rio e leva a diversas quedas d'água, como a Cachoeira do Chuveiro, perfeita para um banho."
+  },
+  {
+    "name": "Trilha do Morro Dois Irmãos",
+    "estimated_time": "1 hora",
+    "distance": "1.6 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Com início na comunidade do Vidigal, esta trilha oferece uma das vistas mais icônicas do Rio de Janeiro, contemplando a orla da Zona Sul. O percurso é curto, mas íngreme, e a experiência cultural é um atrativo extra."
+  },
+  {
+    "name": "Trilha do Pico do Jaraguá",
+    "estimated_time": "1 hora e 30 minutos",
+    "distance": "3.6 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada no Parque Estadual do Jaraguá, esta trilha pavimentada leva ao ponto mais alto da cidade de São Paulo. O percurso é um pouco íngreme, mas a vista panorâmica de 360 graus da metrópole compensa o esforço."
+  },
+  {
+    "name": "Trilha da Pedra Grande (Atibaia)",
+    "estimated_time": "2 horas",
+    "distance": "5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Com um visual incrível da região, a trilha leva ao topo de um grande monolito de pedra. O local é muito procurado para a prática de voo livre. A subida é moderada e pode ser feita por uma estrada de terra."
+  },
+  {
+    "name": "Trilha da Praia Brava da Almada (Ubatuba)",
+    "estimated_time": "1 hora",
+    "distance": "2.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve em meio à Mata Atlântica que leva a uma praia selvagem e paradisíaca. O percurso é bem sinalizado e ideal para quem busca tranquilidade e contato com a natureza intocada do litoral norte de São Paulo."
+  },
+  {
+    "name": "Trilha das Sete Praias (Ubatuba)",
+    "estimated_time": "4 horas",
+    "distance": "10 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Um percurso deslumbrante que conecta sete praias em Ubatuba, algumas acessíveis apenas por trilha ou barco. A caminhada oferece vistas espetaculares do mar e da mata, passando por praias de diferentes estilos, desde as mais calmas até as boas para o surfe."
+  },
+  {
+    "name": "Trilha do Bonete (Ilhabela)",
+    "estimated_time": "4 horas",
+    "distance": "12 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais famosas de Ilhabela, que cruza o Parque Estadual e leva à paradisíaca Praia do Bonete. O percurso é longo e exige preparo, passando por cachoeiras e trechos de mata fechada, mas a beleza do destino é recompensadora."
+  },
+  {
+    "name": "Trilha da Janela do Céu (Ibitipoca)",
+    "estimated_time": "6 horas",
+    "distance": "16 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "O principal atrativo do Parque Estadual do Ibitipoca, esta trilha leva a uma cachoeira com uma vista espetacular. O percurso é longo e com bastante subida, mas as paisagens e as diversas paradas para banho ao longo do caminho valem a pena."
+  },
+  {
+    "name": "Trilha do Pico do Pião (Ibitipoca)",
+    "estimated_time": "4 horas",
+    "distance": "11 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva ao ponto mais alto do Parque Estadual do Ibitipoca, com uma vista de 360 graus da região. O caminho é mais tranquilo que o da Janela do Céu e passa por belas paisagens e ruínas históricas."
+  },
+  {
+    "name": "Trilha do Circuito das Águas (Ibitipoca)",
+    "estimated_time": "3 horas",
+    "distance": "5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "A trilha mais leve do Parque Estadual do Ibitipoca, perfeita para um dia relaxante. O percurso passa por diversas cachoeiras, poços e grutas, como o Lago dos Espelhos e a Prainha, ideais para banho e contemplação da natureza."
+  },
+  {
+    "name": "Trilha do Cânion Itaimbezinho (Cambará do Sul)",
+    "estimated_time": "2 horas",
+    "distance": "6 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada no Parque Nacional de Aparados da Serra, esta trilha de nível fácil leva a mirantes com vistas espetaculares de um dos maiores cânions do Brasil. O percurso é bem estruturado, ideal para toda a família."
+  },
+  {
+    "name": "Trilha do Rio do Boi (Praia Grande)",
+    "estimated_time": "7 horas",
+    "distance": "14 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha desafiadora que percorre o interior do Cânion Itaimbezinho. A caminhada é feita em grande parte pelo leito do rio, com trechos de água e pedras. É uma experiência de imersão total na grandiosidade do cânion."
+  },
+  {
+    "name": "Trilha do Cânion Fortaleza (Cambará do Sul)",
+    "estimated_time": "3 horas",
+    "distance": "8 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada no Parque Nacional da Serra Geral, esta trilha leva a mirantes com vistas impressionantes do Cânion Fortaleza, o maior da região. O percurso é de nível moderado e passa por paisagens de campos de altitude e bordas de cânions."
+  },
+  {
+    "name": "Trilha do Morro do Cambirela (Palhoça)",
+    "estimated_time": "4 horas",
+    "distance": "6 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais desafiadoras da Grande Florianópolis, com subida íngreme e trechos de escalaminhada. O cume oferece uma vista panorâmica espetacular da ilha de Santa Catarina e do continente, recompensando todo o esforço."
+  },
+  {
+    "name": "Trilha da Lagoinha do Leste (Florianópolis)",
+    "estimated_time": "1 hora",
+    "distance": "2.3 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais famosas de Florianópolis, que leva a uma praia selvagem e paradisíaca com uma lagoa de água doce. O percurso é íngreme, mas curto, e a beleza do destino é uma das mais impressionantes da ilha."
+  },
+  {
+    "name": "Trilha do Morro da Coroa (Florianópolis)",
+    "estimated_time": "1 hora e 30 minutos",
+    "distance": "3 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada próximo à Lagoinha do Leste, esta trilha leva a um mirante com uma vista espetacular da praia e da lagoa. O percurso é íngreme e exige um pouco de esforço, mas a foto clássica no topo é a recompensa."
+  },
+  {
+    "name": "Trilha do Saquinho (Florianópolis)",
+    "estimated_time": "40 minutos",
+    "distance": "1.8 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve e agradável no sul da ilha de Florianópolis, que leva a uma pequena comunidade de pescadores e a uma bela cachoeira. A trilha é bem demarcada e oferece belas vistas do mar ao longo do percurso."
+  },
+  {
+    "name": "Trilha do Gravatá (Florianópolis)",
+    "estimated_time": "30 minutos",
+    "distance": "1.2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso no leste da ilha, que leva a uma pequena e charmosa praia. O percurso é íngreme no início, mas logo se torna plano, sendo uma ótima opção para um passeio rápido e um banho de mar."
+  },
+  {
+    "name": "Trilha da Pedra do Baú (São Bento do Sapucaí)",
+    "estimated_time": "2 horas",
+    "distance": "3.5 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Um dos principais atrativos da Serra da Mantiqueira, esta trilha leva ao topo de um complexo rochoso com uma vista espetacular. O acesso ao cume é feito por escadas de ferro, exigindo coragem e bom preparo físico."
+  },
+  {
+    "name": "Trilha do Pico do Itaguaré (Cruzeiro)",
+    "estimated_time": "8 horas",
+    "distance": "14 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha desafiadora na Serra da Mantiqueira, que leva a um pico com uma vista impressionante da região. O percurso é longo e com trechos íngremes, exigindo bom preparo físico e experiência em trekking."
+  },
+  {
+    "name": "Trilha do Pico dos Marins (Piquete)",
+    "estimated_time": "6 horas",
+    "distance": "10 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Considerada uma das trilhas mais difíceis do Brasil, o percurso até o Pico dos Marins exige excelente preparo físico e orientação. A recompensa é uma vista de 360 graus da Serra da Mantiqueira, uma experiência inesquecível para montanhistas experientes."
+  },
+  {
+    "name": "Trilha da Cachoeira da Fumaça (Chapada Diamantina)",
+    "estimated_time": "2 horas",
+    "distance": "6 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva ao mirante de uma das maiores cachoeiras do Brasil, com uma queda de quase 380 metros. O percurso é plano na maior parte, mas com uma subida inicial íngreme. A vista do cânion é impressionante."
+  },
+  {
+    "name": "Trilha do Vale do Pati (Chapada Diamantina)",
+    "estimated_time": "5 dias",
+    "distance": "70 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Considerada uma das travessias mais bonitas do mundo, o Vale do Pati é uma experiência de imersão total na natureza. O percurso passa por paisagens deslumbrantes, cachoeiras e cânions, com pernoite na casa de nativos."
+  },
+  {
+    "name": "Trilha do Morro do Pai Inácio (Chapada Diamantina)",
+    "estimated_time": "30 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a um dos cartões-postais da Chapada Diamantina. A subida é um pouco íngreme, mas a vista panorâmica do pôr do sol sobre os platôs da região é simplesmente espetacular."
+  },
+  {
+    "name": "Trilha do Poço Azul (Chapada Diamantina)",
+    "estimated_time": "20 minutos",
+    "distance": "0.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta que leva a uma gruta com um poço de águas cristalinas e azuladas. Em determinada época do ano, um feixe de luz solar ilumina o poço, tornando a experiência ainda mais mágica. É permitido flutuar na água."
+  },
+  {
+    "name": "Trilha do Poço Encantado (Chapada Diamantina)",
+    "estimated_time": "15 minutos",
+    "distance": "0.4 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Semelhante ao Poço Azul, esta trilha leva a uma gruta com um poço de águas incrivelmente azuis. O acesso é fácil e a beleza do lugar é impressionante, especialmente quando o sol ilumina o poço, revelando sua profundidade."
+  },
+  {
+    "name": "Trilha do Buraco do Padre (Ponta Grossa)",
+    "estimated_time": "30 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha leve e bem estruturada que leva a uma furna com uma cachoeira de 30 metros de altura em seu interior. O lugar é de uma beleza singular e o acesso é feito por passarelas de madeira, ideal para toda a família."
+  },
+  {
+    "name": "Trilha do Pico do Paraná (Antonina)",
+    "estimated_time": "8 horas",
+    "distance": "12 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "O ponto mais alto do sul do Brasil, esta trilha é um desafio para montanhistas experientes. O percurso é longo, com trechos de mata fechada, escalaminhada e exposição a altura. A vista do cume é recompensadora."
+  },
+  {
+    "name": "Trilha do Salto dos Macacos (Morretes)",
+    "estimated_time": "4 horas",
+    "distance": "7 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha em meio à Mata Atlântica que leva a uma bela cachoeira com um poço para banho. O percurso tem trechos de subida e descida, e cruza rios, exigindo um pouco de esforço, mas a beleza natural compensa."
+  },
+  {
+    "name": "Trilha da Garganta do Diabo (Foz do Iguaçu)",
+    "estimated_time": "1 hora",
+    "distance": "2.2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma passarela que leva ao mirante da queda d'água mais impressionante das Cataratas do Iguaçu. A força e o volume de água são impressionantes. O percurso é totalmente acessível, ideal para todos os públicos."
+  },
+  {
+    "name": "Trilha das Cataratas - Lado Brasileiro (Foz do Iguaçu)",
+    "estimated_time": "2 horas",
+    "distance": "1.2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve com vistas panorâmicas das Cataratas do Iguaçu. A trilha passa por diversos mirantes, oferecendo diferentes ângulos das quedas. O final do percurso é em uma passarela que se aproxima da Garganta do Diabo."
+  },
+  {
+    "name": "Trilha do Poço Preto (Foz do Iguaçu)",
+    "estimated_time": "4 horas",
+    "distance": "9 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha em meio à mata do Parque Nacional do Iguaçu, que pode ser feita a pé, de bicicleta ou de carro elétrico. O percurso termina com um passeio de barco pelo rio, oferecendo uma experiência de contato com a fauna e a flora local."
+  },
+  {
+    "name": "Trilha do Salto do Yucumã (Derrubadas)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva à maior queda d'água longitudinal do mundo, com 1.800 metros de extensão. O percurso é leve e a beleza do Salto do Yucumã é única, especialmente na época de seca, quando as quedas ficam mais visíveis."
+  },
+  {
+    "name": "Trilha da Pedra Furada (Urubici)",
+    "estimated_time": "2 horas",
+    "distance": "4 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada no Morro da Igreja, esta trilha leva a uma formação rochosa em forma de janela, um dos cartões-postais da Serra Catarinense. O percurso é feito em altitude e a vista da região é espetacular."
+  },
+  {
+    "name": "Trilha do Pico da Bandeira (Alto Caparaó)",
+    "estimated_time": "4 horas",
+    "distance": "9.4 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "A trilha que leva ao terceiro ponto mais alto do Brasil, famosa por seu nascer do sol espetacular acima das nuvens. A subida é longa e íngreme, exigindo bom preparo físico, especialmente por causa da altitude e do frio."
+  },
+  {
+    "name": "Trilha do Pico do Cristal (Alto Caparaó)",
+    "estimated_time": "5 horas",
+    "distance": "11 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha menos frequentada no Parque Nacional do Caparaó, que leva a um pico com uma vista incrível da região. O percurso é desafiador e exige boa orientação, sendo uma ótima opção para quem busca mais aventura e isolamento."
+  },
+  {
+    "name": "Trilha do Vale Verde (Alto Caparaó)",
+    "estimated_time": "2 horas",
+    "distance": "4 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha leve e agradável no Parque Nacional do Caparaó, que passa por belas cachoeiras e poços para banho. É uma ótima opção para um dia mais tranquilo no parque, ideal para famílias e para relaxar na natureza."
+  },
+  {
+    "name": "Trilha da Farofa (Serra do Cipó)",
+    "estimated_time": "3 horas",
+    "distance": "8 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais populares da Serra do Cipó, que leva a uma bela cachoeira com um grande poço para banho. O percurso é plano na maior parte e passa por paisagens típicas do cerrado, com campos rupestres e rios."
+  },
+  {
+    "name": "Trilha dos Escravos (Diamantina)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha histórica com calçamento original do século XVIII, que fazia parte da Estrada Real. A caminhada é leve e passa por belas paisagens, sendo uma ótima oportunidade para conhecer a história e a natureza da região."
+  },
+  {
+    "name": "Trilha do Pico do Sol (Serra do Caraça)",
+    "estimated_time": "6 horas",
+    "distance": "12 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "O ponto mais alto da Serra do Caraça, esta trilha é um desafio para os mais experientes. O percurso é longo e com bastante subida, mas a vista do topo, com um mar de montanhas, é uma das mais bonitas de Minas Gerais."
+  },
+  {
+    "name": "Trilha da Gruta da Morena (Serra do Caraça)",
+    "estimated_time": "2 horas",
+    "distance": "4 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a uma gruta com uma bela queda d'água em seu interior. O percurso é de nível moderado e passa por belas paisagens do Santuário do Caraça, sendo uma ótima opção de passeio no parque."
+  },
+  {
+    "name": "Trilha da Cascatona (Serra do Caraça)",
+    "estimated_time": "3 horas",
+    "distance": "6 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais famosas do Santuário do Caraça, que leva a uma imponente cachoeira com um grande poço para banho. O percurso é de nível moderado e passa por belas paisagens, sendo um dos principais atrativos do parque."
+  },
+  {
+    "name": "Trilha do Morro do Chapéu (Ouro Preto)",
+    "estimated_time": "2 horas",
+    "distance": "5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um mirante com uma vista panorâmica da cidade histórica de Ouro Preto. O percurso é moderado e passa por áreas de campo e mata, sendo uma ótima opção para apreciar a cidade de um ângulo diferente."
+  },
+  {
+    "name": "Trilha do Pico do Itacolomi (Ouro Preto)",
+    "estimated_time": "3 horas",
+    "distance": "7 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "A trilha que leva ao pico que é o símbolo de Ouro Preto, com uma vista espetacular da cidade e da região. O percurso é desafiador, com trechos íngremes e de escalaminhada, mas a recompensa no topo é inesquecível."
+  },
+  {
+    "name": "Trilha da Cachoeira do Tabuleiro (Conceição do Mato Dentro)",
+    "estimated_time": "1 hora e 30 minutos",
+    "distance": "3 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva à parte baixa da terceira maior cachoeira do Brasil, com uma queda de 273 metros. O percurso é de nível moderado e o visual da cachoeira e do seu enorme poço é impressionante."
+  },
+  {
+    "name": "Trilha do Cânion das Bandeirinhas (Serra do Cipó)",
+    "estimated_time": "5 horas",
+    "distance": "12 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha longa e desafiadora na Serra do Cipó, que leva a um belo cânion com diversas cachoeiras e poços para banho. O percurso exige bom preparo físico e disposição para caminhar sob o sol, mas a beleza do lugar é recompensadora."
+  },
+  {
+    "name": "Trilha da Cachoeira Véu da Noiva (Serra do Cipó)",
+    "estimated_time": "30 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a uma das cachoeiras mais famosas da Serra do Cipó. O lugar possui boa estrutura e é ideal para famílias e para quem busca um banho de cachoeira refrescante sem muito esforço."
+  },
+  {
+    "name": "Trilha do Mirante da Cascata (Chapada dos Veadeiros)",
+    "estimated_time": "2 horas",
+    "distance": "4 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um mirante com uma vista espetacular de uma série de quedas d'água. O percurso é de nível moderado e passa por belas paisagens do cerrado, sendo uma ótima opção para apreciar a grandiosidade da Chapada dos Veadeiros."
+  },
+  {
+    "name": "Trilha dos Saltos (Chapada dos Veadeiros)",
+    "estimated_time": "4 horas",
+    "distance": "11 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das trilhas mais tradicionais do Parque Nacional da Chapada dos Veadeiros, que leva a duas belas cachoeiras e a um mirante com vista para o Salto de 120 metros. O percurso é de nível moderado e passa por paisagens exuberantes."
+  },
+  {
+    "name": "Trilha dos Cânions (Chapada dos Veadeiros)",
+    "estimated_time": "5 horas",
+    "distance": "12 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um belo cânion com diversas cachoeiras e poços para banho. O percurso é longo e exige bom preparo físico, mas a beleza do lugar, com suas formações rochosas e águas cristalinas, é impressionante."
+  },
+  {
+    "name": "Trilha da Sertão Zen (Chapada dos Veadeiros)",
+    "estimated_time": "3 horas",
+    "distance": "8 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a uma série de cachoeiras e poços em uma área mais tranquila da Chapada dos Veadeiros. O percurso é de nível moderado e ideal para quem busca mais sossego e contato com a natureza."
+  },
+  {
+    "name": "Trilha do Abismo (Bonito)",
+    "estimated_time": "1 hora",
+    "distance": "1.5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva à entrada de uma caverna onde é praticado o rapel. A descida de 72 metros leva a um lago de águas cristalinas, proporcionando uma experiência única de aventura e contemplação da natureza."
+  },
+  {
+    "name": "Trilha da Gruta do Lago Azul (Bonito)",
+    "estimated_time": "40 minutos",
+    "distance": "0.8 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta que leva a uma das cavernas mais bonitas do Brasil, com um lago de águas incrivelmente azuis. O percurso é feito por escadarias e a beleza da gruta e do lago é de tirar o fôlego."
+  },
+  {
+    "name": "Trilha do Rio da Prata (Jardim)",
+    "estimated_time": "2 horas",
+    "distance": "2.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve em meio à mata ciliar que precede a flutuação em um dos rios mais cristalinos do mundo. A trilha permite a observação da fauna e da flora local, preparando o visitante para a incrível experiência de flutuar com os peixes."
+  },
+  {
+    "name": "Trilha da Boca da Onça (Bodoquena)",
+    "estimated_time": "4 horas",
+    "distance": "4 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que percorre o Cânion do Rio Salobra, passando por diversas cachoeiras e poços para banho. O destaque é a Cachoeira Boca da Onça, a mais alta do estado. O percurso tem trechos de escadaria e exige um pouco de esforço."
+  },
+  {
+    "name": "Trilha do Monte Roraima (Roraima)",
+    "estimated_time": "6 dias",
+    "distance": "80 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma das travessias mais incríveis do mundo, que leva ao topo de um dos tepuis mais famosos da América do Sul. O percurso é longo e desafiador, mas as paisagens surreais do topo, com suas formações rochosas e ecossistema único, são inesquecíveis."
+  },
+  {
+    "name": "Trilha do Pico da Neblina (Amazonas)",
+    "estimated_time": "4 dias",
+    "distance": "36 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "A trilha que leva ao ponto mais alto do Brasil, uma aventura em meio à Floresta Amazônica. O percurso é extremamente desafiador, com trechos de mata fechada, lama e subidas íngremes, exigindo excelente preparo físico e mental."
+  },
+  {
+    "name": "Trilha do Atalaia (Fernando de Noronha)",
+    "estimated_time": "30 minutos",
+    "distance": "1.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a uma piscina natural com rica vida marinha. A flutuação é controlada e permite a observação de peixes, tartarugas e até pequenos tubarões. É um dos passeios mais procurados em Noronha."
+  },
+  {
+    "name": "Trilha do Sancho (Fernando de Noronha)",
+    "estimated_time": "20 minutos",
+    "distance": "0.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva à praia considerada uma das mais bonitas do mundo. O acesso é feito por escadas em meio a uma fenda na rocha, e a beleza da praia, com suas águas cristalinas e areia branca, é deslumbrante."
+  },
+  {
+    "name": "Trilha do Leão (Fernando de Noronha)",
+    "estimated_time": "40 minutos",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve que leva a uma praia com um visual incrível e que é um importante ponto de desova de tartarugas marinhas. A trilha oferece belas paisagens do mar de fora e a praia é ideal para contemplação."
+  },
+  {
+    "name": "Trilha dos Lençóis Maranhenses (Maranhão)",
+    "estimated_time": "3 dias",
+    "distance": "40 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma travessia única no mundo, que cruza o deserto de dunas e lagoas dos Lençóis Maranhenses. A caminhada é desafiadora, mas a experiência de caminhar pelas dunas e se refrescar nas lagoas de água cristalina é inesquecível."
+  },
+  {
+    "name": "Trilha da Pedra Selada (Visconde de Mauá)",
+    "estimated_time": "3 horas",
+    "distance": "6 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha desafiadora que leva ao topo de uma montanha com uma vista de 360 graus da região de Visconde de Mauá. O percurso é íngreme e com trechos de escalaminhada, exigindo bom preparo físico e disposição."
+  },
+  {
+    "name": "Trilha da Cachoeira do Escorrega (Visconde de Mauá)",
+    "estimated_time": "10 minutos",
+    "distance": "0.3 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a uma das cachoeiras mais famosas de Visconde de Mauá, com uma pedra lisa que forma um tobogã natural. É um lugar divertido e refrescante, ideal para toda a família."
+  },
+  {
+    "name": "Trilha da Costeira de Zimbros (Bombinhas)",
+    "estimated_time": "2 horas",
+    "distance": "4 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que margeia a costa, passando por praias desertas e costões rochosos. O percurso é de nível moderado e oferece belas vistas do mar, sendo uma ótima opção para conhecer as praias mais selvagens de Bombinhas."
+  },
+  {
+    "name": "Trilha da Sepultura (Bombinhas)",
+    "estimated_time": "20 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve e curta que leva a uma bela praia com águas calmas e cristalinas, ideal para a prática de snorkel. A trilha é bem demarcada e o acesso é fácil, sendo uma ótima opção para famílias com crianças."
+  },
+  {
+    "name": "Trilha do Morro do Macaco (Bombinhas)",
+    "estimated_time": "40 minutos",
+    "distance": "1.5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um mirante com uma vista panorâmica de 360 graus da península de Bombinhas. A subida é íngreme, mas curta, e a recompensa é uma das vistas mais bonitas do litoral de Santa Catarina."
+  },
+  {
+    "name": "Trilha da Tainha (Bombinhas)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a uma das praias mais selvagens e preservadas de Bombinhas. O percurso é de nível moderado e passa por trechos de mata e costão, oferecendo belas paisagens e um refúgio de tranquilidade."
+  },
+  {
+    "name": "Trilha do Ouro (Parque Nacional da Serra da Bocaina)",
+    "estimated_time": "3 dias",
+    "distance": "53 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma travessia histórica que percorre um antigo caminho colonial calçado por escravos. O percurso é longo e desafiador, passando por trechos de mata fechada, rios e cachoeiras, uma verdadeira imersão na história e na natureza."
+  },
+  {
+    "name": "Trilha da Praia do Sono (Paraty)",
+    "estimated_time": "1 hora e 30 minutos",
+    "distance": "3.5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a uma das praias mais famosas e bonitas de Paraty, com uma comunidade caiçara e um ambiente rústico. O percurso é de nível moderado, com subidas e descidas em meio à mata."
+  },
+  {
+    "name": "Trilha da Cachoeira do Saco Bravo (Paraty)",
+    "estimated_time": "3 horas",
+    "distance": "8 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha desafiadora que leva a uma cachoeira que deságua diretamente no mar, formando uma piscina natural de borda infinita. O percurso é longo e íngreme, mas a beleza do lugar é única e recompensadora."
+  },
+  {
+    "name": "Trilha do Pico do Corcovado de Ubatuba",
+    "estimated_time": "6 horas",
+    "distance": "16 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha desafiadora que leva ao topo de uma montanha com uma vista panorâmica de Ubatuba e região. O percurso é longo e íngreme, exigindo excelente preparo físico e experiência em trekking."
+  },
+  {
+    "name": "Trilha do Baepi (Ilhabela)",
+    "estimated_time": "4 horas",
+    "distance": "7.4 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um dos picos mais altos de Ilhabela, com uma vista de 360 graus da ilha e do continente. O percurso é desafiador, com subida íngreme e trechos de mata fechada, mas a recompensa é uma paisagem espetacular."
+  },
+  {
+    "name": "Trilha da Cachoeira do Paquetá (Ilhabela)",
+    "estimated_time": "30 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a uma bela cachoeira com diversas quedas e poços para banho. É um lugar ideal para relaxar e se refrescar na natureza, sendo uma ótima opção de passeio em Ilhabela."
+  },
+  {
+    "name": "Trilha da Toca do Urso (Campos do Jordão)",
+    "estimated_time": "40 minutos",
+    "distance": "1.8 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve e agradável em meio a um bosque de araucárias. A trilha é bem demarcada e ideal para famílias, oferecendo um contato relaxante com a natureza de Campos do Jordão e belas paisagens."
+  },
+  {
+    "name": "Trilha do Mirante do Ninho da Águia (Campos do Jordão)",
+    "estimated_time": "1 hora",
+    "distance": "2.5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um mirante com uma vista espetacular do Vale do Paraíba. O percurso é de nível moderado e o local é muito procurado para a prática de voo livre, proporcionando um belo espetáculo no céu."
+  },
+  {
+    "name": "Trilha do Morro do Elefante (Campos do Jordão)",
+    "estimated_time": "20 minutos",
+    "distance": "0.7 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada curta que leva a um dos pontos turísticos mais famosos de Campos do Jordão, com uma vista panorâmica da cidade. O acesso também pode ser feito por teleférico, mas a caminhada é uma opção agradável."
+  },
+  {
+    "name": "Trilha do Rio do Peixe (Socorro)",
+    "estimated_time": "2 horas",
+    "distance": "4 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que margeia o rio, passando por corredeiras e poços para banho. O percurso é de nível moderado e ideal para quem busca aventura e contato com a natureza, com a possibilidade de praticar atividades como rafting e boia-cross."
+  },
+  {
+    "name": "Trilha da Pedra Bela Vista (Socorro)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um mirante com uma vista panorâmica de Socorro e região. A subida é um pouco íngreme, mas a recompensa é uma paisagem deslumbrante, especialmente ao pôr do sol. O local também é ponto de voo livre."
+  },
+  {
+    "name": "Trilha da Gruta do Anjo (Socorro)",
+    "estimated_time": "15 minutos",
+    "distance": "0.4 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta que leva a uma gruta com um lago de águas cristalinas em seu interior. O passeio de pedalinho dentro da gruta é a principal atração, proporcionando uma experiência única e encantadora."
+  },
+  {
+    "name": "Trilha do Pico Agudo (Santo Antônio do Pinhal)",
+    "estimated_time": "30 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a um pico com uma vista de 360 graus da Serra da Mantiqueira. O local é muito procurado para a prática de voo livre e para apreciar o pôr do sol."
+  },
+  {
+    "name": "Trilha do Bauzinho (São Bento do Sapucaí)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "A trilha mais leve do complexo da Pedra do Baú, que leva a um mirante com uma vista espetacular da Pedra do Baú e do Bauzinho. O percurso é plano e ideal para toda a família, oferecendo uma paisagem incrível."
+  },
+  {
+    "name": "Trilha do Pico do Olho D'Água (Mairiporã)",
+    "estimated_time": "1 hora e 30 minutos",
+    "distance": "3 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a um pico com uma vista panorâmica de Mairiporã e da Represa de Atibainha. O percurso é de nível moderado e o local é muito procurado para a prática de voo livre e para apreciar o pôr do sol."
+  },
+  {
+    "name": "Trilha da Cachoeira de Marsilac (São Paulo)",
+    "estimated_time": "2 horas",
+    "distance": "5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Localizada na zona sul de São Paulo, esta trilha em meio à Mata Atlântica leva a uma bela cachoeira. O percurso é de nível moderado e uma ótima opção para quem busca contato com a natureza sem sair da cidade."
+  },
+  {
+    "name": "Trilha do Silêncio (Parque Estadual da Cantareira)",
+    "estimated_time": "40 minutos",
+    "distance": "1.2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha leve e adaptada para pessoas com mobilidade reduzida, que proporciona uma experiência sensorial em meio à Mata Atlântica. O percurso é plano e ideal para uma caminhada tranquila e contemplativa."
+  },
+  {
+    "name": "Trilha da Bica (Parque Estadual da Cantareira)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve em meio à mata, que leva a uma bica de água potável. O percurso é bem sinalizado e ideal para famílias, oferecendo um contato relaxante com a natureza da Serra da Cantareira."
+  },
+  {
+    "name": "Trilha do Mirante da Pedra Redonda (Monte Verde)",
+    "estimated_time": "1 hora",
+    "distance": "1.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a um mirante com uma vista espetacular de Monte Verde e região. O percurso é bem demarcado e ideal para apreciar o nascer ou o pôr do sol."
+  },
+  {
+    "name": "Trilha do Chapéu do Bispo (Monte Verde)",
+    "estimated_time": "40 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha leve que leva ao topo de uma formação rochosa que lembra o formato de um chapéu de bispo. O percurso é curto e a vista do topo é muito bonita, sendo uma ótima opção de passeio em Monte Verde."
+  },
+  {
+    "name": "Trilha do Platô (Monte Verde)",
+    "estimated_time": "1 hora e 30 minutos",
+    "distance": "2.5 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha de nível moderado que leva a um platô com uma bela vista da região. O percurso passa por trechos de mata e campos de altitude, sendo uma ótima opção para quem busca uma caminhada um pouco mais longa."
+  },
+  {
+    "name": "Trilha do Pico do Selado (Monte Verde)",
+    "estimated_time": "3 horas",
+    "distance": "5 km",
+    "level": "dificil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "A trilha mais desafiadora de Monte Verde, que leva ao ponto mais alto da região. O percurso é íngreme e com trechos de escalaminhada, mas a vista de 360 graus do topo é espetacular e recompensa todo o esforço."
+  },
+  {
+    "name": "Trilha do Poço das Antas (Lavras Novas)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve que leva a um belo poço para banho em meio à natureza. O percurso é tranquilo e ideal para um dia de relaxamento, sendo uma ótima opção de passeio em Lavras Novas."
+  },
+  {
+    "name": "Trilha da Cachoeira dos Namorados (Lavras Novas)",
+    "estimated_time": "40 minutos",
+    "distance": "1.5 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha curta e de fácil acesso que leva a uma charmosa cachoeira com um poço para banho. É um lugar ideal para um passeio romântico ou para se refrescar em um dia quente."
+  },
+  {
+    "name": "Trilha do Mirante da Cidade (São Thomé das Letras)",
+    "estimated_time": "30 minutos",
+    "distance": "1 km",
+    "level": "fácil",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma caminhada leve que leva a um mirante com uma vista panorâmica da cidade e das montanhas ao redor. É o lugar perfeito para apreciar o famoso pôr do sol de São Thomé das Letras."
+  },
+  {
+    "name": "Trilha da Gruta do Sobradinho (São Thomé das Letras)",
+    "estimated_time": "1 hora",
+    "distance": "2 km",
+    "level": "medio",
+    "imgSrc": "imagem_trilha.jpg",
+    "info": "Uma trilha que leva a uma gruta com uma bela cachoeira e um poço para banho em seu interior. O percurso é de nível moderado e a experiência de nadar dentro da gruta é única e revigorante."
+  }
+]
