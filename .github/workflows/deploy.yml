@@ -58,5 +58,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build app for iOS and Android
-        run: eas build --platform android --non-interactive
+      - name: Build app (AAB e APK)
+        run: |
+          echo "Iniciando build do .aab (para a loja)..."
+          eas build --platform android --non-interactive --profile production-aab
+          
+          echo "Iniciando build do .apk (para instalação manual)..."
+          eas build --platform android --non-interactive --profile production-apk
