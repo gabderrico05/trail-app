@@ -1,10 +1,8 @@
 import Button from "@/components/Button";
 import LogoApp from "@/components/LogoApp";
 import { router } from "expo-router";
-import React from "react";
-import { Text } from "react-native";
+import { StatusBar, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from 'react-native';
 
 function inicio() {
   return (
