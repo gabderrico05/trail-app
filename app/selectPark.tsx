@@ -21,13 +21,14 @@ export default function App() {
           renderItem={({ item }) => (
             <ParkCard
               image={item.image}
-              title={item.name}
-              subtitle={item.address}
+              name={item.name}
+              complement={item.complement}
+              address={item.address}
               onPress={() => {
                 router.push({
                   pathname: "/selectTrail",
                   params: {
-                    park: JSON.stringify(item), // Passa o objeto inteiro serializado
+                    park: JSON.stringify(item), 
                   },
                 });
               }}
@@ -81,7 +82,7 @@ export function Header({ setFilteredParks }: HeaderProps) {
         <SearchBar
           className="mx-6 mt-1 mb-6"
           data={parquesData}
-          filterKey={["name", "address"]}
+          filterKey={["name", "address", "complement"]}
           onFiltered={setFilteredParks}
         />
       </View>
