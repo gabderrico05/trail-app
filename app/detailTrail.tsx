@@ -6,6 +6,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import React from "react";
 import {
+  FlatList,
   Image,
   ImageBackground,
   ScrollView,
@@ -16,7 +17,30 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import LevelIcon from "../assets/level_icon.svg";
 
+type ImgProps = {
+  src: any;
+};
+
+const images: ImgProps[] = [
+  { src: require("../assets/imagem_trilha.jpg") },
+  { src: require("../assets/imagem_trilha2.jpg") },
+  { src: require("../assets/imagem_trilha3.jpg") },
+  { src: require("../assets/imagem_trilha.jpg") },
+  { src: require("../assets/imagem_trilha2.jpg") },
+  { src: require("../assets/imagem_trilha3.jpg") },
+];
+
 function detailTrail() {
+  const renderItem = ({ item }: { item: ImgProps }) => {
+    return (
+      <Image
+        className="rounded-2xl mr-2"
+        source={item.src}
+        style={{ width: 150, height: 190 }}
+      />
+    );
+  };
+
   function handleOnPressStart() {}
   return (
     <SafeAreaView className="flex-1">
@@ -73,8 +97,17 @@ function detailTrail() {
             subidas.
           </Text>
         </View>
-        <View className="bg-[#FFE489] p-5 ">
-          <Text className="text-forestGreen-500 font-semibold">Imagens</Text>
+        <View className="bg-[#FFE489] pl-6 py-6 ">
+          <Text className="text-forestGreen-500 font-semibold m-1 mb-4">
+            Imagens
+          </Text>
+          <FlatList
+            data={images}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            renderItem={renderItem}
+            keyExtractor={(_, index) => index.toString()}
+          />
         </View>
         <View className="bg-forestGreen-500 p-6 flex-row items-center justify-between">
           <View className="flex-row items-center gap-4">
@@ -115,15 +148,15 @@ function detailTrail() {
             </Text>
           </View>
 
-          <Text className=" font-semibold text-xs text-justify m-1">
+          <Text className=" font-semibold text-xs  m-1">
             Use calçados adequados. Prefira tênis ou botas com sola
             antiderrapante para evitar escorregões.
           </Text>
-          <Text className=" font-semibold text-xs text-justify m-1">
+          <Text className=" font-semibold text-xs  m-1">
             Leve água e lanches leves. Mantenha-se hidratado e faça pequenas
             pausas para se alimentar.
           </Text>
-          <Text className=" font-semibold text-xs text-justify m-1">
+          <Text className=" font-semibold text-xs  m-1">
             Não se afaste da trilha marcada. Trilhas secundárias podem ser
             perigosas e dificultar a localização em caso de emergência.
           </Text>
