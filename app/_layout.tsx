@@ -21,38 +21,14 @@ const [fontsLoaded] = useFonts({
   }
 
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="inicio"
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="selectPark"
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="selectTrail"
-        options={{
-          headerShown: false
-        }}
-      />
-      <Stack.Screen
-        name="detailTrail"
-        options={{
-          headerShown: false
-        }}
-      />
 
+
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" options={{headerShown: false,}} />
+      <Stack.Screen name="inicio"  options={{headerShown: false,}} />
+      <Stack.Screen name="(tabs)"  options={{headerShown: false,}} />
     </Stack>
+
+    
   );
 }

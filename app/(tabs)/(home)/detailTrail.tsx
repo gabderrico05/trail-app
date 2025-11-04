@@ -1,17 +1,42 @@
+import LevelIcon from "@/assets/level_icon.svg";
 import ReturnButton from "@/components/ReturnButton";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import LevelIcon from "../assets/level_icon.svg";
 
 function detailTrail() {
+  const navigation = useNavigation();
+
+  useFocusEffect(
+    React.useCallback(() => {
+      // Hide tab bar when this screen is focused
+      navigation.getParent()?.setOptions({
+        tabBarStyle: { display: "none" },
+      } as any);
+
+      return () => {
+        // Restore tab bar on blur/unfocus
+        navigation.getParent()?.setOptions({
+          tabBarStyle: {
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            borderTopWidth: 2,
+            alignItems: 'center',
+            height: 80,
+          },
+        } as any);
+      };
+    }, [navigation])
+  );
+
   return (
     <SafeAreaView className="flex-1">
       <ImageBackground
         className="p-6"
         style={{ height: "auto", width: "100%" }}
-        source={require("../assets/imageTrilha.jpg")}
+        source={require("@/assets/imageTrilha.jpg")}
         resizeMode="cover"
       >
         <View className="w-full ">
@@ -22,7 +47,7 @@ function detailTrail() {
             Trilha da Pedra Branca
           </Text>
           <Image
-            source={require("../assets/parqueEstadual.png")}
+            source={require("@/assets/parqueEstadual.png")}
             style={{ width: 50, height: 50 }}
             resizeMode="contain"
           />

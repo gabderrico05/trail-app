@@ -1,11 +1,11 @@
 import EntityBanner from "@/components/EntityBanner";
 import SearchBar from "@/components/SearchBar";
 import TrailCard from "@/components/TrailCard";
+import trails from "@/db-mock/trilhas.json";
 import { useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
 import { FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import trails from "../db-mock/trilhas.json";
 
 
 export default function SelectTrail() {

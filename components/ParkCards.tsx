@@ -45,7 +45,7 @@ export default function ParkCard({
       
       
       <View className="flex-1">
-        <Text className="text-sm font-semibold text-gray-900">{name + " - " + complement}</Text>
+        <Text className="text-sm font-semibold text-gray-900">{name + (complement != undefined? (" - " + complement) : "")}</Text>
         {address && <Text className="text-xs text-gray-500">{address}</Text>}
       </View>
       <View className="ml-3">

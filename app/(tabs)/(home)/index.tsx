@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function App() {
+export default function SelectPark() {
   const [filteredParks, setFilteredParks] = useState(parquesData);
 
   return (
@@ -56,7 +56,7 @@ type HeaderProps = {
 export function Header({ setFilteredParks }: HeaderProps) {
   return (
     <View className="px-7">
-      <ReturnButton />
+      <ReturnButton onPress={() => router.replace("/inicio")} />
 
       <View className="items-center gap-4">
         <LogoApp className="w-[152px] h-[149px]" />
