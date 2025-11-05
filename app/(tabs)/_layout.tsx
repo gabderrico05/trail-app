@@ -1,7 +1,7 @@
 import HistoryIcon from "@/assets/icons/history.svg";
 import HomeIcon from "@/assets/icons/home.svg";
 import QrIcon from "@/assets/icons/qrCode.svg";
-import { Tabs } from "expo-router";
+import { Tabs, useSegments } from "expo-router";
 import { Text, View } from "react-native";
 
 function TabIcon({ Icon, focused, title }: { Icon: any; focused: boolean; title: string }) {
@@ -21,18 +21,29 @@ function TabIcon({ Icon, focused, title }: { Icon: any; focused: boolean; title:
 }
 
 export default function TabsLayout() {
+
+  const segments = useSegments();
+
+  // Telas onde você quer esconder a TabBar (adicione/remova nomes aqui)
+  const HIDE_TABS_ON = new Set<string>(['detailTrail', 'aboutTrail',]);
+  const hideTabBar = segments[0] === '(tabs)' && segments.some(s => HIDE_TABS_ON.has(String(s)));
+
+
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {
+        tabBarStyle: [{
           flexDirection: 'row',
           backgroundColor: "white",
           borderTopWidth: 2,
           alignItems: 'center',
           height: 80,
         },
+        hideTabBar && { display: "none" }
+        ],
       }}
     >
       <Tabs.Screen
