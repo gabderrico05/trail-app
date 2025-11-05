@@ -1,3 +1,4 @@
+import LevelIcon from "@/assets/level_icon.svg";
 import ReturnButton from "@/components/ReturnButton";
 import Feather from "@expo/vector-icons/Feather";
 import Foundation from "@expo/vector-icons/Foundation";
@@ -15,19 +16,18 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import LevelIcon from "../assets/level_icon.svg";
 
 type ImgProps = {
   src: any;
 };
 
 const images: ImgProps[] = [
-  { src: require("../assets/imagem_trilha.jpg") },
-  { src: require("../assets/imagem_trilha2.jpg") },
-  { src: require("../assets/imagem_trilha3.jpg") },
-  { src: require("../assets/imagem_trilha.jpg") },
-  { src: require("../assets/imagem_trilha2.jpg") },
-  { src: require("../assets/imagem_trilha3.jpg") },
+  { src: require("@/assets/imagem_trilha.jpg") },
+  { src: require("@/assets/imagem_trilha2.jpg") },
+  { src: require("@/assets/imagem_trilha3.jpg") },
+  { src: require("@/assets/imagem_trilha.jpg") },
+  { src: require("@/assets/imagem_trilha2.jpg") },
+  { src: require("@/assets/imagem_trilha3.jpg") },
 ];
 
 function detailTrail() {
@@ -48,7 +48,7 @@ function detailTrail() {
         <ImageBackground
           className="p-6"
           style={{ height: "auto", width: "100%" }}
-          source={require("../assets/imageTrilha.jpg")}
+          source={require("@/assets/imageTrilha.jpg")}
           resizeMode="cover"
         >
           <View className="w-full ">
@@ -59,7 +59,7 @@ function detailTrail() {
               Trilha da Pedra Branca
             </Text>
             <Image
-              source={require("../assets/parqueEstadual.png")}
+              source={require("@/assets/parqueEstadual.png")}
               style={{ width: 50, height: 50 }}
               resizeMode="contain"
             />

@@ -16,7 +16,7 @@ function inicio() {
         Explore trilhas de forma interativa, descubra curiosidades e registre
         conquistas a cada passo. Escolha sua rota e viva a experiência!
       </Text>
-      <Button onPress={() => router.push("/selectPark")}>Começar</Button>
+      <Button onPress={() => router.push("/(tabs)/(home)")}>Começar</Button>
     </SafeAreaView>
   );
 }

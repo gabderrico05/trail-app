@@ -1,11 +1,11 @@
 import EntityBanner from "@/components/EntityBanner";
 import SearchBar from "@/components/SearchBar";
 import TrailCard from "@/components/TrailCard";
+import trails from "@/db-mock/trilhas.json";
 import { useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
 import { FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import trails from "../db-mock/trilhas.json";
 
 
 export default function SelectTrail() {
@@ -13,7 +13,6 @@ export default function SelectTrail() {
   const { park } = useLocalSearchParams<{ park: string }>();
   const parkData = park ? JSON.parse(park) : undefined;
 
-  // Obter as margens exatas do SafeAreaView
   const insets = useSafeAreaInsets();
 
   const [filteredTrails, setFilteredTrails] = useState(trailData);
@@ -53,7 +52,7 @@ export default function SelectTrail() {
             <View className="max-w-full mx-5">
               <TrailCard
                 title={item.name}
-                imgSrc={"../assets/" + item.imgSrc}
+                imgSrc={"@/assets/" + item.imgSrc}
                 distance={item.distance}
                 time={item.estimated_time}
                 level={item.level}

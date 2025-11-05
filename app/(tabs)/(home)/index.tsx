@@ -10,9 +10,11 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Alert, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function App() {
+export default function SelectPark() {
+  const [allEntities, setAllEntities] = useState<EntityProps[]>([]);
   const [entities, setEntities] = useState<EntityProps[]>([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     function fetchEntities() {
       (async () => {
@@ -20,7 +22,8 @@ export default function App() {
           const { data } = await axios.get<{
             entities: EntityProps[];
           }>("https://api.trilhainterativa.com.br/entities");
-          setEntities(data.entities);
+          setAllEntities(data.entities);          
+          setEntities(data.entities);              
           setLoading(false);
         } catch (error) {
           Alert.alert(
@@ -37,12 +40,17 @@ export default function App() {
   return (
     <SafeAreaView className="flex-1 bg-white">
       {loading ? (
-        <ActivityIndicator size="large" color={"#113D31"} />
+        <View className="flex-1 items-center justify-center">
+          <ActivityIndicator size="large" color={"#113D31"} />
+        </View>
       ) : (
         <View className="flex-1">
           <FlatList
             ListHeaderComponent={
-              <Header entities={entities} setEntities={setEntities} />
+              <Header
+                allEntities={allEntities}
+                onFiltered={setEntities}
+              />
             }
             data={entities}
             renderItem={({ item: entity }) => (
@@ -78,22 +86,19 @@ export default function App() {
 }
 
 type HeaderProps = {
-  setEntities: (entities: EntityProps[]) => void;
-  entities: EntityProps[];
+  allEntities: EntityProps[];
+  onFiltered: (entities: EntityProps[]) => void;
 };
 
-export function Header({ setEntities, entities }: HeaderProps) {
+export function Header({ allEntities, onFiltered }: HeaderProps) {
   return (
     <View className="px-7">
       <ReturnButton />
-
       <View className="items-center gap-4">
         <LogoApp className="w-[152px] h-[149px]" />
-
         <TextFont className="text-xl font-bold text-forestGreen-500 text-center">
           Pronto para começar?
         </TextFont>
-
         <TextFont
           className="text-md text-forestGreen-500 text-center"
           numberOfLines={1}
@@ -102,7 +107,6 @@ export function Header({ setEntities, entities }: HeaderProps) {
         >
           Selecione a instituição ou parque e comece a explorar.
         </TextFont>
-
         <TextFont className="text-md text-forestGreen-500 text-center">
           Permita o compartilhamento de localização para uma experiência
           aprimorada
@@ -110,11 +114,11 @@ export function Header({ setEntities, entities }: HeaderProps) {
 
         <SearchBar
           className="mx-6 mt-1 mb-6"
-          data={entities}
+          data={allEntities}
           filterKey={
             ["name", "address", "nameComplement"] as (keyof EntityProps)[]
           }
-          onFiltered={setEntities}
+          onFiltered={onFiltered} 
         />
       </View>
     </View>
