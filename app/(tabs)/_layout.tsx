@@ -13,7 +13,7 @@ function TabIcon({ Icon, focused, title }: { Icon: any; focused: boolean; title:
         color={focused ? "#BF360C" : "#113D31"}
         fill={focused ? "#BF360C" : "#113D31"}
       />
-      <Text className={`text-sm font-bold ${focused ? 'text-burntOrange' : 'text-forestGreen-500'}`}>
+      <Text className={`text-sm font-bold ${focused ? 'text-burntOrange' : 'text-forestGreen-500'}`} numberOfLines={1}>
         {title}
       </Text>
     </View>
@@ -61,7 +61,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="qrCode"
         options={() => {
-          const title = "QRCode";
+          const title = "QR Code";
           return {
             title,
             tabBarIcon: ({ focused }) => (
