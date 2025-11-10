@@ -5,25 +5,42 @@ import ParkCard from '../components/ParkCards';
 
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 test('ParkCard renders correctly', () => {
-    render(<ParkCard title="Yellowstone" subtitle="First national park in the U.S." />);
-
-});
-
-test('ParkCard is clickable and triggers navigation via onPress', () => {
-  const navigation = { navigate: jest.fn() };
-  const onPress = () => router.push('/selectTrail');
-
   const { getByText } = render(
-    <ParkCard
-      title="Yellowstone"
-      subtitle="First national park in the U.S."
-      onPress={onPress}
-    />
+    <ParkCard name="Yellowstone" complement="First national park in the U.S." />
   );
 
-  fireEvent.press(getByText('Yellowstone'));
-  expect(router.push).toHaveBeenCalledWith('/selectTrail');
+  expect(getByText('Yellowstone - First national park in the U.S.')).toBeTruthy();
 });
 
+test('ParkCard renders address when provided', () => {
+  const { getByText } = render(
+    <ParkCard name="Grand Canyon" complement="Arizona" address="Arizona, USA" />
+  );
+
+  expect(getByText('Arizona, USA')).toBeTruthy();
+});
+
+test('calls provided onPress when pressed', () => {
+  const onPress = jest.fn();
+  const { getByText } = render(
+    <ParkCard name="Yellowstone" complement="First national park in the U.S." onPress={onPress} />
+  );
+
+  fireEvent.press(getByText(/Yellowstone/));
+  expect(onPress).toHaveBeenCalled();
+});
+
+test('invokes router.push when onPress uses router', () => {
+  const onPress = () => router.push('/selectTrail');
+  const { getByText } = render(
+    <ParkCard name="Yellowstone" complement="First national park in the U.S." onPress={onPress} />
+  );
+
+  fireEvent.press(getByText(/Yellowstone/));
+  expect(router.push).toHaveBeenCalledWith('/selectTrail');
+});
