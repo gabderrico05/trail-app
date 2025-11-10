@@ -3,18 +3,21 @@
     "id": 1,
     "name": "Parque Ibirapuera",
     "address": "Av. Pedro Álvares Cabral - Vila Mariana, São Paulo - SP, 04094-050",
+    "complement": "Setor Cultural",
     "image": "https://www.essemundoenosso.com.br/wp-content/uploads/2022/11/parque-do-ibirapuera-sao-paulo-principais-atracoes-01.jpg"
   },
   {
     "id": 2,
     "name": "Parque Villa-Lobos",
     "address": "Av. Prof. Fonseca Rodrigues, 2001 - Alto de Pinheiros, São Paulo - SP, 05461-010",
+    "complement": "Núcleo Norte",
     "image": "https://www.parquevillalobos.net/wp-content/uploads/2023/07/parque-villa-lobos.jpg"
   },
   {
     "id": 3,
     "name": "Jardim Botânico de São Paulo",
     "address": "Av. Miguel Estefno, 3031 - Vila Água Funda, São Paulo - SP, 04301-902",
+    "complement": "Entrada Principal",
     "image": "https://jardimbotanico.sp.gov.br/files/2022/07/2-Entrada-do-JB-cred-Sandra-Canejo-1-1.jpg"
   },
   {
@@ -25,9 +28,10 @@
   },
   {
     "id": 5,
-    "name": "Parque Burle Marx",
-    "address": "Av. Dona Helena Pereira de Moraes, 200 - Vila Andrade, São Paulo - SP, 05707-400",
-    "image": "https://www.parqueburlemarx.com.br/wp-content/uploads/2022/01/pbm-galeria-01.jpg"
+    "name": "Parque Estadual Serra do Mar",
+    "address": "R. Três, 187 - Paulo VI, Belo Horizonte - MG, 31998-190",
+    "complement": "Núcleo Caraguatatuba",
+    "image": "https://cdn.limbersoftware.com.br/img/ec/76/logo/footer-gSqH9rPmmk.png"
   },
   {
     "id": 6,
@@ -63,6 +67,7 @@
     "id": 11,
     "name": "Parque Estadual Jaraguá",
     "address": "Rua Antônio Cardoso Nogueira, 539 - Vila Chica Luiza, São Paulo - SP, 05184-000",
+    "complement": "Portaria Principal",
     "image": "https://www.saopaulo.sp.gov.br/wp-content/uploads/2022/10/pico-do-jaragua.jpg"
   },
   {
@@ -183,6 +188,7 @@
     "id": 31,
     "name": "Jardim Botânico de Curitiba",
     "address": "Rua Eng°. Ostoja Roguski, s/n - Jardim Botânico, Curitiba - PR, 80210-390",
+    "complement": "Setor de Pesquisa",
     "image": "https://www.curitiba.pr.gov.br/fotos/jardim-botanico-de-curitiba/31"
   },
   {
@@ -405,12 +411,6 @@
     "id": 68,
     "name": "Parque do Piqueri",
     "address": "R. Tuiuti, 515 - Tatuapé, São Paulo - SP, 03081-015",
-    "image": "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/meio_ambiente/parques/piqueri/Galeria_de_fotos/Piqueri_HelennaArtur%20(17).jpg"
-  },
-  {
-    "id": 69,
-    "name": "Parque Estadual da Pedra Branca",
-    "address": "Estr. do Pau da Fome, 4003 - Taquara, Rio de Janeiro - RJ, 22723-497",
     "image": "https://www.inea.rj.gov.br/wp-content/uploads/2019/01/PEPB-010.jpg"
   },
   {
@@ -579,18 +579,13 @@
     "id": 97,
     "name": "Parque da Matinha",
     "address": "R. Ituiutaba, 313 - União, Belo Horizonte - MG, 31170-020",
-    "image": ""
+    "image": "https://parquepedradosol.com.br/wp-content/uploads/2025/02/identidade-visual-parque-pedra-do-sol.webp"
   },
   {
     "id": 98,
     "name": "Parque Real",
     "address": "R. Três, 187 - Paulo VI, Belo Horizonte - MG, 31998-190",
     "image": "https://p7.hiclipart.com/preview/784/756/1021/parques-reunidos-business-amusement-park-california-s-great-america-business.jpg"
-  },
-  {
-    "id": 99,
-    "name": "Parque Estadual Serra do Mar",
-    "address": "R. Três, 187 - Paulo VI, Belo Horizonte - MG, 31998-190",
-    "image": "https://parquepedradosol.com.br/wp-content/uploads/2025/02/identidade-visual-parque-pedra-do-sol.webp"
   }
+  
 ]

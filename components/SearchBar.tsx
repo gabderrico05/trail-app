@@ -38,7 +38,7 @@ export default function SearchBar<T>({
   };
 
   return (
-    <View className={`p-0.5 pl-2 pr-10 w-full min-h-14 flex-row items-center bg-lightGray-300 rounded-2xl ${className}`}>
+    <View className={`p-0.5 pl-2 pr-10 w-full min-h-12 flex-row items-center bg-lightGray-300 rounded-2xl ${className}`}>
       <TouchableOpacity 
         className="flex-row h-full items-center pb-0.5 px-2"
         onPress={handleSearch}
