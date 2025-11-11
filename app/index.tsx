@@ -1,7 +1,10 @@
+import PointCard from "@/components/PointCard";
 import React from "react";
+import { View } from "react-native";
 import "./global.css";
-import Inicio from "./inicio";
 
 export default function App() {
-  return <Inicio />;
+  return (<View>
+    <PointCard name={"Teste"}/>
+  </View>);
 }
