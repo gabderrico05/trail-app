@@ -10,6 +10,7 @@ import {
   FlatList,
   Image,
   ImageBackground,
+  Platform,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -43,7 +44,7 @@ function detailTrail() {
 
   function handleOnPressStart() {}
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1"  edges={Platform.OS === 'ios' ? ['top', 'bottom']: ['top']}>
       <ScrollView>
         <ImageBackground
           className="p-6"
