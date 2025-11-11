@@ -4,7 +4,15 @@ import QrIcon from "@/assets/icons/qrCode.svg";
 import { Tabs, useSegments } from "expo-router";
 import { Text, View } from "react-native";
 
-function TabIcon({ Icon, focused, title }: { Icon: any; focused: boolean; title: string }) {
+function TabIcon({
+  Icon,
+  focused,
+  title,
+}: {
+  Icon: any;
+  focused: boolean;
+  title: string;
+}) {
   return (
     <View className="items-center justify-center">
       <Icon
@@ -13,7 +21,10 @@ function TabIcon({ Icon, focused, title }: { Icon: any; focused: boolean; title:
         color={focused ? "#BF360C" : "#113D31"}
         fill={focused ? "#BF360C" : "#113D31"}
       />
-      <Text className={`text-sm font-bold ${focused ? 'text-burntOrange' : 'text-forestGreen-500'}`} numberOfLines={1}>
+      <Text
+        className={`text-sm font-bold ${focused ? "text-burntOrange" : "text-forestGreen-500"}`}
+        numberOfLines={1}
+      >
         {title}
       </Text>
     </View>
@@ -21,28 +32,32 @@ function TabIcon({ Icon, focused, title }: { Icon: any; focused: boolean; title:
 }
 
 export default function TabsLayout() {
-
   const segments = useSegments();
 
   // Telas onde você quer esconder a TabBar (adicione/remova nomes aqui)
-  const HIDE_TABS_ON = new Set<string>(['detailTrail', 'aboutTrail',]);
-  const hideTabBar = segments[0] === '(tabs)' && segments.some(s => HIDE_TABS_ON.has(String(s)));
-
-
+  const HIDE_TABS_ON = new Set<string>([
+    "detailTrail",
+    "aboutTrail",
+    "interestPoints",
+  ]);
+  const hideTabBar =
+    segments[0] === "(tabs)" &&
+    segments.some((s) => HIDE_TABS_ON.has(String(s)));
 
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: [{
-          flexDirection: 'row',
-          backgroundColor: "white",
-          borderTopWidth: 2,
-          alignItems: 'center',
-          height: 80,
-        },
-        hideTabBar && { display: "none" }
+        tabBarStyle: [
+          {
+            flexDirection: "row",
+            backgroundColor: "white",
+            borderTopWidth: 2,
+            alignItems: "center",
+            height: 80,
+          },
+          hideTabBar && { display: "none" },
         ],
       }}
     >

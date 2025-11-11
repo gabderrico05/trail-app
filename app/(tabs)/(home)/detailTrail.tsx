@@ -1,15 +1,15 @@
 import LevelIcon from "@/assets/level_icon.svg";
-import ReturnButton from "@/components/ReturnButton";
-import Feather from "@expo/vector-icons/Feather";
+import StartButton from "@/components/StartButton";
+import TrailHeader from "@/components/TrailHeader";
 import Foundation from "@expo/vector-icons/Foundation";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
+import { router } from "expo-router";
 import React from "react";
 import {
   FlatList,
   Image,
-  ImageBackground,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -45,26 +45,7 @@ function detailTrail() {
   return (
     <SafeAreaView className="flex-1">
       <ScrollView>
-        <ImageBackground
-          className="p-6"
-          style={{ height: "auto", width: "100%" }}
-          source={require("@/assets/imageTrilha.jpg")}
-          resizeMode="cover"
-        >
-          <View className="w-full ">
-            <ReturnButton buttonType="secondary" />
-          </View>
-          <View className="bg-white items-center p-2 px-4 mt-4 rounded-2xl flex-row">
-            <Text className="text-forestGreen-500 font-bold mr-auto">
-              Trilha da Pedra Branca
-            </Text>
-            <Image
-              source={require("@/assets/parqueEstadual.png")}
-              style={{ width: 50, height: 50 }}
-              resizeMode="contain"
-            />
-          </View>
-        </ImageBackground>
+        <TrailHeader />
         <View className="p-6 gap-2">
           <View className="flex-row items-center ">
             <MaterialCommunityIcons name="clock" size={14} color="#BF360C" />
@@ -109,7 +90,11 @@ function detailTrail() {
             keyExtractor={(_, index) => index.toString()}
           />
         </View>
-        <View className="bg-forestGreen-500 p-6 flex-row items-center justify-between">
+
+        <TouchableOpacity
+          className="bg-forestGreen-500 p-6 flex-row items-center justify-between"
+          onPress={() => router.push("/(tabs)/(home)/interestPoints")}
+        >
           <View className="flex-row items-center gap-4">
             <Ionicons name="analytics-outline" size={24} color="white" />
             <Text className="text-white">Pontos de interesse</Text>
@@ -121,8 +106,11 @@ function detailTrail() {
             size={24}
             color="white"
           />
-        </View>
-        <View className="bg-[#FFC500] p-6 flex-row items-center justify-between">
+        </TouchableOpacity>
+        <TouchableOpacity
+          className="bg-[#FFC500] p-6 flex-row items-center justify-between"
+          onPress={() => router.push("/(tabs)/(home)/aboutTrail")}
+        >
           <View className="flex-row items-center gap-4">
             <Foundation name="info" size={24} color="#113D31" />
             <Text className="text-forestGreen-500 font-semibold">
@@ -135,7 +123,7 @@ function detailTrail() {
             size={24}
             color="#113D31"
           />
-        </View>
+        </TouchableOpacity>
         <View className="border border-forestGreen-500/50 p-6 m-10 rounded-2xl gap-4">
           <View className="flex-row items-center gap-2">
             <MaterialCommunityIcons
@@ -162,16 +150,7 @@ function detailTrail() {
           </Text>
         </View>
       </ScrollView>
-      <View className="p-5 border-t border-forestGreen-500/50">
-        <TouchableOpacity
-          onPress={handleOnPressStart}
-          activeOpacity={0.7}
-          className="bg-forestGreen-400 flex-row items-center justify-end py-5 rounded-2xl pr-3 mx-5"
-        >
-          <Text className="text-white text-lg font-bold mr-1">Iniciar</Text>
-          <Feather name="chevron-right" size={24} color="white" />
-        </TouchableOpacity>
-      </View>
+      <StartButton />
     </SafeAreaView>
   );
 }
