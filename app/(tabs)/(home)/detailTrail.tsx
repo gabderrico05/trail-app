@@ -10,6 +10,8 @@ import React from "react";
 import {
   FlatList,
   Image,
+  ImageBackground,
+  Platform,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -43,7 +45,7 @@ function detailTrail() {
 
   function handleOnPressStart() {}
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1"  edges={Platform.OS === 'ios' ? ['top', 'bottom']: ['top']}>
       <ScrollView>
         <TrailHeader />
         <View className="p-6 gap-2">

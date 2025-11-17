@@ -7,7 +7,7 @@ import { EntityProps } from "@/types/Entity";
 import axios from "axios";
 import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Alert, FlatList, View } from "react-native";
+import { ActivityIndicator, Alert, FlatList, Platform, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SelectPark() {
@@ -38,7 +38,10 @@ export default function SelectPark() {
   }, []);
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView className="flex-1 bg-white"
+      
+      edges={Platform.OS === 'ios' ? ['top', 'bottom']: ['top']}
+    >
       {loading ? (
         <View className="flex-1 items-center justify-center">
           <ActivityIndicator size="large" color={"#113D31"} />
