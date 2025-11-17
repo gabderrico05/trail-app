@@ -9,7 +9,7 @@ import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"
 function TabIcon({classname, Icon, focused, title }: { classname?: string, Icon: any; focused: boolean; title: string }) {
 
   return (
-    <View className="pl-0.5 items-center justify-center pb-4">
+    <View className="pl-0.5 items-center justify-center ">
       <Icon
         width={35}
         height={35}
@@ -48,7 +48,7 @@ export default function TabsLayout() {
             backgroundColor: 'white',
             borderTopWidth: 2,
             alignItems: 'center',
-            paddingTop: 26,
+            paddingTop: 10,
             height: 40,
             elevation: 0,
           },
