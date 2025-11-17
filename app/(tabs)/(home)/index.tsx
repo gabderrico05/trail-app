@@ -58,7 +58,7 @@ export default function SelectPark() {
             data={entities}
             renderItem={({ item: entity }) => (
               <ParkCard
-                image={"/imagem_trilha.jpg"}
+                image={"/" + entity.coverUrl}
                 name={entity.name}
                 complement={entity.nameComplement}
                 address={entity.address}

@@ -19,9 +19,7 @@ export default function ParkCard({
 }: ParkCardProps) {
   const [pressed, setPressed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  
-
+  const imageBaseUrl = process.env.EXPO_PUBLIC_IMAGE_BASE_URL
   return (
     <Pressable
       onPress={onPress}
@@ -35,7 +33,7 @@ export default function ParkCard({
            className="w-12 h-12 mr-3 rounded-full items-center justify-center bg-lightGray-300">
         {image && (
           <Image 
-            source={{ uri: image }}
+            source={{ uri: imageBaseUrl + image}}
             resizeMode="contain"
             className={`w-full h-full ${imageLoaded && 'bg-white'}`}
             onLoad={() => setImageLoaded(true)}

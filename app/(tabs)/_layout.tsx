@@ -7,6 +7,7 @@ import { Platform, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 function TabIcon({classname, Icon, focused, title }: { classname?: string, Icon: any; focused: boolean; title: string }) {
+
   return (
     <View className="pl-0.5 items-center justify-center pb-4">
       <Icon
