@@ -1,7 +1,7 @@
 import React from "react";
+import Inicio from "./(tabs)/(home)/startTrail";
 import "./global.css";
-import Inicio from "./inicio";
 
 export default function App() {
-  return <Inicio />;
+  return (<Inicio />);
 }
