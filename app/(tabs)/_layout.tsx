@@ -28,7 +28,7 @@ export default function TabsLayout() {
   const insets = useSafeAreaInsets();
 
   // Telas onde você quer esconder a TabBar (adicione/remova nomes aqui)
-  const HIDE_TABS_ON = new Set<string>(['detailTrail', 'aboutTrail']);
+  const HIDE_TABS_ON = new Set<string>(['detailTrail', 'aboutTrail', 'startTrail']);
   const hideTabBar = segments[0] === '(tabs)' && segments.some(s => HIDE_TABS_ON.has(String(s)));
 
   return (
