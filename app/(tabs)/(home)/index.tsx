@@ -3,8 +3,8 @@ import ParkCard from "@/components/ParkCards";
 import ReturnButton from "@/components/ReturnButton";
 import SearchBar from "@/components/SearchBar";
 import TextFont from "@/components/TextFont";
+import { api, getImageUrl } from "@/lib/api";
 import { EntityProps } from "@/types/Entity";
-import axios from "axios";
 import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Alert, FlatList, Platform, View } from "react-native";
@@ -16,23 +16,19 @@ export default function SelectPark() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    function fetchEntities() {
-      (async () => {
-        try {
-          const { data } = await axios.get<{
-            entities: EntityProps[];
-          }>("https://api.trilhainterativa.com.br/entities");
-          setAllEntities(data.entities);          
-          setEntities(data.entities);              
-          setLoading(false);
-        } catch (error) {
-          Alert.alert(
-            "Ocorreu um erro Inesperado \nPor favor, tente novamente mais tarde."
-          );
-        } finally {
-          setLoading(false);
-        }
-      })();
+    async function fetchEntities() {
+      try {
+        const entitiesData = await api.entities.getAll();
+        setAllEntities(entitiesData);
+        setEntities(entitiesData);
+      } catch (error: any) {
+        Alert.alert(
+          "Erro",
+          error?.message || "Ocorreu um erro inesperado.\nPor favor, tente novamente mais tarde."
+        );
+      } finally {
+        setLoading(false);
+      }
     }
     fetchEntities();
   }, []);
@@ -58,7 +54,7 @@ export default function SelectPark() {
             data={entities}
             renderItem={({ item: entity }) => (
               <ParkCard
-                image={"/" + entity.coverUrl}
+                image={getImageUrl(entity.coverUrl) || undefined}
                 name={entity.name}
                 complement={entity.nameComplement}
                 address={entity.address}
