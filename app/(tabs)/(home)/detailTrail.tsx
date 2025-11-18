@@ -10,12 +10,11 @@ import React from "react";
 import {
   FlatList,
   Image,
-  ImageBackground,
   Platform,
   ScrollView,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -45,7 +44,7 @@ function detailTrail() {
 
   function handleOnPressStart() {}
   return (
-    <SafeAreaView className="flex-1"  edges={Platform.OS === 'ios' ? ['top', 'bottom']: ['top']}>
+    <SafeAreaView className="flex-1"  edges={Platform.OS === 'android' ? ['top'] : []}>
       <ScrollView>
         <TrailHeader />
         <View className="p-6 gap-2">
