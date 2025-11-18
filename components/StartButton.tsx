@@ -1,9 +1,12 @@
 import Feather from "@expo/vector-icons/Feather";
+import { router } from "expo-router";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 function StartButton() {
-  function handleOnPressStart(): void {}
+  function handleOnPressStart(): void {
+    router.push(`/startTrail`);
+  }
 
   return (
     <View className="p-5 border-t border-forestGreen-500/50 mt-auto">
