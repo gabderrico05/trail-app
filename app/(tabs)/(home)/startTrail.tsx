@@ -1,9 +1,8 @@
-import ReturnButton from "@/components/ReturnButton";
+import TrailHeader from "@/components/TrailHeader";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import React from "react";
 import {
-  Image,
-  ImageBackground,
+  Platform,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -11,45 +10,14 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-type ImgProps = {
-  src: any;
-};
-
-const images: ImgProps[] = [
-  { src: require("@/assets/imagem_trilha.jpg") },
-  { src: require("@/assets/imagem_trilha2.jpg") },
-  { src: require("@/assets/imagem_trilha3.jpg") },
-  { src: require("@/assets/imagem_trilha.jpg") },
-  { src: require("@/assets/imagem_trilha2.jpg") },
-  { src: require("@/assets/imagem_trilha3.jpg") },
-];
 
 function startTrail() {
 
   function handleOnPressStart() {}
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top', 'bottom']: ['top']}>
       <ScrollView>
-        <ImageBackground
-          className="p-6"
-          style={{ height: "auto", width: "100%" }}
-          source={require("@/assets/imageTrilha.jpg")}
-          resizeMode="cover"
-        >
-          <View className="w-full ">
-            <ReturnButton buttonType="secondary" />
-          </View>
-          <View className="bg-white items-center p-2 px-4 mt-4 rounded-2xl flex-row">
-            <Text className="text-forestGreen-500 font-bold mr-auto">
-              Trilha da Pedra Branca
-            </Text>
-            <Image
-              source={require("@/assets/parqueEstadual.png")}
-              style={{ width: 50, height: 50 }}
-              resizeMode="contain"
-            />
-          </View>
-        </ImageBackground>
+        <TrailHeader />
         <View className="p-6 gap-2">
           <View className="flex-row items-center ">
             <MaterialCommunityIcons name="check-circle" size={50} color="forestGreen-500" />
