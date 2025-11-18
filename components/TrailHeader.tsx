@@ -21,7 +21,7 @@ function TrailHeader() {
             source={require("@/assets/parqueEstadual.png")}
             style={{ width: 50, height: 50 }}
             resizeMode="contain"
-            />
+          />
         </View>
       </View>
     </ImageBackground>

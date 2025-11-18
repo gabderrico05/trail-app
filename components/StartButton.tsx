@@ -5,7 +5,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 function StartButton() {
   function handleOnPressStart(): void {
-    router.push(`/startTrail`);
+    router.push(`/detailPoint`);
   }
 
   return (
