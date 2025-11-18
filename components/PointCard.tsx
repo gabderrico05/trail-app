@@ -22,12 +22,12 @@ export default function ParkCard({
       onPress={onPress}
       onPressIn={() => setPressed(true)}
       onPressOut={() => setPressed(false)}
-      className={`flex-row min-h-fit items-center rounded-xl p-3 mb-3 border-2 ${
+      className={`flex-col min-h-fit items-center rounded-xl p-3 mb-3 border-2 ${
         pressed ? "border-butterYellow" : "border-gray-300"
       } mr-9 ml-9`}
     >
       <View
-           className="w-[35%] h-24 rounded-2xl items-center ml-2 mr-10 bg-gray-300">
+           className="w-full h-24 rounded-2xl items-center mx-3 bg-gray-300">
         {image && (
           <Image 
             source={{ uri: image }}
@@ -37,7 +37,7 @@ export default function ParkCard({
           />
         )}
       </View>
-      <View className="flex-1"><Text className="text-2xl font-semibold text-gray-900">{name}</Text></View>
+      <View><Text className="text-xl font-semibold text-gray-900">{name}</Text></View>
     </Pressable>
   );
 }
