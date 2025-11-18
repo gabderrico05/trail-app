@@ -28,9 +28,6 @@ export default function SelectTrail() {
 
       <View
         className="flex-1 bg-white"
-        style={{
-          paddingBottom: insets.bottom,
-        }}
       >
         <FlatList
           ListHeaderComponent={

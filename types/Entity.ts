@@ -8,6 +8,7 @@ export interface EntityProps {
   city: string;
   state: string;
   phone: number;
+  coverUrl: string;
   nameComplement: string;
   addressComplement: string;
 }
