@@ -48,7 +48,7 @@ export default function EntityBanner(parkData: any) {
                  <TextFont
                   className="font-regular mt-1"
                   >
-                    {parkData && parkData.complement}
+                    {parkData && parkData.nameComplement}
                  </TextFont>
             </View>
             
