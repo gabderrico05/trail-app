@@ -5,7 +5,7 @@ import ReturnButton from "./ReturnButton";
 function TrailHeader() {
   return (
     <ImageBackground
-      style={{ height: "auto", width: "100%" }}
+      style={{ height: "auto", width: "auto" }}
       source={require("@/assets/imageTrilha.jpg")}
       resizeMode="cover"
     >
