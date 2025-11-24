@@ -23,6 +23,7 @@ module.exports = {
         },
         burntOrange: "#BF360C",
         butterYellow: "#FFE489",
+        lemnonYellow: "#FFF8E1",
         forestGreen: {
           400: "#2A6A59",
           500: "#113D31",
