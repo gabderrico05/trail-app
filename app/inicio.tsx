@@ -6,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 function inicio() {
   return (
-    <SafeAreaView className="flex-1  bg-butterYellow items-center py-10">
+    <SafeAreaView className="flex-1 bg-butterYellow items-center py-10">
       <StatusBar backgroundColor="#000" translucent barStyle="dark-content" />
       <LogoApp />
       <Text className=" text-forestGreen-500 text-xl font-bold my-5">
