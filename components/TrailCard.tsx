@@ -1,9 +1,9 @@
 import Feather from "@expo/vector-icons/Feather";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { Image } from "expo-image";
 import { router } from "expo-router";
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { useEffect } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import LevelIcon from "../assets/level_icon.svg";
 
 const TrailCard = ({
@@ -22,16 +22,29 @@ const TrailCard = ({
   detailLink: string;
 }) => {
   function handleOnPressStart() {}
-
+  useEffect(() => {
+    console.log(imgSrc);
+  }, [imgSrc]);
   function handleOnPressDetails() {
     router.push(`/detailTrail`);
   }
   return (
     <View className="w-full max-h-min bg-white rounded-2xl overflow-hidden my-2.5 shadow-lg p-4 border border-black/20">
-      <Image
-        source={require("../assets/imagem_trilha.jpg")}
-        style={{ width: "100%", height: 128, borderRadius: 12 }}
-      />
+      <View className="w-full h-32 rounded-xl bg-slate-200 relative">
+        {!imgSrc && (
+          <FontAwesome6
+            name="image"
+            size={24}
+            color="#cbd5e1"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          />
+        )}
+        <Image
+          source={{ uri: imgSrc }}
+          resizeMode="cover"
+          style={{ width: "100%", height: 128, borderRadius: 12 }}
+        />
+      </View>
 
       <View className=" w-full pt-1">
         <Text className="text-xl font-bold mb-2 text-forestGreen-500">

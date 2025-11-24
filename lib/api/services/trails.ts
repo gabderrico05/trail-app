@@ -6,9 +6,6 @@ export interface ListTrailsResponse {
   trails: TrailProps[];
 }
 
-export interface GetTrailParams {
-  entityId?: number;
-}
 
 /**
  * Service for trail related API calls
@@ -16,13 +13,11 @@ export interface GetTrailParams {
 export const trailsService = {
   /**
    * Get all trails, optionally filtered by entity ID
-   * @param params - Optional parameters for filtering
+   * @entityId entityId - An entity ID to filter trails
    * @returns Promise with list of trails
    */
-  async getAll(params?: GetTrailParams): Promise<TrailProps[]> {
-    const { data } = await apiClient.get<ListTrailsResponse>("/trails", {
-      params,
-    });
+  async getAll(entityId: number): Promise<TrailProps[]> {
+    const { data } = await apiClient.get<ListTrailsResponse>("/trails/" + entityId);
     return data.trails;
   },
 
