@@ -33,8 +33,6 @@ export default function TabsLayout() {
   const bottomPadding = Math.max(insets.bottom, 8);
 
   return (
-   
-    
     <Tabs
       screenOptions={{
         headerShown: false,

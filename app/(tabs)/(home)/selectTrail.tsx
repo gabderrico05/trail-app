@@ -1,21 +1,44 @@
 import EntityBanner from "@/components/EntityBanner";
 import SearchBar from "@/components/SearchBar";
 import TrailCard from "@/components/TrailCard";
-import trails from "@/db-mock/trilhas.json";
+import { api, getImageUrl } from "@/lib/api";
+import { EntityProps } from "@/types/Entity";
+import { TrailProps } from "@/types/Trail";
 import { useLocalSearchParams } from "expo-router";
-import React, { useState } from "react";
-import { FlatList, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, Alert, FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 
 export default function SelectTrail() {
-  const trailData = trails;
   const { park } = useLocalSearchParams<{ park: string }>();
-  const parkData = park ? JSON.parse(park) : undefined;
+  const parkData: EntityProps | undefined = park ? JSON.parse(park) : undefined;
 
   const insets = useSafeAreaInsets();
 
-  const [filteredTrails, setFilteredTrails] = useState(trailData);
+  const [allTrails, setAllTrails] = useState<TrailProps[]>([]);
+  const [filteredTrails, setFilteredTrails] = useState<TrailProps[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchTrails() {
+      try {
+        const trailsData = await api.trails.getAll(
+          parkData ? { entityId: parkData.id } : undefined
+        );
+        setAllTrails(trailsData);
+        setFilteredTrails(trailsData);
+      } catch (error: any) {
+        Alert.alert(
+          "Erro",
+          error?.message || "Ocorreu um erro ao carregar as trilhas.\nPor favor, tente novamente."
+        );
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchTrails();
+  }, [parkData?.id]);
 
   return (
     <>
@@ -29,35 +52,46 @@ export default function SelectTrail() {
       <View
         className="flex-1 bg-white"
       >
-        <FlatList
-          ListHeaderComponent={
-            <View>
-              <EntityBanner {...parkData} />
+        {loading ? (
+          <View className="flex-1 items-center justify-center">
+            <ActivityIndicator size="large" color={"#113D31"} />
+          </View>
+        ) : (
+          <FlatList
+            ListHeaderComponent={
+              <View>
+                <EntityBanner
+                  name={parkData?.name}
+                  nameComplement={parkData?.nameComplement}
+                  image={getImageUrl(parkData?.coverUrl)}
+                />
 
-              <View className="mx-5 mt-7 mb-4">
-                <SearchBar
-                  data={trailData}
-                  onFiltered={setFilteredTrails}
-                  filterKey={"name"}
+                <View className="mx-5 mt-7 mb-4">
+                  <SearchBar
+                    data={allTrails}
+                    onFiltered={setFilteredTrails}
+                    filterKey={"name"}
+                  />
+                </View>
+              </View>
+            }
+            className="flex-1"
+            data={filteredTrails}
+            renderItem={({ item }) => (
+              <View className="max-w-full mx-5">
+                <TrailCard
+                  title={item.name}
+                  imgSrc={getImageUrl(item.coverUrl) || ""}
+                  distance={`${item.distance} km`}
+                  time={`${item.duration} min`}
+                  level={item.difficulty}
+                  detailLink={`/detailTrail`}
                 />
               </View>
-            </View>
-          }
-          className="flex-1"
-          data={filteredTrails}
-          renderItem={({ item }) => (
-            <View className="max-w-full mx-5">
-              <TrailCard
-                title={item.name}
-                imgSrc={"@/assets/" + item.imgSrc}
-                distance={item.distance}
-                time={item.estimated_time}
-                level={item.level}
-                detailLink={`/trailDetails?park=`}
-              ></TrailCard>
-            </View>
-          )}
-        />
+            )}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        )}
       </View>
     </>
   );
