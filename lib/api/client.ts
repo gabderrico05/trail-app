@@ -1,8 +1,7 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
-import Constants from "expo-constants";
+import axios, { AxiosError, AxiosInstance } from "axios";
 
-const API_URL = Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL || process.env.EXPO_PUBLIC_API_URL || "";
-const IMAGE_BASE_URL = Constants.expoConfig?.extra?.EXPO_PUBLIC_IMAGE_BASE_URL || process.env.EXPO_PUBLIC_IMAGE_BASE_URL || "";
+const API_URL = process.env.EXPO_PUBLIC_API_URL || "";
+const IMAGE_BASE_URL = process.env.EXPO_PUBLIC_IMAGE_BASE_URL || "";
 
 /**
  * Axios instance configured with base API URL
@@ -92,4 +91,5 @@ export function getImageUrl(imagePath: string | null | undefined): string | null
   return `${IMAGE_BASE_URL}${imagePath}`;
 }
 
-export { apiClient, API_URL, IMAGE_BASE_URL };
+export { API_URL, apiClient, IMAGE_BASE_URL };
+

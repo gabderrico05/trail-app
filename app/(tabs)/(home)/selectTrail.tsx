@@ -12,7 +12,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function SelectTrail() {
   const { park } = useLocalSearchParams<{ park: string }>();
-  const parkData: EntityProps | undefined = park ? JSON.parse(park) : undefined;
+  const parkData: EntityProps = JSON.parse(park);
+  console.log(parkData.id);
 
   const insets = useSafeAreaInsets();
 
@@ -23,11 +24,10 @@ export default function SelectTrail() {
   useEffect(() => {
     async function fetchTrails() {
       try {
-        const trailsData = await api.trails.getAll(
-          parkData ? { entityId: parkData.id } : undefined
-        );
+        const trailsData = await api.trails.getAll(parkData.id);
         setAllTrails(trailsData);
         setFilteredTrails(trailsData);
+        console.log(trailsData);
       } catch (error: any) {
         Alert.alert(
           "Erro",
