@@ -24,7 +24,7 @@ const [fontsLoaded] = useFonts({
 
   return (
 
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{ elevation: 0, flex: 1 }}>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" options={{headerShown: false,}} />
         <Stack.Screen name="inicio"  options={{headerShown: false,}} />
