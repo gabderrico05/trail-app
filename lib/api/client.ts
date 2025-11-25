@@ -68,7 +68,8 @@ apiClient.interceptors.response.use(
     } else if (error.request) {
       // Request made but no response received
       return Promise.reject({
-        message: "Não foi possível conectar ao servidor. Verifique sua conexão.",
+        message:
+          "Não foi possível conectar ao servidor. Verifique sua conexão.",
         code: error.code,
       });
     } else {
@@ -86,10 +87,11 @@ apiClient.interceptors.response.use(
  * @param imagePath - The relative image path from the API
  * @returns Full image URL or null if path is null/empty
  */
-export function getImageUrl(imagePath: string | null | undefined): string | null {
+export function getImageUrl(
+  imagePath: string | null | undefined
+): string | null {
   if (!imagePath) return null;
   return `${IMAGE_BASE_URL}${imagePath}`;
 }
 
 export { API_URL, apiClient, IMAGE_BASE_URL };
-

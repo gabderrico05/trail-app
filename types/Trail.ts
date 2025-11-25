@@ -8,4 +8,5 @@ export interface TrailProps {
   difficulty: "fácil" | "moderado" | "difícil";
   safetyTips: string;
   coverUrl: string | null;
+  gallery: { id: number; url: string; uuid: string }[];
 }

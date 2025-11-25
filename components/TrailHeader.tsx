@@ -2,11 +2,19 @@ import React from "react";
 import { Image, ImageBackground, Text, View } from "react-native";
 import ReturnButton from "./ReturnButton";
 
-function TrailHeader() {
+function TrailHeader({
+  name,
+  imgSrc,
+  parkImage,
+}: {
+  name?: string;
+  imgSrc?: string | null;
+  parkImage?: string | null;
+}) {
   return (
     <ImageBackground
       style={{ height: "auto", width: "auto" }}
-      source={require("@/assets/imageTrilha.jpg")}
+      source={{ uri: imgSrc || undefined }}
       resizeMode="cover"
     >
       <View className="p-6">
@@ -15,10 +23,10 @@ function TrailHeader() {
         </View>
         <View className="bg-white items-center p-2 px-4 mt-4 rounded-2xl flex-row">
           <Text className="text-forestGreen-500 font-bold mr-auto">
-            Trilha da Pedra Branca
+            {name || "Nome da trilha"}
           </Text>
           <Image
-            source={require("@/assets/parqueEstadual.png")}
+            source={{ uri: parkImage || undefined }}
             style={{ width: 50, height: 50 }}
             resizeMode="contain"
           />

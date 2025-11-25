@@ -1,7 +1,6 @@
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { router } from "expo-router";
 import React, { useEffect } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import LevelIcon from "../assets/level_icon.svg";
@@ -12,22 +11,19 @@ const TrailCard = ({
   time,
   distance,
   level,
-  detailLink,
+  onPressDetails,
 }: {
   imgSrc: string;
   title: string;
   time: string;
   distance: string;
   level: string;
-  detailLink: string;
+  onPressDetails: () => void;
 }) => {
   function handleOnPressStart() {}
   useEffect(() => {
     console.log(imgSrc);
   }, [imgSrc]);
-  function handleOnPressDetails() {
-    router.push(`/detailTrail`);
-  }
   return (
     <View className="w-full max-h-min bg-white rounded-2xl overflow-hidden my-2.5 shadow-lg p-4 border border-black/20">
       <View className="w-full h-32 rounded-xl bg-slate-200 relative">
@@ -80,7 +76,7 @@ const TrailCard = ({
         {/* Botões */}
         <TouchableOpacity
           className="bg-[#FDECB9] py-3 rounded-xl items-center mb-2.5"
-          onPress={handleOnPressDetails}
+          onPress={onPressDetails}
         >
           <Text className="text- font-medium text-forestGreen-500">
             Ver mais detalhes
