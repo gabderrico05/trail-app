@@ -3,7 +3,7 @@ import { router } from "expo-router";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-function StartButton() {
+function StartButton({ text = "Iniciar" }: { text?: string }) {
   function handleOnPressStart(): void {
     router.push(`/detailPoint`);
   }
@@ -15,7 +15,7 @@ function StartButton() {
         activeOpacity={0.7}
         className="bg-forestGreen-400 flex-row items-center justify-end py-5 rounded-2xl pr-3 mx-5"
       >
-        <Text className="text-white text-lg font-bold mr-1">Iniciar</Text>
+        <Text className="text-white text-lg font-bold mr-1">{text}</Text>
         <Feather name="chevron-right" size={24} color="white" />
       </TouchableOpacity>
     </View>

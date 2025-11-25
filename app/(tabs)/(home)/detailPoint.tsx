@@ -1,7 +1,6 @@
 import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { router } from "expo-router";
 import React from "react";
 import {
   FlatList,
@@ -9,7 +8,6 @@ import {
   ImageBackground,
   ScrollView,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -48,17 +46,16 @@ function detailPoint() {
           resizeMode="cover"
         >
           <View className="px-6 pb-6">
-            <View className="flex-row gap-4 items-center justify-center">
-              <View className="">
-                <ReturnButton buttonType="secondary" />
-              </View>
-              <View className="bg-white items-center px-4 mt-4 rounded-3xl flex-row">
+            <View className="flex-row gap-4 items-center justify-center mt-4">
+              <ReturnButton buttonType="secondary" />
+
+              <View className="bg-white items-center px-6 rounded-3xl flex-row">
                 <Text className="text-forestGreen-500 font-bold mr-auto">
                   Trilha da Pedra Branca
                 </Text>
                 <Image
                   source={require("@/assets/parqueEstadual.png")}
-                  style={{ width: 50, height: 50 }}
+                  style={{ width: 40, height: 40 }}
                   resizeMode="contain"
                 />
               </View>
@@ -95,13 +92,8 @@ function detailPoint() {
             keyExtractor={(_, index) => index.toString()}
           />
         </View>
-
-        <TouchableOpacity
-          className="bg-forestGreen-500 p-6 flex-row items-center justify-between"
-          onPress={() => router.push("/(tabs)/(home)/interestPoints")}
-        ></TouchableOpacity>
       </ScrollView>
-      <StartButton />
+      <StartButton text="Registrar" />
     </SafeAreaView>
   );
 }

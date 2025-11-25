@@ -1,7 +1,7 @@
 import React from "react";
+import DetailPoint from "./(tabs)/(home)/detailPoint";
 import "./global.css";
-import Inicio from "./inicio";
 
 export default function App() {
-  return (<Inicio />);
+  return <DetailPoint />;
 }
