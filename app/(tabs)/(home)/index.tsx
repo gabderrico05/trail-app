@@ -21,6 +21,7 @@ export default function SelectPark() {
         const entitiesData = await api.entities.getAll();
         setAllEntities(entitiesData);
         setEntities(entitiesData);
+        console.log(entitiesData);
       } catch (error: any) {
         Alert.alert(
           "Erro",

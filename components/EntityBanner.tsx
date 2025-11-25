@@ -21,8 +21,8 @@ export default function EntityBanner(parkData: any) {
                   <View className="bg-white w-40 h-40 rounded-2xl items-center justify-center overflow-hidden">
                     <Image
                       source={{ uri: parkData.image }}
-                      className="w-32 h-32"
-                      resizeMode="contain"
+                      className="full w-full h-full rounded-2xl"
+                      resizeMode="cover"
                       onError={() => setImageLoaded(false)}
                       onLoad={() => setImageLoaded(true) }
                     />

@@ -11,6 +11,9 @@
  * const imageUrl = getImageUrl(entity.coverUrl);
  */
 
+import { entitiesService } from "./services/entities";
+import { trailsService } from "./services/trails";
+
 export { apiClient, getImageUrl, API_URL, IMAGE_BASE_URL } from "./client";
 export { entitiesService } from "./services/entities";
 export { trailsService } from "./services/trails";
