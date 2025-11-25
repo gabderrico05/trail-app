@@ -3,5 +3,5 @@ import Inicio from "./(tabs)/(home)/endTrail";
 import "./global.css";
 
 export default function App() {
-  return (<Inicio />);
+  return <Inicio />;
 }
