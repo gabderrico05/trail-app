@@ -4,16 +4,14 @@ import TrailCard from "@/components/TrailCard";
 import { api, getImageUrl } from "@/lib/api";
 import { EntityProps } from "@/types/Entity";
 import { TrailProps } from "@/types/Trail";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Alert, FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-
 export default function SelectTrail() {
   const { park } = useLocalSearchParams<{ park: string }>();
   const parkData: EntityProps = JSON.parse(park);
-  console.log(parkData.id);
 
   const insets = useSafeAreaInsets();
 
@@ -27,11 +25,11 @@ export default function SelectTrail() {
         const trailsData = await api.trails.getAll(parkData.id);
         setAllTrails(trailsData);
         setFilteredTrails(trailsData);
-        console.log(trailsData);
       } catch (error: any) {
         Alert.alert(
           "Erro",
-          error?.message || "Ocorreu um erro ao carregar as trilhas.\nPor favor, tente novamente."
+          error?.message ||
+            "Ocorreu um erro ao carregar as trilhas.\nPor favor, tente novamente."
         );
       } finally {
         setLoading(false);
@@ -49,9 +47,7 @@ export default function SelectTrail() {
         }}
       />
 
-      <View
-        className="flex-1 bg-white"
-      >
+      <View className="flex-1 bg-white">
         {loading ? (
           <View className="flex-1 items-center justify-center">
             <ActivityIndicator size="large" color={"#113D31"} />
@@ -85,7 +81,15 @@ export default function SelectTrail() {
                   distance={`${item.distance} km`}
                   time={`${item.duration} min`}
                   level={item.difficulty}
-                  detailLink={`/detailTrail`}
+                  onPressDetails={() => {
+                    router.push({
+                      pathname: "/detailTrail",
+                      params: {
+                        rawTrailData: JSON.stringify(item),
+                        parkImage: getImageUrl(parkData?.coverUrl) || "",
+                      },
+                    });
+                  }}
                 />
               </View>
             )}

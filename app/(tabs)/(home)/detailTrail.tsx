@@ -1,12 +1,14 @@
 import LevelIcon from "@/assets/level_icon.svg";
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
+import { api, getImageUrl } from "@/lib/api";
+import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
-import { router } from "expo-router";
-import React from "react";
+import { router, useLocalSearchParams } from "expo-router";
+import React, { useEffect, useState } from "react";
 import {
   FlatList,
   Image,
@@ -14,29 +16,34 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-type ImgProps = {
-  src: any;
-};
-
-const images: ImgProps[] = [
-  { src: require("@/assets/imagem_trilha.jpg") },
-  { src: require("@/assets/imagem_trilha2.jpg") },
-  { src: require("@/assets/imagem_trilha3.jpg") },
-  { src: require("@/assets/imagem_trilha.jpg") },
-  { src: require("@/assets/imagem_trilha2.jpg") },
-  { src: require("@/assets/imagem_trilha3.jpg") },
-];
-
 function detailTrail() {
-  const renderItem = ({ item }: { item: ImgProps }) => {
+  const { rawTrailData, parkImage } = useLocalSearchParams<{
+    rawTrailData: string;
+    parkImage: string;
+  }>();
+  const trailData: TrailProps = JSON.parse(rawTrailData);
+  const [trail, setTrail] = useState<TrailProps | null>(null);
+
+  useEffect(() => {
+    async function fetchTrailData() {
+      const data = await api.trails.getById(trailData.id);
+      setTrail(data);
+    }
+    fetchTrailData();
+  }, []);
+
+  console.log(trailData);
+
+  const renderItem = ({ item }: { item: TrailProps["gallery"][0] }) => {
+    console.log(item.url);
     return (
       <Image
         className="rounded-2xl mr-2"
-        source={item.src}
+        source={{ uri: getImageUrl(item.url) || undefined }}
         style={{ width: 150, height: 190 }}
       />
     );
@@ -44,14 +51,21 @@ function detailTrail() {
 
   function handleOnPressStart() {}
   return (
-    <SafeAreaView className="flex-1"  edges={Platform.OS === 'android' ? ['top', 'bottom'] : ['bottom']}>
+    <SafeAreaView
+      className="flex-1"
+      edges={Platform.OS === "android" ? ["top", "bottom"] : ["bottom"]}
+    >
       <ScrollView>
-        <TrailHeader />
+        <TrailHeader
+          name={trail?.name}
+          imgSrc={getImageUrl(trail?.coverUrl)}
+          parkImage={parkImage}
+        />
         <View className="p-6 gap-2">
           <View className="flex-row items-center ">
             <MaterialCommunityIcons name="clock" size={14} color="#BF360C" />
             <Text className="text-forestGreen-500 font-medium ml-2">
-              Tempo Estimado
+              {trail?.duration} min
             </Text>
           </View>
           <View className="flex-row items-center">
@@ -61,12 +75,14 @@ function detailTrail() {
               color="#BF360C"
             />
             <Text className="text-forestGreen-500 font-medium ml-2">
-              Distância
+              {trail?.distance} km
             </Text>
           </View>
           <View className="flex-row items-center">
             <LevelIcon width={14} height={14} />
-            <Text className="text-forestGreen-500 font-medium ml-2">Nível</Text>
+            <Text className="text-forestGreen-500 font-medium ml-2">
+              {trail?.difficulty}
+            </Text>
           </View>
         </View>
         <View className="bg-[#85808028] p-6">
@@ -74,9 +90,7 @@ function detailTrail() {
             Descrição
           </Text>
           <Text className="text-black font-semibold m-1 text-justify text-xs">
-            A Trilha leva você a um dos melhores pontos de observação da baía. O
-            percurso é sombreado pela mata e possui trechos com pequenas
-            subidas.
+            {trail?.shortDescription}
           </Text>
         </View>
         <View className="bg-[#FFE489] pl-6 py-6 ">
@@ -84,7 +98,7 @@ function detailTrail() {
             Imagens
           </Text>
           <FlatList
-            data={images}
+            data={trail?.gallery}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             renderItem={renderItem}
@@ -138,16 +152,7 @@ function detailTrail() {
           </View>
 
           <Text className=" font-semibold text-xs  m-1">
-            Use calçados adequados. Prefira tênis ou botas com sola
-            antiderrapante para evitar escorregões.
-          </Text>
-          <Text className=" font-semibold text-xs  m-1">
-            Leve água e lanches leves. Mantenha-se hidratado e faça pequenas
-            pausas para se alimentar.
-          </Text>
-          <Text className=" font-semibold text-xs  m-1">
-            Não se afaste da trilha marcada. Trilhas secundárias podem ser
-            perigosas e dificultar a localização em caso de emergência.
+            {trail?.safetyTips}
           </Text>
         </View>
       </ScrollView>
