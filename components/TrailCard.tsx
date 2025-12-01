@@ -1,6 +1,7 @@
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { router } from "expo-router";
 import React, { useEffect } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import LevelIcon from "../assets/level_icon.svg";
@@ -19,8 +20,11 @@ const TrailCard = ({
   distance: string;
   level: string;
   onPressDetails: () => void;
+  onPressStart?: () => void;
 }) => {
-  function handleOnPressStart() {}
+  function handleOnPressStart() {
+    router.push("/startTrail");
+  }
   useEffect(() => {
     console.log(imgSrc);
   }, [imgSrc]);
