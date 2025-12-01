@@ -49,6 +49,7 @@ export default function TabsLayout() {
     "aboutTrail",
     "startTrail",
     "detailPoint",
+    "landmarks",
   ]);
   const hideTabBar =
     segments[0] === "(tabs)" &&
