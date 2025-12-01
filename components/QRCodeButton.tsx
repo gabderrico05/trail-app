@@ -1,28 +1,34 @@
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { router } from "expo-router";
+import { cn } from "@/lib/utils";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
+import QRCode from "../assets/QRCode.svg";
 
-function QRCodeButton({ text = "Iniciar" }: { text?: string }) {
-  function handleOnPressStart(): void {
-  router.push(`/qrCode`);
-  }
+interface QRCodeButtonProps {
+  className?: string;
+  onPress?: () => void;
+}
+
+const QRCodeButton = ({ className,  onPress}: QRCodeButtonProps ) => {
+
+    const handlePress = () => {
+        
+       
+          
+        
+      };
 
   return (
-    <View className="p-5 border-t border-forestGreen-500/50 mt-auto">
 
-      <TouchableOpacity
-          onPress={handleOnPressStart}
-          activeOpacity={0.7}
-          className="bg-forestGreen-400 flex-row items-center justify-center py-4 rounded-2xl pr-3 mx-5"
-        >
-           <MaterialCommunityIcons name="qrcode" size={30} color="white" /> 
-          <Text className="text-white text-lg font-bold ml-5">Ler QR Code</Text>
-    </TouchableOpacity>
+<TouchableOpacity onPress={handlePress} className={cn(`w-14 h-14 items-center justify-center rounded-lg bg-forestGreen-600`, className)} activeOpacity={0.7}>
 
+    <View className='items-center justify-center'>
+        <QRCode width={32} height={32} />
     </View>
-    
+        
+</TouchableOpacity >
+
   );
-}
+};
+
 
 export default QRCodeButton;

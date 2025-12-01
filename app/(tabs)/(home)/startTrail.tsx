@@ -1,4 +1,3 @@
-import QRCodeButton from "@/components/QRCodeButton";
 import TrailHeader from "@/components/TrailHeader";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import React from "react";
@@ -6,6 +5,7 @@ import {
   Platform,
   ScrollView,
   Text,
+  TouchableOpacity,
   View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -45,9 +45,16 @@ function startTrail() {
           </View>
         </View>
       </ScrollView>
-      
-        <QRCodeButton />
-      
+      <View className="p-5 border-t border-forestGreen-500/50">
+        <TouchableOpacity
+          onPress={handleOnPressStart}
+          activeOpacity={0.7}
+          className="bg-forestGreen-400 flex-row items-center justify-center py-5 rounded-2xl pr-3 mx-5"
+        >
+           <MaterialCommunityIcons name="qrcode" size={40} color="white" /> 
+          <Text className="text-white text-2xl font-bold ml-5">Ler QR Code</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
