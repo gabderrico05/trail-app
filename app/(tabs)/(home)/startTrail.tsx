@@ -15,7 +15,7 @@ function startTrail() {
 
   function handleOnPressStart() {}
   return (
-    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top', 'bottom']: ['top', 'bottom']}>
+    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
       <ScrollView>
         <TrailHeader />
         <View className="p-6 gap-2">

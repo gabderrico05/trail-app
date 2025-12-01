@@ -3,9 +3,9 @@ import { router } from "expo-router";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-function StartButton({ text = "Iniciar" }: { text?: string }) {
+function StartButton({ text = "Iniciar", onPress }: { text?: string, onPress?: () => void }) {
   function handleOnPressStart(): void {
-    router.push(`/detailPoint`);
+    onPress ? onPress() : router.push(`/startTrail`);
   }
 
   return (

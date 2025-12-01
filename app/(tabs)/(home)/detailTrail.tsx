@@ -53,7 +53,7 @@ function detailTrail() {
   return (
     <SafeAreaView
       className="flex-1"
-      edges={Platform.OS === "android" ? ["top", "bottom"] : ["bottom"]}
+      edges={Platform.OS === "android" ? ["top", "bottom"] : ["top"]}
     >
       <ScrollView>
         <TrailHeader
@@ -156,7 +156,7 @@ function detailTrail() {
           </Text>
         </View>
       </ScrollView>
-      <StartButton />
+      <StartButton onPress={() => router.push('/(tabs)/(home)/startTrail')} /> 
     </SafeAreaView>
   );
 }

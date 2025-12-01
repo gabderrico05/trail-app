@@ -1,6 +1,10 @@
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { CameraView, CameraViewProps } from "expo-camera";
-import { Dimensions, Linking, View } from "react-native";
+import { useState } from "react";
+import { Dimensions, Linking, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import ReturnButton from './ReturnButton';
+0
 
 type QRScannerProps = CameraViewProps & {
   onScan?: (data: string) => void;
@@ -9,6 +13,7 @@ type QRScannerProps = CameraViewProps & {
 export default function QRScanner({ onScan, ...rest }: QRScannerProps) {
   const { width, height } = Dimensions.get("window");
   const insets = useSafeAreaInsets();
+  const [torchOn, setTorchOn] = useState(false);
 
   // Layout constants
   const CUTOUT_SIZE = Math.min(width, height) * 0.6;
@@ -48,8 +53,19 @@ export default function QRScanner({ onScan, ...rest }: QRScannerProps) {
         style={{ flex: 1 }}
         barcodeScannerSettings={{ barcodeTypes: ["qr"] }}
         onBarcodeScanned={handleScan}
+        enableTorch={torchOn}
         {...rest}
       />
+
+      <TouchableOpacity className="absolute top-14 right-8 h-14 w-14 bg-white rounded-full z-20" onPress={() => setTorchOn(!torchOn)}>
+        <View className='flex-1 items-center justify-center pt-0.5 pl-0.5'>
+          <FontAwesome5  name="bolt" size={28} color={torchOn? "green" : "black"} />
+        </View>
+      </TouchableOpacity>
+
+      <View className='absolute top-14 left-8 z-20 pt-1'>
+         <ReturnButton />
+      </View>
 
       {/* Overlays */}
       <View pointerEvents="none" className="absolute inset-0">

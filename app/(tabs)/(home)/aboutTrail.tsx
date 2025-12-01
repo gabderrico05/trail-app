@@ -1,12 +1,16 @@
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
 import Foundation from "@expo/vector-icons/Foundation";
-import { Text, View } from "react-native";
+import { Platform, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
 
 function aboutTrail() {
   return (
-    <View className="flex-1">
+    <SafeAreaView
+          className="flex-1"
+          edges={Platform.OS === "android" ? ["top", "bottom"] : ["top"]}
+        >
       <TrailHeader />
       <View className="bg-[#FFC500] flex-row p-6 items-center gap-4">
         <Foundation name="info" size={24} color="#113D31" />
@@ -33,7 +37,7 @@ function aboutTrail() {
       </View>
 
       <StartButton />
-    </View>
+    </SafeAreaView>
   );
 }
 
