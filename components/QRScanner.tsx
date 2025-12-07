@@ -1,49 +1,75 @@
+import { landmarksService, trailsService } from '@/lib/api';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { CameraView, CameraViewProps } from "expo-camera";
-import { useState } from "react";
-import { Dimensions, Linking, TouchableOpacity, View } from "react-native";
+import { router, useFocusEffect } from 'expo-router';
+import { useCallback, useState } from "react";
+import { Dimensions, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import QRCodeType from '../types/QRCode';
 import ReturnButton from './ReturnButton';
-0
 
 type QRScannerProps = CameraViewProps & {
-  onScan?: (data: string) => void;
 };
 
-export default function QRScanner({ onScan, ...rest }: QRScannerProps) {
+export default function QRScanner({ ...rest }: QRScannerProps) {
   const { width, height } = Dimensions.get("window");
   const insets = useSafeAreaInsets();
   const [torchOn, setTorchOn] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  // Layout constants
-  const CUTOUT_SIZE = Math.min(width, height) * 0.6;
-  const SAFE_BOTTOM = Math.max(insets.bottom, 8);
 
-  // Padding da área inferior onde ficam botões / textos
-  const BOTTOM_UI_HEIGHT = SAFE_BOTTOM + 40 + 14 + 10;
+  useFocusEffect(
+    useCallback(() => {
+      // Reset states quando a tela ganhar foco
+      setIsProcessing(false);
+      setError(null);
+      setTorchOn(false);
 
-  const verticalPadding = (height - CUTOUT_SIZE) / 2;
-  const horizontalPadding = (width - CUTOUT_SIZE) / 2;
-
-  const raise = height * 0.08; // Elevação opcional do recorte
-  const cutoutTop = Math.max(0, verticalPadding - raise);
-
-  const bottomOverlayHeight = Math.max(
-    0,
-    height - cutoutTop - CUTOUT_SIZE - BOTTOM_UI_HEIGHT
+      // Cleanup: desliga a lanterna quando sair da tela
+      return () => {
+        setTorchOn(false);
+      };
+    }, [])
   );
 
-  const handleScan = ({ data }: { data: string }) => {
-    if (!data) return;
 
-    if (onScan) {
-      onScan(data);
-      return;
-    }
+  async function handleScan (scanningResult: { data: string }) {
+    if (!scanningResult?.data) return;
 
-    // Comportamento padrão: tenta abrir o link SE for URL
-    if (data.startsWith("http")) {
-      Linking.openURL(data).catch(() => {});
+    setIsProcessing(true);
+
+    try {
+      const qrData: QRCodeType = JSON.parse(scanningResult.data);
+      if (qrData.type === 'trail') {
+
+        const trail = await trailsService.getById(qrData.id);
+
+        router.replace({
+          pathname: "/detailTrail",
+          params: {
+            rawTrailData: JSON.stringify(trail),
+          },
+       });
+       
+        
+      } else if (qrData.type === 'poi') {
+        
+        const poi = await landmarksService.getById(qrData.id);
+
+        router.replace({
+          pathname: "/startTrail",
+          params: {
+            rawLandmarkData: JSON.stringify(poi),
+          },
+       });
+        
+      }
+
+    } catch (error) {
+      console.error('Erro ao fazer parse do QR Code:', error);
+      setError('QR Code inválido');
+      setIsProcessing(false); // Libera para tentar novamente em caso de erro
     }
   };
 
@@ -52,66 +78,21 @@ export default function QRScanner({ onScan, ...rest }: QRScannerProps) {
       <CameraView
         style={{ flex: 1 }}
         barcodeScannerSettings={{ barcodeTypes: ["qr"] }}
-        onBarcodeScanned={handleScan}
+        onBarcodeScanned={isProcessing ? undefined : handleScan}
         enableTorch={torchOn}
         {...rest}
       />
 
-      <TouchableOpacity className="absolute top-14 right-8 h-14 w-14 bg-white rounded-full z-20" onPress={() => setTorchOn(!torchOn)}>
+      <TouchableOpacity className="absolute top-14 right-6 h-12 w-12 bg-white rounded-full z-20" onPress={() => setTorchOn(!torchOn)}>
         <View className='flex-1 items-center justify-center pt-0.5 pl-0.5'>
-          <FontAwesome5  name="bolt" size={28} color={torchOn? "green" : "black"} />
+          <FontAwesome5  name="bolt" size={26} color={torchOn? "#BF360C" : "black"} />
         </View>
       </TouchableOpacity>
 
-      <View className='absolute top-14 left-8 z-20 pt-1'>
+      <View className='absolute top-14 left-6 z-20'>
          <ReturnButton />
       </View>
-
-      {/* Overlays */}
-      <View pointerEvents="none" className="absolute inset-0">
-
-        {/* Superior */}
-        <View
-          className="absolute top-0 left-0 right-0 bg-black/60"
-          style={{height: cutoutTop }}
-        />
-
-        {/* Inferior */}
-        <View
-          className="absolute left-0 right-0 bottom-0 bg-black/60"
-          style={{ height: bottomOverlayHeight }}
-        />
-
-        {/* Laterais */}
-        <View
-          className="absolute left-0 bg-black/60"
-          style={{
-            top: cutoutTop,
-            width: horizontalPadding,
-            height: CUTOUT_SIZE,
-          }}
-        />
-
-        <View
-          className="absolute right-0 bg-black/60"
-          style={{
-            top: cutoutTop,
-            width: horizontalPadding,
-            height: CUTOUT_SIZE,
-          }}
-        />
-
-        {/* Área do recorte */}
-        <View
-          className="absolute rounded-lg"
-          style={{
-            top: cutoutTop,
-            left: horizontalPadding,
-            width: CUTOUT_SIZE,
-            height: CUTOUT_SIZE,
-          }}
-        />
-      </View>
+      
     </View>
   );
 }
