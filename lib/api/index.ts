@@ -14,8 +14,9 @@
 import { entitiesService } from "./services/entities";
 import { trailsService } from "./services/trails";
 
-export { apiClient, getImageUrl, API_URL, IMAGE_BASE_URL } from "./client";
+export { API_URL, apiClient, getImageUrl, IMAGE_BASE_URL } from "./client";
 export { entitiesService } from "./services/entities";
+export { landmarksService } from "./services/landmarks";
 export { trailsService } from "./services/trails";
 
 // Convenient unified API object
