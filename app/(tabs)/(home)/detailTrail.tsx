@@ -1,7 +1,7 @@
 import LevelIcon from "@/assets/level_icon.svg";
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
-import { api, getImageUrl } from "@/lib/api";
+import { getImageUrl, trailsService } from "@/lib/api";
 import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -30,8 +30,10 @@ function detailTrail() {
 
   useEffect(() => {
     async function fetchTrailData() {
-      const data = await api.trails.getById(trailData.id);
+      
+      const data = await trailsService.getById(trailData.id);
       setTrail(data);
+      console.log(data)
     }
     fetchTrailData();
   }, []);
@@ -156,7 +158,17 @@ function detailTrail() {
           </Text>
         </View>
       </ScrollView>
-      <StartButton onPress={() => router.push('/(tabs)/(home)/startTrail')} /> 
+      <StartButton 
+        onPress={() => {
+          if (!trail) return;
+          router.push({
+            pathname: "/(tabs)/(home)/startTrail",
+            params: { 
+              trail: JSON.stringify(trail),
+              parkImage: parkImage }
+          });
+        }} 
+      />
     </SafeAreaView>
   );
 }
