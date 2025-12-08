@@ -44,6 +44,7 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
       if (qrData.type === 'trail') {
 
         const trail = await trailsService.getById(qrData.id);
+        console.log(trail)
 
         router.replace({
           pathname: "/detailTrail",
@@ -83,13 +84,17 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
         {...rest}
       />
 
-      <TouchableOpacity className="absolute top-14 right-6 h-12 w-12 bg-white rounded-full z-20" onPress={() => setTorchOn(!torchOn)}>
+      <View className='z-20 absolute top-14 right-6 pt-1 pr-0.5'>
+
+      <TouchableOpacity className="h-12 w-12 bg-white rounded-full " onPress={() => setTorchOn(!torchOn)}>
         <View className='flex-1 items-center justify-center pt-0.5 pl-0.5'>
-          <FontAwesome5  name="bolt" size={26} color={torchOn? "#BF360C" : "black"} />
+          <FontAwesome5  name="bolt" size={24} color={torchOn? "#BF360C" : "black"} />
         </View>
       </TouchableOpacity>
 
-      <View className='absolute top-14 left-6 z-20'>
+       </View>
+
+      <View className='absolute top-14 left-6 z-20 '>
          <ReturnButton />
       </View>
       

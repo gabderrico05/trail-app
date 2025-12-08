@@ -1,3 +1,5 @@
+import { LandMarkProps } from "./Landmark";
+
 export interface TrailProps {
   id: number;
   name: string;
@@ -9,4 +11,5 @@ export interface TrailProps {
   safetyTips: string;
   coverUrl: string | null;
   gallery: { id: number; url: string; uuid: string }[];
+  pointsOfInterest: LandMarkProps[]
 }

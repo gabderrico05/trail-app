@@ -90,6 +90,14 @@ export default function SelectTrail() {
                       },
                     });
                   }}
+                  onPressStart={() => {
+                            router.push({
+                              pathname: "/(tabs)/(home)/startTrail",
+                              params: { 
+                                trail: JSON.stringify(item),
+                                parkImage: getImageUrl(parkData?.coverUrl) }
+                            });
+                          }} 
                 />
               </View>
             )}
