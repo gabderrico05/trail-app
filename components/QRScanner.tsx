@@ -1,10 +1,9 @@
-import { landmarksService, trailsService } from '@/lib/api';
+import { landmarksService } from '@/lib/api';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { CameraView, CameraViewProps } from "expo-camera";
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from "react";
-import { Dimensions, TouchableOpacity, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { TouchableOpacity, View } from "react-native";
 import QRCodeType from '../types/QRCode';
 import ReturnButton from './ReturnButton';
 
@@ -12,8 +11,6 @@ type QRScannerProps = CameraViewProps & {
 };
 
 export default function QRScanner({ ...rest }: QRScannerProps) {
-  const { width, height } = Dimensions.get("window");
-  const insets = useSafeAreaInsets();
   const [torchOn, setTorchOn] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -43,21 +40,21 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
       const qrData: QRCodeType = JSON.parse(scanningResult.data);
       if (qrData.type === 'trail') {
 
-        const trail = await trailsService.getById(qrData.id);
-        console.log(trail)
-
         router.replace({
           pathname: "/detailTrail",
           params: {
-            rawTrailData: JSON.stringify(trail),
+            trailId: String(qrData.id),
           },
        });
        
         
       } else if (qrData.type === 'poi') {
+
+        
+
         
         const poi = await landmarksService.getById(qrData.id);
-
+        
         router.replace({
           pathname: "/startTrail",
           params: {

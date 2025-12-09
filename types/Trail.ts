@@ -11,5 +11,6 @@ export interface TrailProps {
   safetyTips: string;
   coverUrl: string | null;
   gallery: { id: number; url: string; uuid: string }[];
-  pointsOfInterest: LandMarkProps[]
+  // Em algumas respostas da API de lista, este campo pode vir ausente
+  pointsOfInterest?: LandMarkProps[];
 }
