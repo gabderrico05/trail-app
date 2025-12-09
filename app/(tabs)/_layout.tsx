@@ -18,7 +18,7 @@ function TabIcon({
   title: string;
 }) {
   return (
-    <View className="pl-0.5 items-center justify-center pb-2">
+    <View className="pl-0.5 items-center justify-center pb-2 bg-white mb-4">
       <Icon
         width={35}
         height={35}
@@ -54,7 +54,7 @@ export default function TabsLayout() {
   const hideTabBar =
     segments[0] === "(tabs)" &&
     segments.some((s) => HIDE_TABS_ON.has(String(s)));
-  const bottomPadding = Math.max(insets.bottom, 8);
+  let bottomPadding = 0;
 
   return (
     <Tabs
@@ -68,8 +68,7 @@ export default function TabsLayout() {
             borderTopWidth: 2,
             alignItems: "center",
             marginBottom: bottomPadding,
-            paddingTop: 14,
-            height: 40,
+            paddingTop: 10,
             elevation: 0,
           },
           hideTabBar && { display: "none" },

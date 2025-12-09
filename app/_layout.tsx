@@ -3,10 +3,8 @@ import { Stack } from "expo-router";
 import { ActivityIndicator, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-
 export default function StackLayout() {
-
-const [fontsLoaded] = useFonts({
+  const [fontsLoaded] = useFonts({
     "Gabarito-Regular": require("../assets/fonts/Gabarito-Regular.ttf"),
     "Gabarito-Bold": require("../assets/fonts/Gabarito-Bold.ttf"),
     "Gabarito-ExtraBold": require("../assets/fonts/Gabarito-ExtraBold.ttf"),
@@ -23,16 +21,14 @@ const [fontsLoaded] = useFonts({
   }
 
   return (
-
-      <SafeAreaProvider style={{ elevation: 0, flex: 1 }}>
+    <SafeAreaProvider
+      style={{ elevation: 0, flex: 1, backgroundColor: "#fff" }}
+    >
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" options={{headerShown: false,}} />
-        <Stack.Screen name="inicio"  options={{headerShown: false,}} />
-        <Stack.Screen name="(tabs)"  options={{headerShown: false,}} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="inicio" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
-      </SafeAreaProvider>
-    
-
-    
+    </SafeAreaProvider>
   );
 }

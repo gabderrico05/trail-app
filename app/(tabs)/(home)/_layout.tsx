@@ -7,7 +7,10 @@ export default function HomeStack() {
       <Stack.Screen name="detailTrail" options={{ title: "Detalhes" }} />
       <Stack.Screen name="selectTrail" options={{ title: "Sobre" }} />
       <Stack.Screen name="aboutTrail" options={{ title: "Sobre a trilha" }} />
-      <Stack.Screen name="landmarks" options={{ title: "pontos de interesse" }} />
+      <Stack.Screen
+        name="landmarks"
+        options={{ title: "pontos de interesse" }}
+      />
       <Stack.Screen
         name="interestPoints"
         options={{ title: "Pontos de interesse" }}

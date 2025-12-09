@@ -18,7 +18,7 @@ function detailTrail() {
   console.log(trail);
   const trailData: TrailProps = JSON.parse(trail);
 
-  const landmarks: LandMarkProps[] = trailData.pointsOfInterest;
+  const landmarks: LandMarkProps[] = trailData.pointsOfInterest || [];
   return (
     <SafeAreaView className="flex-1">
       <ImageBackground
