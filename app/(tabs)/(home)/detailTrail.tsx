@@ -30,10 +30,9 @@ function detailTrail() {
 
   useEffect(() => {
     async function fetchTrailData() {
-      
       const data = await trailsService.getById(trailData.id);
       setTrail(data);
-      console.log(data)
+      console.log(data);
     }
     fetchTrailData();
   }, []);
@@ -51,7 +50,6 @@ function detailTrail() {
     );
   };
 
-  function handleOnPressStart() {}
   return (
     <SafeAreaView
       className="flex-1"
@@ -110,7 +108,15 @@ function detailTrail() {
 
         <TouchableOpacity
           className="bg-forestGreen-500 p-6 flex-row items-center justify-between"
-          onPress={() => router.push("/(tabs)/(home)/landmarks")}
+          onPress={() =>
+            router.push({
+              pathname: "/(tabs)/(home)/landmarks",
+              params: {
+                trail: JSON.stringify(trail),
+                parkImage: parkImage,
+              },
+            })
+          }
         >
           <View className="flex-row items-center gap-4">
             <Ionicons name="analytics-outline" size={24} color="white" />
@@ -158,16 +164,17 @@ function detailTrail() {
           </Text>
         </View>
       </ScrollView>
-      <StartButton 
+      <StartButton
         onPress={() => {
           if (!trail) return;
           router.push({
             pathname: "/(tabs)/(home)/startTrail",
-            params: { 
+            params: {
               trail: JSON.stringify(trail),
-              parkImage: parkImage }
+              parkImage: parkImage,
+            },
           });
-        }} 
+        }}
       />
     </SafeAreaView>
   );

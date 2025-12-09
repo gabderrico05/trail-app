@@ -1,35 +1,40 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { getImageUrl } from "@/lib/api";
+import { LandMarkProps } from "@/types/Landmark";
+import { FontAwesome6 } from "@expo/vector-icons";
+import React from "react";
+import { Image, Text, View } from "react-native";
 
-export default function App() {
-    return (
-        <View className="p-4">
-            <LandmarkCard />
+export function LandmarkCard({ landmark }: { landmark: LandMarkProps }) {
+  return (
+    // O CARD PRINCIPAL
+    <View className="p-4">
+      <View className="bg-white rounded-xl drop-shadow-sm overflow-hidden p-4">
+        {/* CONTÊINER DA IMAGEM*/}
+        <View className="w-full bg-gray-100 h-40 rounded-lg overflow-hidden mb-2 relative">
+          {!landmark.coverUrl && (
+            <FontAwesome6
+              name="image"
+              size={32}
+              color="#cbd5e1"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            />
+          )}
+          <Image
+            source={{ uri: getImageUrl(landmark.coverUrl) ?? "" }} // Substitua pela sua imagem
+            className="w-full h-full"
+            resizeMode="cover"
+            width={50}
+            height={100}
+          />
         </View>
-    );
-}
 
-function LandmarkCard() {
-    return (
-        // O CARD PRINCIPAL
-        <View className="bg-white rounded-xl drop-shadow-sm overflow-hidden h-40 p-4">
-
-            {/* CONTÊINER DA IMAGEM*/}
-            <View className="w-full h-20 rounded-lg overflow-hidden mb-2">
-                <Image
-                    source={{ uri: 'https://picsum.photos/seed/river/400/200' }} // Substitua pela sua imagem
-                    className="w-full h-full"
-                    resizeMode="cover"
-                />
-            </View>
-
-            {/* ÁREA DO TEXTO */}
-            <View className="pt-2 justify-center items-center">
-                <Text className="text-lg font-gabarito font-forestGreen-500">
-                    Gruta da Onça
-                </Text>
-            </View>
-
+        {/* ÁREA DO TEXTO */}
+        <View className="pt-2 justify-center items-center">
+          <Text className="text-lg font-gabarito font-forestGreen-500">
+            {landmark.name}
+          </Text>
         </View>
-    );
+      </View>
+    </View>
+  );
 }
