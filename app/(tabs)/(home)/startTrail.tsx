@@ -1,9 +1,7 @@
 import LandmarkTopic from "@/components/LandmarkTopic";
 import QRCodeButton from "@/components/QRCodeButton";
 import TrailHeader from "@/components/TrailHeader";
-import { LandMarkProps } from "@/types/Landmark";
-import { TrailProps } from "@/types/Trail";
-import { useLocalSearchParams } from "expo-router";
+import { useTrailSession } from "@/store/useTrailSession";
 import React from "react";
 import {
   FlatList,
@@ -16,20 +14,24 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 function startTrail() {
   
-  const { trail, parkImage } = useLocalSearchParams<{ trail: string, parkImage: string}>();
-  const trailData: TrailProps = JSON.parse(trail);
+  const currentTrail = useTrailSession((s) => s.currentTrail);
 
-
-  const landmarks: LandMarkProps[] = trailData.pointsOfInterest
+  if (!currentTrail) {
+    return (
+      <SafeAreaView className="flex-1 justify-center items-center" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
+        <Text>Você não está em nenhuma trilha no momento.</Text>
+      </SafeAreaView>
+    );
+  }
   
 
   return (
     <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
       
         <FlatList
-          ListHeaderComponent={<TrailHeader name={trailData.name} imgSrc={trailData.coverUrl} parkImage={parkImage}/>}
+          ListHeaderComponent={<TrailHeader name={currentTrail.name} imgSrc={currentTrail.coverUrl} parkImage={""}/>}
           className="gap-2"
-          data={landmarks}
+          data={currentTrail.landmarks}
           renderItem={ ({item}) => (
             <View className="px-6">
               <LandmarkTopic title={item.name} id={item.id}/>
