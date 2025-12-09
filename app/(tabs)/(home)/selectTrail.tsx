@@ -1,7 +1,8 @@
 import EntityBanner from "@/components/EntityBanner";
 import SearchBar from "@/components/SearchBar";
 import TrailCard from "@/components/TrailCard";
-import { api, getImageUrl } from "@/lib/api";
+import { useStartTrail } from "@/hooks/useStartTrail";
+import { api, getImageUrl, trailsService } from "@/lib/api";
 import { EntityProps } from "@/types/Entity";
 import { TrailProps } from "@/types/Trail";
 import { router, useLocalSearchParams } from "expo-router";
@@ -18,6 +19,7 @@ export default function SelectTrail() {
   const [allTrails, setAllTrails] = useState<TrailProps[]>([]);
   const [filteredTrails, setFilteredTrails] = useState<TrailProps[]>([]);
   const [loading, setLoading] = useState(true);
+   const { start, buttonText } = useStartTrail();
 
   useEffect(() => {
     async function fetchTrails() {
@@ -76,6 +78,7 @@ export default function SelectTrail() {
             renderItem={({ item }) => (
               <View className="max-w-full mx-5">
                 <TrailCard
+                  buttonText={buttonText}
                   title={item.name}
                   imgSrc={getImageUrl(item.coverUrl) || ""}
                   distance={`${item.distance} km`}
@@ -85,19 +88,16 @@ export default function SelectTrail() {
                     router.push({
                       pathname: "/detailTrail",
                       params: {
-                        rawTrailData: JSON.stringify(item),
+                        trailId: String(item.id),
                         parkImage: getImageUrl(parkData?.coverUrl) || "",
                       },
                     });
                   }}
-                  onPressStart={() => {
-                            router.push({
-                              pathname: "/(tabs)/(home)/startTrail",
-                              params: { 
-                                trail: JSON.stringify(item),
-                                parkImage: getImageUrl(parkData?.coverUrl) }
-                            });
-                          }} 
+                  onPressStart={async () => {
+                    const data = await trailsService.getById(item.id);
+                    const trail : TrailProps = data;
+                    start(trail);
+                  }}
                 />
               </View>
             )}

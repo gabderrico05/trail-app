@@ -1,6 +1,7 @@
 import LevelIcon from "@/assets/level_icon.svg";
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
+import { useStartTrail } from "@/hooks/useStartTrail";
 import { getImageUrl, trailsService } from "@/lib/api";
 import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
@@ -16,28 +17,31 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function detailTrail() {
-  const { rawTrailData, parkImage } = useLocalSearchParams<{
-    rawTrailData: string;
+  const { trailId, parkImage } = useLocalSearchParams<{
+    trailId: string;
     parkImage: string;
   }>();
-  const trailData: TrailProps = JSON.parse(rawTrailData);
+
+  const id = Number(trailId);
   const [trail, setTrail] = useState<TrailProps | null>(null);
+  const { start, buttonText } = useStartTrail();
+
 
   useEffect(() => {
     async function fetchTrailData() {
-      const data = await trailsService.getById(trailData.id);
+      
+      if (!id) return;
+
+      const data = await trailsService.getById(id);
       setTrail(data);
-      console.log(data);
     }
     fetchTrailData();
-  }, []);
-
-  console.log(trailData);
+  }, [id]);
 
   const renderItem = ({ item }: { item: TrailProps["gallery"][0] }) => {
     console.log(item.url);
@@ -165,16 +169,8 @@ function detailTrail() {
         </View>
       </ScrollView>
       <StartButton
-        onPress={() => {
-          if (!trail) return;
-          router.push({
-            pathname: "/(tabs)/(home)/startTrail",
-            params: {
-              trail: JSON.stringify(trail),
-              parkImage: parkImage,
-            },
-          });
-        }}
+      text={buttonText}
+      onPress={() => start(trail)}
       />
     </SafeAreaView>
   );

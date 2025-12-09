@@ -11,6 +11,7 @@ const TrailCard = ({
   time,
   distance,
   level,
+  buttonText,
   onPressDetails,
   onPressStart,
 }: {
@@ -19,12 +20,11 @@ const TrailCard = ({
   time: string;
   distance: string;
   level: string;
+  buttonText?: string;
   onPressDetails: () => void;
   onPressStart: () => void;
 }) => {
-  function handleOnPressStart() {
-
-  }
+  
   useEffect(() => {
     console.log(imgSrc);
   }, [imgSrc]);
@@ -92,7 +92,7 @@ const TrailCard = ({
           activeOpacity={0.7}
           className="bg-forestGreen-400 flex-row items-center justify-end py-3 rounded-xl pr-3"
         >
-          <Text className="text-white text-md font-bold mr-1">Iniciar</Text>
+          <Text className="text-white text-md font-bold mr-1">{buttonText}</Text>
           <Feather name="chevron-right" size={16} color="white" />
         </TouchableOpacity>
       </View>
