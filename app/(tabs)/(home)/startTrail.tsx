@@ -2,6 +2,7 @@ import LandmarkTopic from "@/components/LandmarkTopic";
 import QRCodeButton from "@/components/QRCodeButton";
 import TrailHeader from "@/components/TrailHeader";
 import { useTrailSession } from "@/store/useTrailSession";
+import { router } from "expo-router";
 import React from "react";
 import {
   FlatList,
@@ -29,12 +30,23 @@ function startTrail() {
     <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
       
         <FlatList
-          ListHeaderComponent={<TrailHeader name={currentTrail.name} imgSrc={currentTrail.coverUrl} parkImage={""}/>}
-          className="gap-2"
+          ListHeaderComponent={<TrailHeader name={currentTrail.name} imgSrc={currentTrail.coverUrl} parkImage={currentTrail.parkImage}/>}
+          className="gap-4"
           data={currentTrail.landmarks}
           renderItem={ ({item}) => (
             <View className="px-6">
-              <LandmarkTopic title={item.name} id={item.id}/>
+              <LandmarkTopic 
+                title={item.name} 
+                id={item.id} 
+                onPress={() => router.push({
+                  pathname: "/(tabs)/(home)/detailPoint",
+                  params: {
+                    landmark: JSON.stringify(item),
+                    trail: JSON.stringify(currentTrail),
+                    parkImage: currentTrail.parkImage,
+                  },
+                })}
+              />
             </View>
           )}
           ListEmptyComponent={<Text className="px-6">esta trilha não possui pontos de interesse</Text>}

@@ -3,6 +3,7 @@ import SearchBar from "@/components/SearchBar";
 import TrailCard from "@/components/TrailCard";
 import { useStartTrail } from "@/hooks/useStartTrail";
 import { api, getImageUrl, trailsService } from "@/lib/api";
+import { useTrailSession } from "@/store/useTrailSession";
 import { EntityProps } from "@/types/Entity";
 import { TrailProps } from "@/types/Trail";
 import { router, useLocalSearchParams } from "expo-router";
@@ -19,7 +20,9 @@ export default function SelectTrail() {
   const [allTrails, setAllTrails] = useState<TrailProps[]>([]);
   const [filteredTrails, setFilteredTrails] = useState<TrailProps[]>([]);
   const [loading, setLoading] = useState(true);
-   const { start, buttonText } = useStartTrail();
+  const { start, buttonText } = useStartTrail();
+
+ const { currentTrail} = useTrailSession();
 
   useEffect(() => {
     async function fetchTrails() {
@@ -78,7 +81,7 @@ export default function SelectTrail() {
             renderItem={({ item }) => (
               <View className="max-w-full mx-5">
                 <TrailCard
-                  buttonText={buttonText}
+                  buttonText={currentTrail?.id === item.id ? buttonText : "Começar"}
                   title={item.name}
                   imgSrc={getImageUrl(item.coverUrl) || ""}
                   distance={`${item.distance} km`}
@@ -96,7 +99,7 @@ export default function SelectTrail() {
                   onPressStart={async () => {
                     const data = await trailsService.getById(item.id);
                     const trail : TrailProps = data;
-                    start(trail);
+                    start(trail, getImageUrl(parkData.coverUrl) || "");
                   }}
                 />
               </View>

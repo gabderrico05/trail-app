@@ -1,16 +1,25 @@
 import { LandmarkCard } from "@/components/LandmarkCard";
 import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
+import { useStartTrail } from "@/hooks/useStartTrail";
 import { getImageUrl } from "@/lib/api";
 import { LandMarkProps } from "@/types/Landmark";
 import { TrailProps } from "@/types/Trail";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useLocalSearchParams } from "expo-router";
-import React from "react";
+import { router, useLocalSearchParams } from "expo-router";
+import React, { useEffect } from "react";
 import { FlatList, Image, ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-function detailTrail() {
+function landmarks() {
+
+  const { start, buttonText } = useStartTrail();
+
+  useEffect(() => {
+  
+  }, [buttonText]);
+
+
   const { trail, parkImage } = useLocalSearchParams<{
     trail: string;
     parkImage: string;
@@ -19,6 +28,8 @@ function detailTrail() {
   const trailData: TrailProps = JSON.parse(trail);
 
   const landmarks: LandMarkProps[] = trailData.pointsOfInterest || [];
+
+
   return (
     <SafeAreaView className="flex-1">
       <ImageBackground
@@ -53,11 +64,23 @@ function detailTrail() {
       <FlatList
         data={landmarks}
         keyExtractor={(item: LandMarkProps, index: number) => String(item.id)}
-        renderItem={({ item }) => <LandmarkCard landmark={item} />}
+        renderItem={({ item }) => 
+          <LandmarkCard  
+            landmark={item} 
+            onPress={() => router.push({
+              pathname: "/(tabs)/(home)/detailPoint",
+              params: {
+                landmark: JSON.stringify(item),
+                trail: trail,
+                parkImage: parkImage,
+              },
+            })} 
+          />
+        }
       />
-      <StartButton />
+      <StartButton text={buttonText} onPress={() => start(trailData, parkImage)}/>
     </SafeAreaView>
   );
 }
 
-export default detailTrail;
+export default landmarks;

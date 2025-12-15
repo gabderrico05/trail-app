@@ -11,7 +11,7 @@ export function useStartTrail() {
   const [buttonText, setButtonText] = useState("Começar");
 
   const start = useCallback(
-    (trail: any) => {
+    (trail: any, parkImage: string) => {
       if (!trail) return;
 
       const navigateToSession = () => {
@@ -20,7 +20,7 @@ export function useStartTrail() {
 
       const startNewTrail = () => {
         resetTrail();
-        startTrail(trail);
+        startTrail(trail, parkImage);
         navigateToSession();
       };
 
@@ -44,7 +44,7 @@ export function useStartTrail() {
       }
 
       // Nenhuma trilha ativa → inicia normal
-      startTrail(trail);
+      startTrail(trail, parkImage);
       navigateToSession();
     },
     [currentTrail, router, startTrail, resetTrail]
