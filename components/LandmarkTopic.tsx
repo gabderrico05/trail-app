@@ -4,14 +4,15 @@ import { Pressable, Text, View } from "react-native";
 interface LandmarkTopic {
   title: string
   id: number;
+  onPress?: () => void;
 }
 
 
-const LandmarkTopic = ({title, id}: LandmarkTopic) => {
+const LandmarkTopic = ({title, id, onPress}: LandmarkTopic) => {
 
   return(
 
-    <Pressable onPress={() => console.log("id: "+ id)}>
+    <Pressable onPress={onPress}>
     <View className="flex-row items-center">
             <MaterialCommunityIcons
               name="arrow-right-circle-outline"

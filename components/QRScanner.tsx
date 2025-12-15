@@ -44,15 +44,13 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
           pathname: "/detailTrail",
           params: {
             trailId: String(qrData.id),
+            entityId: String(qrData.entityId),
           },
        });
        
         
       } else if (qrData.type === 'poi') {
 
-        
-
-        
         const poi = await landmarksService.getById(qrData.id);
         
         router.replace({

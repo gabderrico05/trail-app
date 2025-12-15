@@ -12,14 +12,15 @@ export type LandmarkWithStatus = LandMarkProps & {
 
 
 export type TrailWithStatus = TrailProps & {
-  landmarks : LandmarkWithStatus[]
+  landmarks : LandmarkWithStatus[],
+  parkImage: string
 }
 
 
 type TrailSessionStore = {
   currentTrail: TrailWithStatus | null;
 
-  startTrail: (trail: TrailProps) => void;
+  startTrail: (trail: TrailProps, parkImage : string) => void;
   registerPoint: (pointId: number) => void;
   resetTrail: () => void;
 };
@@ -29,17 +30,31 @@ export const useTrailSession = create(
   persist<TrailSessionStore>(
     (set, get) => ({
       currentTrail: null,
-
-      // Quando o usuário inicia uma trilha
-      startTrail: (trail) =>
+      
+      startTrail: (trail, parkImage) =>
         set({
           currentTrail: {
             ...trail,
-            // Garante que não quebre caso pointsOfInterest venha undefined
-            landmarks: (trail.pointsOfInterest || []).map((lm) => ({
-              ...lm,
-              registered: false,
-            })),
+            parkImage : parkImage,
+            landmarks: [
+              // Landmark padrão "Início" já registrado
+              {
+                id: 0,
+                name: "Início",
+                description: "Ponto de partida da trilha",
+                shortDescription: "Ponto de partida da trilha",
+                coverUrl: null,
+                gallery: [],
+                trailId: trail.id,
+                registered: true,
+              } as LandmarkWithStatus,
+              // Demais landmarks da trilha
+              ...(trail.pointsOfInterest || []).map((lm) => ({
+                ...lm,
+                registered: false,
+              })),
+            ],
+            
           },
         }),
 
@@ -62,7 +77,6 @@ export const useTrailSession = create(
           };
         }),
 
-      // Finalizar / limpar sessão
       resetTrail: () => set({ currentTrail: null }),
     }),
 

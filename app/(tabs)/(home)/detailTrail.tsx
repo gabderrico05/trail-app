@@ -2,7 +2,8 @@ import LevelIcon from "@/assets/level_icon.svg";
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
 import { useStartTrail } from "@/hooks/useStartTrail";
-import { getImageUrl, trailsService } from "@/lib/api";
+import { entitiesService, getImageUrl, trailsService } from "@/lib/api";
+import { EntityProps } from "@/types/Entity";
 import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -22,26 +23,39 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function detailTrail() {
-  const { trailId, parkImage } = useLocalSearchParams<{
+  const { trailId, parkImage, entityId } = useLocalSearchParams<{
     trailId: string;
     parkImage: string;
+    entityId?: string;
   }>();
 
-  const id = Number(trailId);
+  const idTrail = Number(trailId);
+  const idPark = entityId ? Number(entityId) : undefined;
   const [trail, setTrail] = useState<TrailProps | null>(null);
+  const [park, setPark] = useState<EntityProps | null>(null);
   const { start, buttonText } = useStartTrail();
 
 
   useEffect(() => {
     async function fetchTrailData() {
-      
-      if (!id) return;
-
-      const data = await trailsService.getById(id);
+      if (!idTrail) return;
+      const data = await trailsService.getById(idTrail);
       setTrail(data);
     }
     fetchTrailData();
-  }, [id]);
+    
+  }, [idTrail]);
+
+  useEffect(() => {
+     async function fetchParkData() {
+      if (!idPark) return;
+      const data = await entitiesService.getById(idPark);
+      setPark(data);
+    }
+    fetchParkData();
+
+  }, [idPark]);
+
 
   const renderItem = ({ item }: { item: TrailProps["gallery"][0] }) => {
     console.log(item.url);
@@ -63,7 +77,7 @@ function detailTrail() {
         <TrailHeader
           name={trail?.name}
           imgSrc={getImageUrl(trail?.coverUrl)}
-          parkImage={parkImage}
+          parkImage={parkImage || getImageUrl(park?.coverUrl) || ""}
         />
         <View className="p-6 gap-2">
           <View className="flex-row items-center ">
@@ -117,7 +131,7 @@ function detailTrail() {
               pathname: "/(tabs)/(home)/landmarks",
               params: {
                 trail: JSON.stringify(trail),
-                parkImage: parkImage,
+                parkImage: parkImage || getImageUrl(park?.coverUrl) || "",
               },
             })
           }
@@ -170,7 +184,7 @@ function detailTrail() {
       </ScrollView>
       <StartButton
       text={buttonText}
-      onPress={() => start(trail)}
+      onPress={() => start(trail, parkImage)}
       />
     </SafeAreaView>
   );
