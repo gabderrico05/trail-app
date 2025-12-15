@@ -5,20 +5,21 @@ interface LandmarkTopic {
   title: string
   id: number;
   onPress?: () => void;
+  registered?: boolean;
 }
 
 
-const LandmarkTopic = ({title, id, onPress}: LandmarkTopic) => {
+const LandmarkTopic = ({title, id, onPress, registered}: LandmarkTopic) => {
 
   return(
 
     <Pressable onPress={onPress}>
     <View className="flex-row items-center">
-            <MaterialCommunityIcons
-              name="arrow-right-circle-outline"
-              size={50}
-              color="forestGreen-500"
-            />
+            {registered ? 
+              <MaterialCommunityIcons name="check-circle" size={50} color="forestGreen-500" />
+              :
+              <MaterialCommunityIcons name="arrow-right-circle-outline" size={50} color="forestGreen-500"/>
+            }
             <Text className="text-forestGreen-500 font-medium ml-2">{title}</Text>
     </View>
     </Pressable>

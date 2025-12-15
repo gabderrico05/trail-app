@@ -1,4 +1,5 @@
-import { landmarksService } from '@/lib/api';
+import { useRegisterLandmark } from '@/hooks/useRegisterLandmark';
+import { entitiesService, getImageUrl, landmarksService, trailsService } from '@/lib/api';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { CameraView, CameraViewProps } from "expo-camera";
 import { router, useFocusEffect } from 'expo-router';
@@ -14,6 +15,7 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
   const [torchOn, setTorchOn] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const { register } = useRegisterLandmark();
 
 
   useFocusEffect(
@@ -53,19 +55,19 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
 
         const poi = await landmarksService.getById(qrData.id);
         
-        router.replace({
-          pathname: "/startTrail",
-          params: {
-            rawLandmarkData: JSON.stringify(poi),
-          },
-       });
+        const trail = await trailsService.getById(poi.trailId);
+
+        const entity = await entitiesService.getById(qrData.entityId);
+        const parkImage = getImageUrl(entity.coverUrl) || "";
+        
+        register(trail, poi.id, parkImage);
         
       }
 
     } catch (error) {
       console.error('Erro ao fazer parse do QR Code:', error);
       setError('QR Code inválido');
-      setIsProcessing(false); // Libera para tentar novamente em caso de erro
+      setIsProcessing(false); 
     }
   };
 
