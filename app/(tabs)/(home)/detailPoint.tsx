@@ -1,5 +1,7 @@
 import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
+import { useRegisterLandmark } from "@/hooks/useRegisterLandmark";
+import { useTrailSession } from "@/store/useTrailSession";
 import { LandMarkProps } from "@/types/Landmark";
 import { TrailProps } from "@/types/Trail";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -35,6 +37,10 @@ function detailPoint() {
   const landmarkData: LandMarkProps = JSON.parse(landmark);
   const trailData: TrailProps = JSON.parse(trail);
 
+  const currentTrail = useTrailSession((s) => s.currentTrail);
+  const { register } = useRegisterLandmark();
+  
+
   const renderItem = ({ item }: { item: {id: number, url: string, uuid: string}}) => {
     return (
       <Image
@@ -45,7 +51,10 @@ function detailPoint() {
     );
   };
 
-  function handleOnPressStart() {}
+  function handlePress() {
+    register(trailData, landmarkData.id, parkImage);
+  }
+
   return (
     <SafeAreaView className="flex-1">
       <ScrollView>
@@ -99,7 +108,7 @@ function detailPoint() {
           />
         </View>
       </ScrollView>
-      <StartButton text="Registrar" />
+      <StartButton text="Registrar" onPress={handlePress}/>
     </SafeAreaView>
   );
 }

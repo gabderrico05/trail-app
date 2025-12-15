@@ -17,7 +17,7 @@ function TrailHeader({
       source={{ uri: imgSrc || undefined }}
       resizeMode="cover"
     >
-      <View className="p-6">
+      <View className="p-6 overflow-hidden">
         <View className="w-full">
           <ReturnButton buttonType="secondary" />
         </View>

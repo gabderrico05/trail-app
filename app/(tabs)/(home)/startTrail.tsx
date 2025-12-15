@@ -37,7 +37,8 @@ function startTrail() {
             <View className="px-6">
               <LandmarkTopic 
                 title={item.name} 
-                id={item.id} 
+                id={item.id}
+                registered={item.registered}
                 onPress={() => router.push({
                   pathname: "/(tabs)/(home)/detailPoint",
                   params: {

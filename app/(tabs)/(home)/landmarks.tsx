@@ -24,6 +24,12 @@ function landmarks() {
     trail: string;
     parkImage: string;
   }>();
+  
+  if (!trail) {
+    router.back();
+    return null;
+  }
+  
   console.log(trail);
   const trailData: TrailProps = JSON.parse(trail);
 
@@ -75,6 +81,7 @@ function landmarks() {
                 parkImage: parkImage,
               },
             })} 
+          
           />
         }
       />
