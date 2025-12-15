@@ -1,6 +1,9 @@
 import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
+import { LandMarkProps } from "@/types/Landmark";
+import { TrailProps } from "@/types/Trail";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import {
   FlatList,
@@ -26,11 +29,17 @@ const images: ImgProps[] = [
 ];
 
 function detailPoint() {
-  const renderItem = ({ item }: { item: ImgProps }) => {
+
+  const { landmark, parkImage, trail } = useLocalSearchParams<{ landmark: string, trail: string, parkImage: string,  }>();
+  const parkImg = parkImage;
+  const landmarkData: LandMarkProps = JSON.parse(landmark);
+  const trailData: TrailProps = JSON.parse(trail);
+
+  const renderItem = ({ item }: { item: {id: number, url: string, uuid: string}}) => {
     return (
       <Image
         className="rounded-2xl mr-2"
-        source={item.src}
+        source={item.url ? { uri: item.url } : undefined}
         style={{ width: 150, height: 190 }}
       />
     );
@@ -42,19 +51,19 @@ function detailPoint() {
       <ScrollView>
         <ImageBackground
           style={{ height: 230, width: "100%" }}
-          source={require("@/assets/imageTrilha.jpg")}
+          source={landmarkData.coverUrl ? { uri: landmarkData.coverUrl } : require("@/assets/imageTrilha.jpg")}
           resizeMode="cover"
         >
           <View className="px-6 pb-6">
             <View className="flex-row gap-4 items-center justify-center mt-4">
               <ReturnButton buttonType="secondary" />
 
-              <View className="bg-white items-center px-6 rounded-3xl flex-row">
+              <View className="bg-white items-center py-1 justify-between pl-6 gap-4 pr-2 rounded-3xl flex-row">
                 <Text className="text-forestGreen-500 font-bold mr-auto">
-                  Trilha da Pedra Branca
+                  {trailData.name}
                 </Text>
                 <Image
-                  source={require("@/assets/parqueEstadual.png")}
+                  source={parkImg ? { uri: parkImg } : undefined}
                   style={{ width: 40, height: 40 }}
                   resizeMode="contain"
                 />
@@ -65,7 +74,7 @@ function detailPoint() {
         <View className="flex-row items-center p-6 gap-3">
           <FontAwesome name="arrow-circle-o-right" size={30} color="black" />
           <Text className="text-forestGreen-500 font-semibold">
-            Gruta da Onça
+            {landmarkData.name}
           </Text>
         </View>
 
@@ -74,10 +83,7 @@ function detailPoint() {
             Descrição
           </Text>
           <Text className="text-black font-semibold m-1 text-justify text-xs">
-            Lorem ipsum dolor sit amet consectetur. Sed aliquet enim elit massa
-            et morbi massa lorem. Sed arcu egestas non condimentum. Mattis cras
-            maecenas enim tristique egestas morbi. Scelerisque ac et consectetur
-            amet at molestie tortor at.
+            {landmarkData.description || "Descrição não disponível."}
           </Text>
         </View>
         <View className="bg-[#FFE489] pl-6 py-6 ">
@@ -85,7 +91,7 @@ function detailPoint() {
             Imagens
           </Text>
           <FlatList
-            data={images}
+            data={landmarkData.gallery}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             renderItem={renderItem}

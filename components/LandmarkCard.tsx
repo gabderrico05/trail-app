@@ -2,12 +2,12 @@ import { getImageUrl } from "@/lib/api";
 import { LandMarkProps } from "@/types/Landmark";
 import { FontAwesome6 } from "@expo/vector-icons";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
-export function LandmarkCard({ landmark }: { landmark: LandMarkProps }) {
+export function LandmarkCard({ landmark, onPress }: { landmark: LandMarkProps, onPress?: () => void }) {
   return (
     // O CARD PRINCIPAL
-    <View className="p-4">
+    <TouchableOpacity activeOpacity={0.7} className="p-4" onPress={onPress}>
       <View className="bg-white rounded-xl drop-shadow-sm overflow-hidden p-4">
         {/* CONTÊINER DA IMAGEM*/}
         <View className="w-full bg-gray-100 h-40 rounded-lg overflow-hidden mb-2 relative">
@@ -35,6 +35,6 @@ export function LandmarkCard({ landmark }: { landmark: LandMarkProps }) {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

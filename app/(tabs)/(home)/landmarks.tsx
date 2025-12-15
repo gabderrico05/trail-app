@@ -5,12 +5,12 @@ import { getImageUrl } from "@/lib/api";
 import { LandMarkProps } from "@/types/Landmark";
 import { TrailProps } from "@/types/Trail";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import React from "react";
 import { FlatList, Image, ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-function detailTrail() {
+function landmarks() {
   const { trail, parkImage } = useLocalSearchParams<{
     trail: string;
     parkImage: string;
@@ -53,11 +53,23 @@ function detailTrail() {
       <FlatList
         data={landmarks}
         keyExtractor={(item: LandMarkProps, index: number) => String(item.id)}
-        renderItem={({ item }) => <LandmarkCard landmark={item} />}
+        renderItem={({ item }) => 
+          <LandmarkCard  
+            landmark={item} 
+            onPress={() => router.push({
+              pathname: "/(tabs)/(home)/detailPoint",
+              params: {
+                landmark: JSON.stringify(item),
+                trail: trail,
+                parkImage: parkImage,
+              },
+            })} 
+          />
+        }
       />
       <StartButton />
     </SafeAreaView>
   );
 }
 
-export default detailTrail;
+export default landmarks;
