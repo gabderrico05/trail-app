@@ -12,36 +12,29 @@ import { FlatList, Image, ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function landmarks() {
-
   const { start, buttonText } = useStartTrail();
 
-  useEffect(() => {
-  
-  }, [buttonText]);
-
+  useEffect(() => {}, [buttonText]);
 
   const { trail, parkImage } = useLocalSearchParams<{
     trail: string;
     parkImage: string;
   }>();
-  
+
   if (!trail) {
     router.back();
     return null;
   }
-  
-  console.log(trail);
   const trailData: TrailProps = JSON.parse(trail);
 
-  const landmarks: LandMarkProps[] = trailData.pointsOfInterest || [];
-
+  const landmarks: LandMarkProps[] = trailData?.pointsOfInterest || [];
 
   return (
     <SafeAreaView className="flex-1">
       <ImageBackground
         className="p-6"
-        style={{ height: "auto", width: "100%" }}
-        source={{ uri: getImageUrl(trailData.coverUrl) || undefined }}
+        style={{ height: "auto", width: "auto" }}
+        source={{ uri: getImageUrl(trailData?.coverUrl) || undefined }}
         resizeMode="cover"
       >
         <View className="w-full ">
@@ -49,7 +42,7 @@ function landmarks() {
         </View>
         <View className="bg-white items-center p-2 px-4 mt-4 rounded-2xl flex-row">
           <Text className="text-forestGreen-500 font-bold mr-auto">
-            {trailData.name}
+            {trailData?.name}
           </Text>
           <Image
             source={{ uri: parkImage }}
@@ -69,23 +62,27 @@ function landmarks() {
       </View>
       <FlatList
         data={landmarks}
-        keyExtractor={(item: LandMarkProps, index: number) => String(item.id)}
-        renderItem={({ item }) => 
-          <LandmarkCard  
-            landmark={item} 
-            onPress={() => router.push({
-              pathname: "/(tabs)/(home)/detailPoint",
-              params: {
-                landmark: JSON.stringify(item),
-                trail: trail,
-                parkImage: parkImage,
-              },
-            })} 
-          
+        keyExtractor={(item: LandMarkProps, index: number) => String(item?.id)}
+        renderItem={({ item }) => (
+          <LandmarkCard
+            landmark={item}
+            onPress={() =>
+              router.push({
+                pathname: "/(tabs)/(home)/detailPoint",
+                params: {
+                  landmark: JSON.stringify(item),
+                  trail: trail,
+                  parkImage: parkImage,
+                },
+              })
+            }
           />
-        }
+        )}
       />
-      <StartButton text={buttonText} onPress={() => start(trailData, parkImage)}/>
+      <StartButton
+        text={buttonText}
+        onPress={() => start(trailData, parkImage)}
+      />
     </SafeAreaView>
   );
 }
