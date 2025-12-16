@@ -13,7 +13,8 @@ export type LandmarkWithStatus = LandMarkProps & {
 
 export type TrailWithStatus = TrailProps & {
   landmarks : LandmarkWithStatus[],
-  parkImage: string
+  parkImage: string,
+  finalized: boolean
 }
 
 
@@ -54,7 +55,7 @@ export const useTrailSession = create(
                 registered: false,
               })),
             ],
-            
+            finalized: false, // No início, nunca está finalizada
           },
         }),
 
@@ -69,10 +70,14 @@ export const useTrailSession = create(
               : lm
           );
 
+          // Verifica se todos os landmarks estão registrados
+          const allRegistered = updated.every((lm) => lm.registered);
+
           return {
             currentTrail: {
               ...state.currentTrail,
               landmarks: updated,
+              finalized: allRegistered,
             },
           };
         }),

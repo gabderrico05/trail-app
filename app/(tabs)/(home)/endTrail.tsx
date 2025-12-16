@@ -12,14 +12,16 @@ function endTrail() {
   };
 
   return (
-    <SafeAreaView className="flex-1  bg-lemnonYellow items-center pt-60">
-      <StatusBar backgroundColor="#000" translucent barStyle="dark-content" />
-      <View>
-        <EndDrawing width={280} height={240} />
+    <SafeAreaView className="flex-1 bg-lemnonYellow items-center ">
+      <View className='flex-1 items-center justify-end pl-3'>
+        <StatusBar backgroundColor="#000" translucent barStyle="dark-content" />
+        <View>
+          <EndDrawing width={280} height={240} />
+        </View>
+        <Text className=" text-forestGreen-500 text-2xl font-bold mb-5 max-w-[70%] text-center">
+          Parabéns! Você chegou ao final da trilha!
+        </Text>
       </View>
-      <Text className=" text-forestGreen-500 text-2xl font-bold mb-5 max-w-[60%] text-center">
-        Parabéns! Você chegou ao final da trilha!
-      </Text>
       
       <View className="pt-56">
         <TouchableOpacity

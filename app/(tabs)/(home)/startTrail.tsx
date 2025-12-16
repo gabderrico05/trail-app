@@ -1,6 +1,8 @@
 import LandmarkTopic from "@/components/LandmarkTopic";
 import QRCodeButton from "@/components/QRCodeButton";
+import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
+import { getImageUrl } from "@/lib/api";
 import { useTrailSession } from "@/store/useTrailSession";
 import { router } from "expo-router";
 import React from "react";
@@ -30,8 +32,7 @@ function startTrail() {
     <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
       
         <FlatList
-          ListHeaderComponent={<TrailHeader name={currentTrail.name} imgSrc={currentTrail.coverUrl} parkImage={currentTrail.parkImage}/>}
-          className="gap-4"
+          ListHeaderComponent={<View className="mb-10"><TrailHeader name={currentTrail.name} imgSrc={getImageUrl(currentTrail.coverUrl) || ""} parkImage={currentTrail.parkImage}/></View>}
           data={currentTrail.landmarks}
           renderItem={ ({item}) => (
             <View className="px-6">
@@ -47,12 +48,16 @@ function startTrail() {
                     parkImage: currentTrail.parkImage,
                   },
                 })}
+                
               />
             </View>
+            
           )}
+          ItemSeparatorComponent={() => <View className="w-2 h-12 -my-1.5 mx-12 bg-forestGreen-600"/>}
           ListEmptyComponent={<Text className="px-6">esta trilha não possui pontos de interesse</Text>}
         />
-      <QRCodeButton/>
+
+      {currentTrail.finalized? <StartButton text="Finalizar trilha" onPress={() => router.push('/(tabs)/(home)/endTrail')}/> : <QRCodeButton/> }
     </SafeAreaView>
   );
 }
