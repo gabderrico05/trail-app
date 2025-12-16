@@ -18,7 +18,7 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -35,7 +35,6 @@ function detailTrail() {
   const [park, setPark] = useState<EntityProps | null>(null);
   const { start, buttonText } = useStartTrail();
 
-
   useEffect(() => {
     async function fetchTrailData() {
       if (!idTrail) return;
@@ -43,19 +42,16 @@ function detailTrail() {
       setTrail(data);
     }
     fetchTrailData();
-    
   }, [idTrail]);
 
   useEffect(() => {
-     async function fetchParkData() {
+    async function fetchParkData() {
       if (!idPark) return;
       const data = await entitiesService.getById(idPark);
       setPark(data);
     }
     fetchParkData();
-
   }, [idPark]);
-
 
   const renderItem = ({ item }: { item: TrailProps["gallery"][0] }) => {
     console.log(item.url);
@@ -111,7 +107,7 @@ function detailTrail() {
             {trail?.shortDescription}
           </Text>
         </View>
-        <View className="bg-[#FFE489] pl-6 py-6 ">
+        <View className="bg-[#FFE489] pl-6 pt-6 pb-12">
           <Text className="text-forestGreen-500 font-semibold m-1 mb-4">
             Imagens
           </Text>
@@ -150,7 +146,15 @@ function detailTrail() {
         </TouchableOpacity>
         <TouchableOpacity
           className="bg-[#FFC500] p-6 flex-row items-center justify-between"
-          onPress={() => router.push("/(tabs)/(home)/aboutTrail")}
+          onPress={() =>
+            router.push({
+              pathname: "/(tabs)/(home)/aboutTrail",
+              params: {
+                trail: JSON.stringify(trail),
+                parkImage: parkImage || getImageUrl(park?.coverUrl) || "",
+              },
+            })
+          }
         >
           <View className="flex-row items-center gap-4">
             <Foundation name="info" size={24} color="#113D31" />
@@ -182,10 +186,7 @@ function detailTrail() {
           </Text>
         </View>
       </ScrollView>
-      <StartButton
-      text={buttonText}
-      onPress={() => start(trail, parkImage)}
-      />
+      <StartButton text={buttonText} onPress={() => start(trail, parkImage)} />
     </SafeAreaView>
   );
 }

@@ -24,13 +24,12 @@ const TrailCard = ({
   onPressDetails: () => void;
   onPressStart: () => void;
 }) => {
-  
   useEffect(() => {
     console.log(imgSrc);
   }, [imgSrc]);
   return (
     <View className="w-full max-h-min bg-white rounded-2xl overflow-hidden my-2.5 shadow-lg p-4 border border-black/20">
-      <View className="w-full h-32 rounded-xl bg-slate-200 relative">
+      <View className="w-full rounded-xl bg-slate-200 relative">
         {!imgSrc && (
           <FontAwesome6
             name="image"
@@ -92,7 +91,9 @@ const TrailCard = ({
           activeOpacity={0.7}
           className="bg-forestGreen-400 flex-row items-center justify-end py-3 rounded-xl pr-3"
         >
-          <Text className="text-white text-md font-bold mr-1">{buttonText}</Text>
+          <Text className="text-white text-md font-bold mr-1">
+            {buttonText}
+          </Text>
           <Feather name="chevron-right" size={16} color="white" />
         </TouchableOpacity>
       </View>

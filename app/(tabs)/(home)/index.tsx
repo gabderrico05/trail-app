@@ -37,7 +37,7 @@ export default function SelectPark() {
   return (
     <SafeAreaView className="flex-1 bg-white"
       
-      edges={Platform.OS === 'ios' ? []: ['top']}
+      edges={Platform.OS === 'ios' ? ['top']: ['top']}
     >
       {loading ? (
         <View className="flex-1 items-center justify-center">

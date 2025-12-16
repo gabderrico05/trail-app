@@ -31,7 +31,7 @@ export function LandmarkCard({ landmark, onPress }: { landmark: LandMarkProps, o
         {/* ÁREA DO TEXTO */}
         <View className="pt-2 justify-center items-center">
           <Text className="text-lg font-gabarito font-forestGreen-500">
-            {landmark.name}
+            {landmark?.name}
           </Text>
         </View>
       </View>

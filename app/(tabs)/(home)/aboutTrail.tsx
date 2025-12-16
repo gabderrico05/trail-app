@@ -1,17 +1,35 @@
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
+import { getImageUrl } from "@/lib/api";
+import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
+import { router, useLocalSearchParams } from "expo-router";
 import { Platform, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
 
 function aboutTrail() {
+  const { trail, parkImage } = useLocalSearchParams<{
+    trail: string;
+    parkImage: string;
+  }>();
+
+  if (!trail) {
+    router.back();
+    return null;
+  }
+  const trailData: TrailProps = JSON.parse(trail);
+
   return (
     <SafeAreaView
-          className="flex-1"
-          edges={Platform.OS === "android" ? ["top", "bottom"] : ["top"]}
-        >
-      <TrailHeader />
+      className="flex-1"
+      edges={Platform.OS === "android" ? ["top", "bottom"] : ["top"]}
+    >
+      <TrailHeader
+        name={trailData.name}
+        parkImage={parkImage}
+        imgSrc={getImageUrl(trailData.coverUrl)}
+      />
       <View className="bg-[#FFC500] flex-row p-6 items-center gap-4">
         <Foundation name="info" size={24} color="#113D31" />
         <Text className="font-bold text-forestGreen-500">Sobre a Trilha</Text>
@@ -20,19 +38,16 @@ function aboutTrail() {
         <WebView
           originWhitelist={["*"]}
           style={{ background: "black" }}
-          source={{ html: `
+          source={{
+            html: `
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
             <div style='padding: 24px; font-family: Gabarito, Roboto, sans-serif'>
-            <h1 style='color: #113D31; font-size: 4rem'>Lorem ipsum</h1>
-            <p style='font-size: 3rem'>Lorem ipsum dolor sit amet consectetur. Sed aliquet enim elit massa et morbi massa lorem. Sed arcu egestas non condimentum. Mattis cras maecenas enim tristique egestas morbi. Scelerisque ac et consectetur amet at molestie tortor at.</p>
-            <h1 style='color: #113D31; font-size: 4rem'>Lorem ipsum</h1>
-            <p style='font-size: 3rem'>Lorem ipsum dolor sit amet consectetur. Sed aliquet enim elit massa et morbi massa lorem. Sed arcu egestas non condimentum. Mattis cras maecenas enim tristique egestas morbi. Scelerisque ac et consectetur amet at molestie tortor at.</p>
-            <h1 style='color: #113D31; font-size: 4rem'>Lorem ipsum</h1>
-            <p style='font-size: 3rem'>Lorem ipsum dolor sit amet consectetur. Sed aliquet enim elit massa et morbi massa lorem. Sed arcu egestas non condimentum. Mattis cras maecenas enim tristique egestas morbi. Scelerisque ac et consectetur amet at molestie tortor at.</p>
+              ${trailData.description || "Sem descrição disponível."}
             </div>
-            ` }}
+            `,
+          }}
         />
       </View>
 

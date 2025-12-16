@@ -1,9 +1,11 @@
 import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
 import { useRegisterLandmark } from "@/hooks/useRegisterLandmark";
+import { getImageUrl } from "@/lib/api";
 import { useTrailSession } from "@/store/useTrailSession";
 import { LandMarkProps } from "@/types/Landmark";
 import { TrailProps } from "@/types/Trail";
+import { Foundation } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useLocalSearchParams } from "expo-router";
 import React from "react";
@@ -16,36 +18,30 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-type ImgProps = {
-  src: any;
-};
-
-const images: ImgProps[] = [
-  { src: require("@/assets/imagem_trilha.jpg") },
-  { src: require("@/assets/imagem_trilha2.jpg") },
-  { src: require("@/assets/imagem_trilha3.jpg") },
-  { src: require("@/assets/imagem_trilha.jpg") },
-  { src: require("@/assets/imagem_trilha2.jpg") },
-  { src: require("@/assets/imagem_trilha3.jpg") },
-];
+import { WebView } from "react-native-webview";
 
 function detailPoint() {
-
-  const { landmark, parkImage, trail } = useLocalSearchParams<{ landmark: string, trail: string, parkImage: string,  }>();
+  const { landmark, parkImage, trail } = useLocalSearchParams<{
+    landmark: string;
+    trail: string;
+    parkImage: string;
+  }>();
   const parkImg = parkImage;
   const landmarkData: LandMarkProps = JSON.parse(landmark);
   const trailData: TrailProps = JSON.parse(trail);
 
   const currentTrail = useTrailSession((s) => s.currentTrail);
   const { register } = useRegisterLandmark();
-  
 
-  const renderItem = ({ item }: { item: {id: number, url: string, uuid: string}}) => {
+  const renderItem = ({
+    item,
+  }: {
+    item: { id: number; url: string; uuid: string };
+  }) => {
     return (
       <Image
         className="rounded-2xl mr-2"
-        source={item.url ? { uri: item.url } : undefined}
+        source={{ uri: getImageUrl(item.url) || undefined }}
         style={{ width: 150, height: 190 }}
       />
     );
@@ -59,11 +55,11 @@ function detailPoint() {
     <SafeAreaView className="flex-1">
       <ScrollView>
         <ImageBackground
-          style={{ height: 230, width: "100%" }}
-          source={landmarkData.coverUrl ? { uri: landmarkData.coverUrl } : require("@/assets/imageTrilha.jpg")}
+          style={{ height: "auto", width: "auto" }}
+          source={{ uri: getImageUrl(landmarkData.coverUrl) || "" }}
           resizeMode="cover"
         >
-          <View className="px-6 pb-6">
+          <View className="px-6 py-6 pb-72">
             <View className="flex-row gap-4 items-center justify-center mt-4">
               <ReturnButton buttonType="secondary" />
 
@@ -92,10 +88,10 @@ function detailPoint() {
             Descrição
           </Text>
           <Text className="text-black font-semibold m-1 text-justify text-xs">
-            {landmarkData.description || "Descrição não disponível."}
+            {landmarkData.shortDescription || "Descrição não disponível."}
           </Text>
         </View>
-        <View className="bg-[#FFE489] pl-6 py-6 ">
+        <View className="bg-[#FFE489] pl-6 pt-6 pb-12">
           <Text className="text-forestGreen-500 font-semibold m-1 mb-4">
             Imagens
           </Text>
@@ -107,8 +103,28 @@ function detailPoint() {
             keyExtractor={(_, index) => index.toString()}
           />
         </View>
+        <View className="bg-white flex-row p-6 items-center gap-4">
+          <Foundation name="info" size={24} color="#113D31" />
+          <Text className="font-bold text-forestGreen-500">Sobre a Trilha</Text>
+        </View>
+        <View className="bg-white h-96 w-full">
+          <WebView
+            originWhitelist={["*"]}
+            style={{ background: "white" }}
+            source={{
+              html: `
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+            <div style='padding: 24px; font-family: Gabarito, Roboto, sans-serif; font-size: 30px; width: calc(100% - 48px); word-wrap: break-word;'>
+              ${landmarkData.description || "Sem descrição disponível."}
+            </div>
+            `,
+            }}
+          />
+        </View>
       </ScrollView>
-      <StartButton text="Registrar" onPress={handlePress}/>
+      <StartButton text="Registrar" onPress={handlePress} />
     </SafeAreaView>
   );
 }
