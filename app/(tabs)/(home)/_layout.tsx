@@ -15,6 +15,7 @@ export default function HomeStack() {
         name="interestPoints"
         options={{ title: "Pontos de interesse" }}
       />
+      <Stack.Screen name="endTrail" options={{ title: "Finalizar trilha" }} />
     </Stack>
   );
 }
