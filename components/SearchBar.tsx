@@ -1,5 +1,5 @@
 import Feather from '@expo/vector-icons/Feather';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextInput, TouchableOpacity, View } from "react-native";
 
 interface SearchBarProps<T> {
@@ -20,14 +20,12 @@ export default function SearchBar<T>({
 
   const [query, setQuery] = useState("");
 
-  const handleChange = (text: string) => {
-    setQuery(text);
-    if (text.trim() === "") {
-      onFiltered(data);
-    }
-  };
-
   const handleSearch = () => {
+    if (query.trim() === "") {
+      onFiltered(data);
+      return;
+    }
+
     const results = data.filter((item) => {
       const keys = Array.isArray(filterKey) ? filterKey : [filterKey];
       return keys.some(key => 
@@ -36,6 +34,18 @@ export default function SearchBar<T>({
     });
     onFiltered(results);
   };
+
+  const handleChange = (text: string) => {
+    setQuery(text);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleSearch();
+    }, 700);
+
+    return () => clearTimeout(timer);
+  }, [query]);
 
   return (
     <View className={`p-0.5 pl-2 pr-10 w-full min-h-12 flex-row items-center bg-lightGray-300 rounded-2xl ${className}`}>
