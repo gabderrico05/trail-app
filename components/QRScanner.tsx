@@ -1,5 +1,5 @@
 import { useRegisterLandmark } from '@/hooks/useRegisterLandmark';
-import { landmarksService, trailsService } from '@/lib/api';
+import { entitiesService, getImageUrl, landmarksService, trailsService } from '@/lib/api';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { CameraView, CameraViewProps } from "expo-camera";
 import { router, useFocusEffect } from 'expo-router';
@@ -57,10 +57,10 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
         
         const trail = await trailsService.getById(poi.trailId);
 
-        // const entity = await entitiesService.getById(qrData.entityId);
-        // const parkImage = getImageUrl(entity.coverUrl) || "";
+        const entity = await entitiesService.getById(qrData.entityId);
+        const parkImage = getImageUrl(entity.coverUrl) || "";
 
-        const parkImage = ""
+        // const parkImage = ""
         
         register(trail, poi.id, parkImage);
         
