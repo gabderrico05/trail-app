@@ -7,7 +7,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 function endTrail() {
   const handleOnPressStart = () => {
-    // TODO: replace with actual navigation or QR scanner logic
     router.push("/(tabs)/(home)");
   };
 

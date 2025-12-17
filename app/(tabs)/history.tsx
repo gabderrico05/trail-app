@@ -1,11 +1,20 @@
-import { Text, View } from "react-native";
+import { useTrailSession } from "@/store/useTrailSession";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback } from "react";
 
 
 export default function History() {
-  return(
+  const { currentTrail } = useTrailSession();
   
-        <View className="flex-1 justify-center items-center bg-white">
-                <Text>History Screen</Text>
-        </View>
+  useFocusEffect(
+    useCallback(() => {
+      if (currentTrail) {
+        router.push('/(tabs)/(home)/startTrail');
+      }
+      else{
+
+      }
+    }, [currentTrail])
   );
+  
 }
