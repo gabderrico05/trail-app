@@ -8,7 +8,7 @@ import { TrailProps } from "@/types/Trail";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { router, useLocalSearchParams } from "expo-router";
 import React, { useEffect } from "react";
-import { FlatList, Image, ImageBackground, Text, View } from "react-native";
+import { FlatList, Image, ImageBackground, Platform, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function landmarks() {
@@ -67,7 +67,7 @@ function landmarks() {
 
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
      
       <FlatList
         data={landmarks}

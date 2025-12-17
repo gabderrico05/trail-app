@@ -20,7 +20,7 @@ const LandmarkTopic = ({title, id, onPress, registered}: LandmarkTopic) => {
               :
               <MaterialCommunityIcons name="arrow-right-circle-outline" size={50} color="forestGreen-500"/>
             }
-            <Text className="text-forestGreen-500 font-medium ml-2">{title}</Text>
+            <Text className="text-forestGreen-500 text-lg font-medium ml-2">{title}</Text>
     </View>
     </Pressable>
 

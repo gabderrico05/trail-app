@@ -13,6 +13,7 @@ import {
   FlatList,
   Image,
   ImageBackground,
+  Platform,
   ScrollView,
   Text,
   View,
@@ -52,7 +53,7 @@ function detailPoint() {
   }
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
       <ScrollView>
         <ImageBackground
           style={{ height: "auto", width: "auto" }}

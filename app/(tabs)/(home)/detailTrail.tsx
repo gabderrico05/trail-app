@@ -67,7 +67,7 @@ function detailTrail() {
   return (
     <SafeAreaView
       className="flex-1"
-      edges={Platform.OS === "android" ? ["top", "bottom"] : ["top"]}
+      edges={Platform.OS === "android" ? ["bottom"] : ["top"]}
     >
       <ScrollView>
         <TrailHeader
