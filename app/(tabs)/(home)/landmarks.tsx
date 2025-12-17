@@ -29,9 +29,10 @@ function landmarks() {
 
   const landmarks: LandMarkProps[] = trailData?.pointsOfInterest || [];
 
-  return (
-    <SafeAreaView className="flex-1">
-      <ImageBackground
+  const LandmarksHeader = () => {
+    return (
+      <View className="mb-6">
+       <ImageBackground
         className="p-6"
         style={{ height: "auto", width: "auto" }}
         source={{ uri: getImageUrl(trailData?.coverUrl) || undefined }}
@@ -60,8 +61,17 @@ function landmarks() {
           </Text>
         </View>
       </View>
+      </View>
+    );
+  }
+
+
+  return (
+    <SafeAreaView className="flex-1">
+     
       <FlatList
         data={landmarks}
+        ListHeaderComponent={LandmarksHeader}
         keyExtractor={(item: LandMarkProps, index: number) => String(item?.id)}
         renderItem={({ item }) => (
           <LandmarkCard
