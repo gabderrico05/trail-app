@@ -43,7 +43,7 @@ function aboutTrail() {
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
-            <div style='padding: 24px; font-family: Gabarito, Roboto, sans-serif'>
+            <div style='padding: 24px; font-size: 30px; font-family: Gabarito, Roboto, sans-serif'>
               ${trailData.description || "Sem descrição disponível."}
             </div>
             `,
