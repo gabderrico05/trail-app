@@ -39,6 +39,7 @@ function startTrail() {
                 title={item.name} 
                 id={item.id}
                 registered={item.registered}
+                disable={item.disable}
                 onPress={() => router.push({
                   pathname: "/(tabs)/(home)/detailPoint",
                   params: {
@@ -52,7 +53,7 @@ function startTrail() {
             </View>
             
           )}
-          ItemSeparatorComponent={() => <View className="w-2 h-12 -my-1.5 mx-12 bg-forestGreen-500"/>}
+          ItemSeparatorComponent={() => <View className="w-2 h-14 -my-1 mx-12 bg-forestGreen-500"/>}
           ListEmptyComponent={<Text className="px-6 text-lg font-medium">esta trilha não possui pontos de interesse</Text>}
         />
 

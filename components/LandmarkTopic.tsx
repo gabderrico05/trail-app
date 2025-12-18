@@ -1,4 +1,5 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import CheckCircle from '@/assets/check-circle.svg';
+import LeftArrowCircle from '@/assets/left-arrow-circle.svg';
 import { Pressable, Text, View } from "react-native";
 
 interface LandmarkTopic {
@@ -6,21 +7,22 @@ interface LandmarkTopic {
   id: number;
   onPress?: () => void;
   registered?: boolean;
+  disable?: boolean;
 }
 
 
-const LandmarkTopic = ({title, id, onPress, registered}: LandmarkTopic) => {
+const LandmarkTopic = ({title, id, onPress, registered, disable = false}: LandmarkTopic) => {
 
   return(
 
-    <Pressable onPress={onPress}>
+    <Pressable onPress={disable? undefined : onPress}>
     <View className="flex-row items-center">
             {registered ? 
-              <MaterialCommunityIcons name="check-circle" size={50} color="forestGreen-500" />
+              <CheckCircle width={50} height={50} />
               :
-              <MaterialCommunityIcons name="arrow-right-circle-outline" size={50} color="forestGreen-500"/>
+              <LeftArrowCircle width={50} height={50} />
             }
-            <Text className="text-forestGreen-500 text-lg font-medium ml-2">{title}</Text>
+            <Text className="text-forestGreen-500 text-xl font-medium ml-3">{title}</Text>
     </View>
     </Pressable>
 
