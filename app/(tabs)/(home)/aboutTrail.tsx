@@ -1,5 +1,6 @@
 import StartButton from "@/components/StartButton";
 import TrailHeader from "@/components/TrailHeader";
+import { useStartTrail } from "@/hooks/useStartTrail";
 import { getImageUrl } from "@/lib/api";
 import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
@@ -19,6 +20,8 @@ function aboutTrail() {
     return null;
   }
   const trailData: TrailProps = JSON.parse(trail);
+
+  const { start, buttonText } = useStartTrail();
 
   return (
     <SafeAreaView
@@ -51,7 +54,7 @@ function aboutTrail() {
         />
       </View>
 
-      <StartButton />
+      <StartButton text={buttonText} onPress={() => start(trailData, parkImage)} />
     </SafeAreaView>
   );
 }
