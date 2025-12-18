@@ -2,7 +2,7 @@ import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
 import { useRegisterLandmark } from "@/hooks/useRegisterLandmark";
 import { getImageUrl } from "@/lib/api";
-import { useTrailSession } from "@/store/useTrailSession";
+
 import { LandMarkProps } from "@/types/Landmark";
 import { TrailProps } from "@/types/Trail";
 import { Foundation } from "@expo/vector-icons";
@@ -31,7 +31,7 @@ function detailPoint() {
   const landmarkData: LandMarkProps = JSON.parse(landmark);
   const trailData: TrailProps = JSON.parse(trail);
 
-  const currentTrail = useTrailSession((s) => s.currentTrail);
+  
   const { register } = useRegisterLandmark();
 
   const renderItem = ({
@@ -60,12 +60,12 @@ function detailPoint() {
           source={{ uri: getImageUrl(landmarkData.coverUrl) || "" }}
           resizeMode="cover"
         >
-          <View className="px-6 py-6 pb-72">
+          <View className="mx-16 py-6 pb-72">
             <View className="flex-row gap-4 items-center justify-center mt-4">
               <ReturnButton buttonType="secondary" />
 
               <View className="bg-white items-center py-1 justify-between pl-6 gap-4 pr-2 rounded-3xl flex-row">
-                <Text className="text-forestGreen-500 font-bold mr-auto">
+                <Text className="flex-1 text-lg text-forestGreen-500 font-bold text-center" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>
                   {trailData.name}
                 </Text>
                 <Image
