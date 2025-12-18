@@ -1,3 +1,4 @@
+import LandmarkTopic from "@/components/LandmarkTopic";
 import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
 import { useRegisterLandmark } from "@/hooks/useRegisterLandmark";
@@ -6,9 +7,8 @@ import { getImageUrl } from "@/lib/api";
 import { LandMarkProps } from "@/types/Landmark";
 import { TrailProps } from "@/types/Trail";
 import { Foundation } from "@expo/vector-icons";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { useLocalSearchParams } from "expo-router";
-import React from "react";
+import { useFocusEffect, useLocalSearchParams } from "expo-router";
+import React, { useCallback, useState } from "react";
 import {
   FlatList,
   Image,
@@ -30,9 +30,27 @@ function detailPoint() {
   const parkImg = parkImage;
   const landmarkData: LandMarkProps = JSON.parse(landmark);
   const trailData: TrailProps = JSON.parse(trail);
+  
+  const { register, currentTrail } = useRegisterLandmark();
+  const [isRegistered, setIsRegistered] = useState(false);
+
+  const checkRegistered = useCallback(() => {
+    if (currentTrail === undefined) {
+      return false;
+    } else if (currentTrail?.id !== trailData.id) {
+      return false;
+    }
+    const landmark = currentTrail.landmarks.find(lm => lm.id === landmarkData.id);
+    return landmark?.registered || false;
+  }, [currentTrail, trailData.id, landmarkData.id]);
+
+  useFocusEffect(
+    useCallback(() => {
+      setIsRegistered(checkRegistered());
+    }, [checkRegistered])
+  );
 
   
-  const { register } = useRegisterLandmark();
 
   const renderItem = ({
     item,
@@ -52,6 +70,8 @@ function detailPoint() {
     register(trailData, landmarkData.id, parkImage);
   }
 
+    
+
   return (
     <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
       <ScrollView>
@@ -64,8 +84,8 @@ function detailPoint() {
             <View className="flex-row gap-4 items-center justify-center mt-4">
               <ReturnButton buttonType="secondary" />
 
-              <View className="bg-white items-center py-1 justify-between pl-6 gap-4 pr-2 rounded-3xl flex-row">
-                <Text className="flex-1 text-lg text-forestGreen-500 font-bold text-center" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>
+              <View className="bg-white items-center py-1 justify-between pl-6 gap-4 pr-2 rounded-3xl flex-row overflow-hidden">
+                <Text className="flex-1 text-forestGreen-500 font-bold text-center" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>
                   {trailData.name}
                 </Text>
                 <Image
@@ -77,14 +97,11 @@ function detailPoint() {
             </View>
           </View>
         </ImageBackground>
-        <View className="flex-row items-center p-6 gap-3">
-          <FontAwesome name="arrow-circle-o-right" size={30} color="black" />
-          <Text className="text-forestGreen-500 font-semibold">
-            {landmarkData.name}
-          </Text>
+        <View className="bg-butterYellow/35 flex-row items-center px-6 py-4 gap-3">
+            <LandmarkTopic title={landmarkData.name} id={landmarkData.id} animated={false} size={40} registered={isRegistered}/>
         </View>
 
-        <View className="bg-[#85808028] p-6">
+        <View className="p-6">
           <Text className="text-forestGreen-500 font-semibold m-1">
             Descrição
           </Text>

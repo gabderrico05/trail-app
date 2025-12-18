@@ -63,5 +63,5 @@ export function useRegisterLandmark() {
     [currentTrail, registerPoint, startTrail, resetTrail]
   );
 
-  return { register };
+  return { register, currentTrail };
 }

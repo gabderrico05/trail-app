@@ -38,6 +38,7 @@ function startTrail() {
               <LandmarkTopic 
                 title={item.name} 
                 id={item.id}
+                size={45}
                 registered={item.registered}
                 disable={item.disable}
                 onPress={() => router.push({
@@ -53,7 +54,7 @@ function startTrail() {
             </View>
             
           )}
-          ItemSeparatorComponent={() => <View className="w-2 h-14 -my-1 mx-12 bg-forestGreen-500"/>}
+          ItemSeparatorComponent={() => <View className="mx-11 pl-0.5"><View className="w-2 h-14 -my-1 bg-forestGreen-500"/></View>}
           ListEmptyComponent={<Text className="px-6 text-lg font-medium">esta trilha não possui pontos de interesse</Text>}
         />
 

@@ -10,14 +10,16 @@ interface LandmarkTopic {
   onPress?: () => void;
   registered?: boolean;
   disable?: boolean;
+  animated?: boolean;
+  size?: number;
 }
 
 
-const LandmarkTopic = ({title, id, onPress, registered, disable = false}: LandmarkTopic) => {
+const LandmarkTopic = ({title, id, onPress, registered, disable = false, animated = true, size = 50}: LandmarkTopic) => {
   const scale = useSharedValue(1);
 
   useEffect(() => {
-    if (registered) {
+    if (registered && animated) {
       scale.value = withTiming(1.1, { duration: 250, easing: Easing.bounce }, () => {
         scale.value = withSpring(1, { damping: 8, stiffness: 150 });
       });
@@ -35,9 +37,9 @@ const LandmarkTopic = ({title, id, onPress, registered, disable = false}: Landma
     <View className="flex-row items-center">
             <Animated.View style={animatedStyle}>
               {registered ? 
-                <CheckCircle width={50} height={50} />
+                <CheckCircle width={size} height={size} />
                 :
-                <LeftArrowCircle width={50} height={50} />
+                <LeftArrowCircle width={size} height={size} />
               }
             </Animated.View>
             <Text className="text-forestGreen-500 text-xl font-medium ml-3">{title}</Text>
