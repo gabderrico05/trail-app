@@ -60,7 +60,6 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
         const entity = await entitiesService.getById(qrData.entityId);
         const parkImage = getImageUrl(entity.coverUrl) || "";
 
-        // const parkImage = ""
         
         register(trail, poi.id, parkImage);
         

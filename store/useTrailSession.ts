@@ -8,6 +8,7 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 export type LandmarkWithStatus = LandMarkProps & {
   registered: boolean;
+  disable?: boolean;
 }
 
 
@@ -38,16 +39,17 @@ export const useTrailSession = create(
             ...trail,
             parkImage : parkImage,
             landmarks: [
-              // Landmark padrão "Início" já registrado
+              
               {
                 id: 0,
-                name: "Início",
+                name: "Início da trilha",
                 description: "Ponto de partida da trilha",
                 shortDescription: "Ponto de partida da trilha",
                 coverUrl: null,
                 gallery: [],
                 trailId: trail.id,
                 registered: true,
+                disable: true,
               } as LandmarkWithStatus,
               // Demais landmarks da trilha
               ...(trail.pointsOfInterest || []).map((lm) => ({

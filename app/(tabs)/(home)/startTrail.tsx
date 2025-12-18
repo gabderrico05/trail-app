@@ -10,7 +10,7 @@ import {
   FlatList,
   Platform,
   Text,
-  View,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -29,8 +29,7 @@ function startTrail() {
   
 
   return (
-    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
-      
+    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
         <FlatList
           ListHeaderComponent={<View className="mb-10"><TrailHeader name={currentTrail.name} imgSrc={getImageUrl(currentTrail.coverUrl) || ""} parkImage={currentTrail.parkImage}/></View>}
           data={currentTrail.landmarks}
@@ -40,6 +39,7 @@ function startTrail() {
                 title={item.name} 
                 id={item.id}
                 registered={item.registered}
+                disable={item.disable}
                 onPress={() => router.push({
                   pathname: "/(tabs)/(home)/detailPoint",
                   params: {
@@ -53,8 +53,8 @@ function startTrail() {
             </View>
             
           )}
-          ItemSeparatorComponent={() => <View className="w-2 h-12 -my-1.5 mx-12 bg-forestGreen-600"/>}
-          ListEmptyComponent={<Text className="px-6">esta trilha não possui pontos de interesse</Text>}
+          ItemSeparatorComponent={() => <View className="w-2 h-14 -my-1 mx-12 bg-forestGreen-500"/>}
+          ListEmptyComponent={<Text className="px-6 text-lg font-medium">esta trilha não possui pontos de interesse</Text>}
         />
 
       {currentTrail.finalized? <StartButton text="Finalizar trilha" onPress={() => router.push('/(tabs)/(home)/endTrail')}/> : <QRCodeButton/> }

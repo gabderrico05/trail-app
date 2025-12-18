@@ -1,6 +1,6 @@
 import { LandmarkCard } from "@/components/LandmarkCard";
-import ReturnButton from "@/components/ReturnButton";
 import StartButton from "@/components/StartButton";
+import TrailHeader from "@/components/TrailHeader";
 import { useStartTrail } from "@/hooks/useStartTrail";
 import { getImageUrl } from "@/lib/api";
 import { LandMarkProps } from "@/types/Landmark";
@@ -8,7 +8,7 @@ import { TrailProps } from "@/types/Trail";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { router, useLocalSearchParams } from "expo-router";
 import React, { useEffect } from "react";
-import { FlatList, Image, ImageBackground, Text, View } from "react-native";
+import { FlatList, Platform, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function landmarks() {
@@ -32,26 +32,12 @@ function landmarks() {
   const LandmarksHeader = () => {
     return (
       <View className="mb-6">
-       <ImageBackground
-        className="p-6"
-        style={{ height: "auto", width: "auto" }}
-        source={{ uri: getImageUrl(trailData?.coverUrl) || undefined }}
-        resizeMode="cover"
-      >
-        <View className="w-full ">
-          <ReturnButton buttonType="secondary" />
-        </View>
-        <View className="bg-white items-center p-2 px-4 mt-4 rounded-2xl flex-row">
-          <Text className="text-forestGreen-500 font-bold mr-auto">
-            {trailData?.name}
-          </Text>
-          <Image
-            source={{ uri: parkImage }}
-            style={{ width: 50, height: 50 }}
-            resizeMode="contain"
-          />
-        </View>
-      </ImageBackground>
+      
+      <TrailHeader
+        name={trailData?.name}
+        parkImage={parkImage}
+        imgSrc={getImageUrl(trailData?.coverUrl)}
+        />
 
       <View className="bg-forestGreen-500 justtfy-center">
         <View className="flex-row items-center mb-4 pt-3 pl-3">
@@ -67,7 +53,7 @@ function landmarks() {
 
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
      
       <FlatList
         data={landmarks}
