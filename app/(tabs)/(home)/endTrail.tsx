@@ -12,7 +12,7 @@ function endTrail() {
 
   return (
     <SafeAreaView className="flex-1 bg-lemnonYellow items-center ">
-      <View className='flex-1 items-center justify-end pl-3'>
+      <View className='flex-1 items-center justify-end'>
         <StatusBar backgroundColor="#000" translucent barStyle="dark-content" />
         <View>
           <EndDrawing width={280} height={240} />
