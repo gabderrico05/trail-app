@@ -1,3 +1,4 @@
+import QRScannerOverlay from '@/assets/QRCodeOverlay.svg';
 import { useRegisterLandmark } from '@/hooks/useRegisterLandmark';
 import { entitiesService, getImageUrl, landmarksService, trailsService } from '@/lib/api';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
@@ -85,12 +86,25 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
   return (
     <View className="flex-1">
       <CameraView
-        style={{ flex: 1 }}
+        style={{ width: '100%', height: '100%' }}
         barcodeScannerSettings={{ barcodeTypes: ["qr"] }}
         onBarcodeScanned={isProcessing ? undefined : handleScan}
         enableTorch={torchOn}
         {...rest}
       />
+
+      <QRScannerOverlay
+      width="100%"
+      height="100%"
+      preserveAspectRatio="none"
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      }}
+    />
 
       <View className='z-20 absolute top-14 right-6 pt-1 pr-0.5'>
 
