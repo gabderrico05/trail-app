@@ -40,6 +40,8 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
 
     try {
       const qrData: QRCodeType = JSON.parse(scanningResult.data);
+      console.log('QR Code escaneado:', qrData);
+      
       if (qrData.type === 'trail') {
 
         router.replace({
@@ -52,21 +54,29 @@ export default function QRScanner({ ...rest }: QRScannerProps) {
        
         
       } else if (qrData.type === 'poi') {
-
+        
         const poi = await landmarksService.getById(qrData.id);
         
         const trail = await trailsService.getById(poi.trailId);
-
+       
         const entity = await entitiesService.getById(qrData.entityId);
-        const parkImage = getImageUrl(entity.coverUrl) || "";
+       
 
-        
-        register(trail, poi.id, parkImage);
+
+        router.replace({
+          pathname: "/(tabs)/(home)/detailPoint",
+          params: {
+            landmark: JSON.stringify(poi),
+            trail: JSON.stringify(trail),
+            parkImage: getImageUrl(entity?.coverUrl)
+          },
+       });
+       
         
       }
 
     } catch (error) {
-      console.error('Erro ao fazer parse do QR Code:', error);
+      console.error('Erro ao fazer leitura do QR Code:', error);
       setError('QR Code inválido');
       setIsProcessing(false); 
     }

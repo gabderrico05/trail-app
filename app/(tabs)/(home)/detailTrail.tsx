@@ -75,7 +75,7 @@ function detailTrail() {
           imgSrc={getImageUrl(trail?.coverUrl)}
           parkImage={parkImage || getImageUrl(park?.coverUrl) || ""}
         />
-        <View className="p-6 gap-2">
+        <View className="bg-white p-6 gap-2">
           <View className="flex-row items-center ">
             <MaterialCommunityIcons name="clock" size={14} color="#BF360C" />
             <Text className="text-forestGreen-500 font-medium ml-2">
@@ -99,7 +99,7 @@ function detailTrail() {
             </Text>
           </View>
         </View>
-        <View className="bg-[#85808028] p-6">
+        <View className="bg-[#F0EEEEAB] p-6">
           <Text className="text-forestGreen-500 font-semibold m-1">
             Descrição
           </Text>

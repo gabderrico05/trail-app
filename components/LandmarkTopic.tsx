@@ -1,6 +1,8 @@
 import CheckCircle from '@/assets/check-circle.svg';
 import LeftArrowCircle from '@/assets/left-arrow-circle.svg';
+import { useEffect } from "react";
 import { Pressable, Text, View } from "react-native";
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 
 interface LandmarkTopic {
   title: string
@@ -8,20 +10,38 @@ interface LandmarkTopic {
   onPress?: () => void;
   registered?: boolean;
   disable?: boolean;
+  animated?: boolean;
+  size?: number;
 }
 
 
-const LandmarkTopic = ({title, id, onPress, registered, disable = false}: LandmarkTopic) => {
+const LandmarkTopic = ({title, id, onPress, registered, disable = false, animated = true, size = 50}: LandmarkTopic) => {
+  const scale = useSharedValue(1);
+
+  useEffect(() => {
+    if (registered && animated) {
+      scale.value = withTiming(1.1, { duration: 250, easing: Easing.bounce }, () => {
+        scale.value = withSpring(1, { damping: 8, stiffness: 150 });
+      });
+      
+    }
+  }, [registered]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
 
   return(
 
     <Pressable onPress={disable? undefined : onPress}>
     <View className="flex-row items-center">
-            {registered ? 
-              <CheckCircle width={50} height={50} />
-              :
-              <LeftArrowCircle width={50} height={50} />
-            }
+            <Animated.View style={animatedStyle}>
+              {registered ? 
+                <CheckCircle width={size} height={size} />
+                :
+                <LeftArrowCircle width={size} height={size} />
+              }
+            </Animated.View>
             <Text className="text-forestGreen-500 text-xl font-medium ml-3">{title}</Text>
     </View>
     </Pressable>
@@ -30,25 +50,3 @@ const LandmarkTopic = ({title, id, onPress, registered, disable = false}: Landma
 }
 export default LandmarkTopic;
 
-
-
-
-
-
-// <View className="flex-row items-center ">
-//             <MaterialCommunityIcons name="check-circle" size={50} color="forestGreen-500" />
-//             <Text className="text-forestGreen-500 font-medium ml-2">
-//               Inicio da Trilha
-//             </Text>
-//   </View>
-
-//           <View className="flex-row items-center">
-//             <MaterialCommunityIcons
-//               name="arrow-right-circle-outline"
-//               size={50}
-//               color="forestGreen-500"
-//             />
-//             <Text className="text-forestGreen-500 font-medium ml-2">
-//               Gruta da Pedra Furada (+1,2km)
-//             </Text>
-//           </View>
